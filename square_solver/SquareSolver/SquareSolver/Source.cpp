@@ -19,7 +19,7 @@ int main(int argc, char** argv)
 		print_equation(argc, argv, a, b, c); // print equation 
 		solver equation(a, b, c); // create an equation object
 		equation.Calc();
-		/*if (equation.nRoots == UNLIM_ROOTS) {
+		if (equation.nRoots == UNLIM_ROOTS) {
 			std::cout << "every x";
 		}
 		else if (equation.nRoots == 0) {
@@ -30,7 +30,7 @@ int main(int argc, char** argv)
 			{
 				std::cout << "rout " << i + 1 << " = " << equation.roots[i] << std::endl;
 			}
-		}*/
+		}
 	}
 	return 0;
 }
