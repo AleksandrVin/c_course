@@ -1,4 +1,3 @@
 ﻿  Source.cpp
-  solver.cpp
-  Generating Code...
+c:\users\aleksandr\onedrive\data\information\university\subjcts\cs\labs\square_solver\squaresolver\squaresolver\source.cpp(85): warning C4477: 'sscanf_s' : format string '%lg' requires an argument of type 'double *', but variadic argument 1 has type 'const double *'
   SquareSolver.vcxproj -> C:\Users\Aleksandr\OneDrive\Data\Information\university\subjcts\cs\labs\square_solver\SquareSolver\Debug\SquareSolver.exe

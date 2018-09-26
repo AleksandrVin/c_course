@@ -37,6 +37,27 @@ void solver::Calc()
 	}
 }
 
+void solver::Print_roots()
+{
+	if (nRoots == UNLIM_ROOTS) {
+		std::cout << "every x";
+	}
+	else if (nRoots == 0) {
+		std::cout << "no roots";
+	}
+	else {
+		for (size_t i = 0; i < nRoots; i++)
+		{
+			std::cout << "root " << i + 1 << " = " << roots[i] << std::endl;
+		}
+	}
+}
+
+double solver::Solve_line_equation(double a, double b)
+{
+	return -b / a;
+}
+
 solver::solver(double a, double  b, double c)
 {
 	assert(std::isfinite(a));
@@ -45,7 +66,7 @@ solver::solver(double a, double  b, double c)
 	arguments[0] = a;
 	arguments[1] = b;
 	arguments[2] = c;
-	std::cout << "this is solver" << arguments[0] << ' ' << arguments[1] << ' ' << arguments[2] << std::endl;
+	//std::cout << "this is solver" << arguments[0] << ' ' << arguments[1] << ' ' << arguments[2] << std::endl;
 }
 
 
