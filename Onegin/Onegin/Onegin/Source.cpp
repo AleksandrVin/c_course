@@ -10,7 +10,7 @@
 int main()
 {
 	Sorter obj(FILE_INPUT);
-	//obj.SaveSorted(FILE_OUTPUT_SORTED);
+	obj.SaveSorted(FILE_OUTPUT_SORTED);
 	//obj.SaveMixed(FILE_OUTPUT_MIXED);
 
 	system("pause");

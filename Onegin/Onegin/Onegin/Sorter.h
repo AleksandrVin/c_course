@@ -28,13 +28,13 @@ private:
 	int nStrings = 0;
 	int countStrings(const char* buff, size_t size_of_buff);
 	const char *stringCopy(char* str_to, const char* str_from, int begin_from , int lenght, int begin_to);
-	int reverseCompare(const void* a, const void* b);
+	static int reverseCompare(const void* a, const void* b);
 	void copy_strings_to_strings_sorted(int nStrings); // copy strings to strings_sorted 
 	int cmp(const void*a, const void *b);
 protected:
 	bool File_readed = false;
 	int printStrings(int strings_amount, char** strings);
-	int findSizeOfString(const char* string);
+	static int findSizeOfString(const char* string);
 };
 
 #endif // !SORTER

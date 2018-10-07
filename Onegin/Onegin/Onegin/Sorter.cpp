@@ -39,7 +39,7 @@ Sorter::~Sorter()
 bool Sorter::SaveSorted(const char * file_output)
 {
 	copy_strings_to_strings_sorted(nStrings);
-	//std::qsort(strings_sorted, nStrings, sizeof(strings_sorted[0]),reverseCompare);
+	qsort(strings_sorted, nStrings, sizeof(strings_sorted[0]), reverseCompare);
 	printStrings(nStrings, strings_sorted);
 	return true;
 }
@@ -70,10 +70,10 @@ int Sorter::parseToSrings(const char* buff, size_t size_of_buff)
 			strings[current_string] = (char*)calloc(current_string_lenght, sizeof(char));
 			stringCopy(strings[current_string], buff, current_string_starts, current_string_lenght, 0);
 			current_string++;
-			++current_string_starts += current_string_lenght; 
+			++current_string_starts += current_string_lenght;
 			current_string_lenght = 0;
 		}
-		else if(buff[i] != '\n'){
+		else if (buff[i] != '\n') {
 			current_string_lenght++;
 		}
 	}
@@ -110,7 +110,7 @@ int Sorter::countStrings(const char * buff, size_t size_of_buff)
 			last_was_free = true;
 			string_counter++;
 		}
-		else if(buff[i] != '\n'){
+		else if (buff[i] != '\n') {
 			last_was_free = false;
 		}
 	}
@@ -141,7 +141,7 @@ int Sorter::reverseCompare(const void* a, const void* b)
 			if (arg1[i] == arg2[i]) {
 				continue;
 			}
-			else if(arg1[i] > arg2[i]){
+			else if (arg1[i] > arg2[i]) {
 				return 1;
 			}
 			else {
@@ -159,7 +159,7 @@ int Sorter::reverseCompare(const void* a, const void* b)
 				return 1;
 			}
 			else {
-				return 1;
+				return -1;
 			}
 		}
 	}
@@ -177,15 +177,15 @@ void Sorter::copy_strings_to_strings_sorted(int nStrings)
 
 int Sorter::cmp(const void * a, const void * b)
 {
-	return strcmp(*(char**)a,*(char**)b);
+	return strcmp(*(char**)a, *(char**)b);
 }
 
 
-int Sorter::printStrings(int strings_amount , char** strings)
+int Sorter::printStrings(int strings_amount, char** strings)
 {
 	for (int i = 0; i < strings_amount; i++)
 	{
-		printf("%s\n ", strings[i]);
+		printf("{%s}\n", strings[i]);
 	}
 	return strings_amount;
 }
@@ -194,6 +194,7 @@ int Sorter::findSizeOfString(const char * string)
 {
 	int size = 0;
 	while (*string++ != '\0') {
+		printf("*");
 		size++;
 	}
 	return size - 1;
