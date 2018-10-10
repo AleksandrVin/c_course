@@ -10,22 +10,46 @@
 
 int main()
 {
+	Stack *ex = nullptr;
 
-	Stack *ex = StackCtorDin();
-	Test43_42(ex);
-	StackPush(ex, 55);
-	StackPush(ex, 55);
-	StackPush(ex, 55);
-	StackPush(ex, 55); 
-	StackPush(ex, 55);
-	StackPush(ex, 55);
-	ex->stack_state = STACK_NOT_EXIST;
-	StackDump(ex);
+	//ex = StackCtorDin();
+	//Test43_42(ex);
+	//StackDtorDin(ex);
+
+	//printf("\n\n");
+
+	//ex = StackCtorDin();
+	//TestTestDump(ex);
+	//StackDtorDin(ex);
+
+	//printf("\n\n");
+
+	//ex = StackCtorDin();
+	//ex->stack_state = STACK_NOT_EXIST;
+	//ex->size = ex->capacity + 1;
+	//TestTestDump(ex);
+	//StackDtorDin(ex);
+
+	//printf("\n\n");
+
+	//ex = StackCtorDin();
+	//TestTryPopEmpty(ex);
+	//StackDtorDin(ex);
+
+	//printf("\n\n");
+
+	//ex = StackCtorDin();
+	//TestTryGetLast(ex);
+	//StackDtorDin(ex);
+
+	printf("\n\n");
+
+	ex = StackCtorDin();
+	TestPushAndPopLarge(ex);
 	StackDtorDin(ex);
-	//StackPush(ex, 42);
-	//StackPush(ex, 43);
-	//printf("%d\n", StackPop(ex));
-	//printf("%d\n", StackPop(ex));
+
+	printf("\n\n");
+
 	printf("\n");
 	system("pause");
 	return 0;

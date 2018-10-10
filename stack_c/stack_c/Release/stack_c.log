@@ -1,0 +1,8 @@
+﻿  Source.cpp
+  Stack.cpp
+  tests.cpp
+  unittest.h
+  Generating code
+  All 16 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  stack_c.vcxproj -> C:\Users\Aleksandr\OneDrive\Data\Information\university\subjcts\cs\labs\stack_c\Release\stack_c.exe

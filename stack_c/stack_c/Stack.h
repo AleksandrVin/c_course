@@ -14,18 +14,32 @@
 */
 typedef int data_stack; /// defined as double but you can override it 
 
-#define STACK_UNDERFLOW -1  /// enum make it 
-#define STACK_OVERFLOW -2
-#define STACK_NOT_EXIST -3
-#define STACK_TYPE_ERR -4
-#define STACK_LACK_OF_MEMORY -5
-#define STACK_BAD_ARGS -6
-#define STACK_UNNOWN_ERROR -10
+enum STACK_STATES {
+ STACK_UNDERFLOW  = -1,  /// enum make it 
+ STACK_OVERFLOW  = -2,
+ STACK_NOT_EXIST  = -3,
+ STACK_TYPE_ERR  = -4,
+ STACK_LACK_OF_MEMORY = -5,
+ STACK_BAD_ARGS = -6,
+ STACK_UNNOWN_ERROR = -10
+};
+//#define STACK_UNDERFLOW -1  /// enum make it 
+//#define STACK_OVERFLOW -2
+//#define STACK_NOT_EXIST -3
+//#define STACK_TYPE_ERR -4
+//#define STACK_LACK_OF_MEMORY -5
+//#define STACK_BAD_ARGS -6
+//#define STACK_UNNOWN_ERROR -10
 
 #define MEM_SHOP "start http://newegg.com"
 
-#define STACK_GOOD 1
-#define STACK_BROKEN 0
+enum STACK_BOOL_STATES
+{
+	STACK_GOOD = 1,
+	STACK_BROKEN = 0
+};
+//#define STACK_GOOD 1
+//#define STACK_BROKEN 0
 
 //#define MAX_BUFF 10000000
 //#define STACK_MAX_CAPCITY ( MAX_BUFF / sizeof(data_stack) )

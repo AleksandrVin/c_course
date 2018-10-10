@@ -10,3 +10,10 @@ bool Test43_42(Stack* stack);
 
 bool TestPushPop10(Stack* stack, int elem_to_push);
 
+bool TestTestDump(Stack* stack);
+
+bool TestTryPopEmpty(Stack* stack);
+
+bool TestTryGetLast(Stack* stack);
+
+bool TestPushAndPopLarge(Stack* stack);
