@@ -1,42 +1,13 @@
-#pragma once 
-
-#include <stdio.h>
-#include <stdlib.h>
-
-typedef double data_stack; /// defined as double but you can override it 
-
-#define STACK_UNDERFLOW -1
-#define STACK_OVERFLOW -2
-#define STACK_NOT_EXIST -3
-#define STACK_TYPE_ERR -4
-#define STACK_LACK_OF_MEMORY -5
-#define STACK_BAD_ARGS -6
-#define STACK_UNNOWN_ERROR -10
-
-#define MEM_SHOP "http://newegg.com"
-
-#define STACK_GOOD 1
-#define STACK_BROKEN 0
-
-#define MAX_BUFF 10000000
-#define STACK_MAX_CAPCITY ( MAX_BUFF / sizeof(data_stack) )
-
-struct Stack
-{
-	data_stack *data;
-	size_t size = 0;
-	size_t capacity = 0;
-	int stack_state = STACK_NOT_EXIST;
-};
-
 /**
- /brief construct a Stack using dimamic memory
+ /file
+ /brief realization of Stack
 
- /param[in] size_of_init size of stack initializing // default is 0
-
- /return pointer to created Stack
+ /author Vinogradov Aleksandr
 */
-Stack* StackCtorDin(size_t size_to_init = 0) /// to-do assert and err mesaging
+#include "Stack.h"
+
+/// make it using Stackstor 
+Stack* StackCtorDin(size_t size_to_init) /// to-do assert and err mesaging
 {
 	Stack *stack = (Stack*)calloc(1, sizeof(Stack));
 	stack->data = (data_stack*)calloc(size_to_init, sizeof(data_stack));
@@ -46,15 +17,8 @@ Stack* StackCtorDin(size_t size_to_init = 0) /// to-do assert and err mesaging
 	return stack;
 }
 
-/**
- /brief construct a Stack
 
- /param[in] stack stack to construct
- /param[in] size_of_init size of stack initializing // default is 0
-
- /return size of output_data or error messege
-*/
-int StackCtor(Stack* stack, size_t size_to_init = 0) /// to-do assert and err mesaging
+int StackCtor(Stack* stack, size_t size_to_init) /// to-do assert and err mesaging
 {
 	stack->data = (data_stack*)calloc(size_to_init, sizeof(data_stack));
 	stack->capacity = size_to_init;
@@ -63,72 +27,211 @@ int StackCtor(Stack* stack, size_t size_to_init = 0) /// to-do assert and err me
 	return size_to_init;
 }
 
-/**
- /brief destruct a Stack
 
- /param[in] stack stack to destruct
-
- /return size of destructed or error messege
-*/
 int StackDtor(Stack* stack) /// to-do assert and err mesaging
 {
-	size_t stack_size = stack->size;
-	free(stack->data);
-	return stack_size;
+	if (StackOk(stack)) {
+		size_t stack_size = stack->size;
+		free(stack->data);
+		stack->stack_state = STACK_NOT_EXIST;
+		stack->data = nullptr;
+		stack->capacity = STACK_NOT_EXIST;
+		stack->size = STACK_NOT_EXIST;
+		return stack_size;
+	}
+	return STACK_BROKEN;
 }
 
-/**
- /brief destruct a Stack dinamic
 
- /param[in] stack stack to destruct dinamic
-
- /return size of destructed or error messege
-*/
-int StackDtorDin(Stack* stack) /// to-do assert and err mesaging
+int StackDtorDin(Stack* stack) /// to-do assert and err mesaging /// call it delete and make it from StackDtor
 {
-	size_t stack_size = stack->size;
-	free(stack->data);
-	free(stack);
-	return stack_size;
+	if (StackOk(stack)) {
+		size_t stack_size = stack->size;
+		free(stack->data);
+		free(stack);
+		stack->stack_state = STACK_NOT_EXIST;
+		stack->data = nullptr;
+		stack->capacity = STACK_NOT_EXIST;
+		stack->size = STACK_NOT_EXIST;
+		return stack_size;
+	}
+	return STACK_BROKEN;
 }
 
 int StackClean(Stack* stack)
 {
-
+	if (StackOk(stack)) {
+		size_t stack_size = stack->size;
+		for (stack->size--; stack->size > 0; stack->size--)
+		{
+			stack->data[stack->size] = 0;
+		}
+		return stack_size;
+	}
+	return STACK_BROKEN;
 }
 
 int StackFree(Stack* stack)
 {
-
+	if (StackOk(stack)) {
+		size_t stack_size = stack->size;
+		free(stack->data);
+		stack->size = 0;
+		stack->capacity = 0;
+		stack->data = nullptr;
+		stack->stack_state = STACK_NOT_EXIST;
+		return stack_size;
+	}
+	return STACK_BROKEN;
 }
 
-int StackPush(Stack* stack)
+int StackPush(Stack* stack, data_stack data) /// make it 3 bloaks
 {
-
+	if (StackOk(stack)) {
+		if (stack->size < stack->capacity) {
+			stack->data[stack->size] = data;
+			stack->size++;
+			return STACK_GOOD;
+		}
+		else {
+			int status = StackRealloc(stack, 'u');
+			if (status == STACK_GOOD) {
+				stack->data[stack->size] = data;
+				stack->size++;
+				return STACK_GOOD;
+			}
+			else {
+				stack->stack_state = status;
+				return status;
+			}
+		}
+		return STACK_UNNOWN_ERROR;
+	}
+	return STACK_BROKEN;
 }
 
-int StackOk(Stack* stack)
+int StackRealloc(Stack* stack, char mode)
 {
-
+	if (StackOk(stack)) {
+		int resize = StackCalcResize(stack, mode);
+		if (stack->capacity != resize) {
+			data_stack* new_ptr = (data_stack*)realloc(stack->data, resize * sizeof(data_stack));
+			if (new_ptr) {
+				stack->data = new_ptr;
+				stack->capacity = resize;
+				return STACK_GOOD;
+			}
+			else {
+				////
+				system(MEM_SHOP); ///ficha
+				////
+				return STACK_LACK_OF_MEMORY;
+			}
+		}
+		else
+		{
+			return STACK_GOOD;
+		}
+		return STACK_UNNOWN_ERROR;
+	}
+	return STACK_BROKEN;
 }
 
-void StackDump(Stack* stack)
+int StackOk(Stack* stack) /// add hash sum and memcheck advanced features 
 {
-
+	if (stack->data == nullptr) {
+		return STACK_NOT_EXIST;
+	}
+	if (stack->size > stack->capacity) {
+		return STACK_BROKEN;
+	}
+	if (stack->size < 0 && stack->capacity < 0) {
+		return STACK_NOT_EXIST;
+	}
+	return STACK_GOOD;
 }
 
-int StackMemAlloc(size_t amount)
+void StackDump(Stack* stack) /// make it guy ! 
 {
-	return int(amount);
+	if (StackOk(stack) != STACK_GOOD) {
+		printf("\n\n Stack [0x%p] (ERROR!)\n{\n\t", stack);
+		printf("capacity = %d\n\t", stack->capacity);
+		printf("size = %d\n\t", stack->size);
+		printf("data[%d] : [0x%p]\n\t{\n", stack->capacity, stack->data);
+		for (size_t i = 0; i < stack->capacity; i++)
+		{
+			if (stack->size <= stack->capacity) {
+				printf("\t\t*[%d] = %d\n", i, stack->data[i]);
+			}
+			else {
+				printf("\t\t[%d] = %d\n", i, stack->data[i]);
+			}
+		}
+		printf("\t}\n}");
+	}
+	else {
+		printf("\n\n Stack [0x%p] (GOOD) \n{\n\t", stack);
+		printf("capacity = %d\n\t", stack->capacity);
+		printf("size = %d\n\t", stack->size);
+		printf("data[%d] : [0x%p]\n\t{\n", stack->capacity, stack->data);
+		for (size_t i = 0; i < stack->capacity; i++)
+		{
+			printf("\t\t*[%d] = %d\n", i, stack->data[i]);
+		}
+		printf("\t}\n}");
+	}
 }
-int StackResize(Stack* stack)
-{
 
+int StackResize(Stack* stack, int new_stack_capacity)
+{
+	if (StackOk(stack)) {
+		if (new_stack_capacity > 0) {
+			data_stack* new_ptr = (data_stack*)realloc(stack->data, new_stack_capacity * sizeof(data_stack));
+			if (new_ptr) {
+				stack->data = new_ptr;
+				stack->capacity = new_stack_capacity;
+				if ((int)stack->size > new_stack_capacity) {
+					stack->size = new_stack_capacity;
+				}
+				return new_stack_capacity;
+			}
+			else {
+				////
+				system(MEM_SHOP); ///ficha
+				////
+				return STACK_LACK_OF_MEMORY;
+			}
+		}
+		else if (new_stack_capacity == 0) {
+			StackFree(stack);
+			return new_stack_capacity;
+		}
+		return STACK_BAD_ARGS;
+	}
+	return STACK_BROKEN;
 }
+
 int StackSrink_to_fit(Stack* stack)
 {
-
+	if (StackOk(stack)) {
+		data_stack* new_ptr = (data_stack*)realloc(stack->data, stack->size * sizeof(data_stack));
+		if (new_ptr) {
+			stack->data = new_ptr;
+			stack->capacity = stack->size;
+			return stack->size;
+		}
+		else {
+			////
+			system(MEM_SHOP); ///ficha
+			////
+			return STACK_LACK_OF_MEMORY;
+		}
+		return STACK_UNNOWN_ERROR;
+	}
+	return STACK_BROKEN;
 }
+
+
 /* unmaked
 size_t StackMaxCapacity(Stack* stack)
 {
@@ -136,69 +239,67 @@ size_t StackMaxCapacity(Stack* stack)
 }
 */
 
-int StackPush(Stack* stack)
-{
-
-}
 
 data_stack StackPop(Stack* stack)
 {
-
+	if (stack->size > 0) {
+		data_stack data = stack->data[stack->size - 1];
+		stack->size--;
+		int status = StackRealloc(stack, 'd');
+		stack->stack_state = status;
+		return data;
+	}
+	else {
+		return (data_stack)STACK_UNDERFLOW;
+	}
+	return (data_stack)STACK_UNNOWN_ERROR;
 }
 
 data_stack StackFront(Stack* stack)
 {
-
+	if (stack->size > 0) {
+		return stack->data[stack->size - 1];
+	}
+	return 0;
 }
-/**
- /brief get all data from Stack
 
- /param[in] stack stack to fetch data
- /param[in] output_data array of elements from Stack
-
- /return size of output_data
-*/
-size_t StackGetAll(Stack* stack, data_stack* output_data)
+size_t StackGetAll(Stack* stack, data_stack* output_data) /// make it 
 {
-	return stack->size;
+	return STACK_UNNOWN_ERROR;
 }
-/**
- /brief Calculate resizing value of stack
 
- /param[in] stack stack to calculate size // default is 'u'
- /param[in] mode mode for calculating 'u' - resize up , and 'd' - resize down
-
- /return value to resize stack under zero on positive
-*/
-int StackCalcResize(Stack* stack, char mode = 'u') /// to-do assert and err mesaging
+int StackCalcResize(Stack* stack, char mode) /// to-do assert and err mesaging
 {
 	if (mode == 'u') { // step up algorithm
 		if (stack->capacity < 5) {
 			return 5;
 		}
 		else if (stack->capacity > 4) {
-			if (stack->capacity * 2 < STACK_MAX_CAPCITY) {
-				return (stack->capacity << 1);
-			}
+			//if (stack->capacity * 2 < STACK_MAX_CAPCITY) {
+			return (stack->capacity * 2);
+			//}
+				/*
 			else {
 				return STACK_MAX_CAPCITY;
 			}
+			*/
 		}
 	}
-	else if(mode == 'd') { // step down algorithm
+	else if (mode == 'd') { // step down algorithm
 		if (stack->capacity < 5) {
-			return stack->size;
+			return stack->capacity;
 		}
 		else if (stack->capacity > 4) {
 			if (stack->capacity / 2 > stack->size) {
-				return (stack->capacity >> 1);
+				return (stack->capacity / 2);
 			}
 			else {
-				return stack->size + stack->size / 4;
+				return stack->capacity;
 			}
 		}
 	}
 	else {
 		return STACK_BAD_ARGS;
 	}
+	return STACK_UNNOWN_ERROR;
 }

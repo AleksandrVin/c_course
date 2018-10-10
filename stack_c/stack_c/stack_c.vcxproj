@@ -117,7 +117,12 @@
   <ItemGroup>
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="Stack.cpp" />
-    <ClCompile Include="unittest.cpp" />
+    <ClCompile Include="tests.cpp" />
+    <ClCompile Include="unittest.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Stack.h" />
+    <ClInclude Include="tests.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
