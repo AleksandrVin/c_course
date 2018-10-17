@@ -11,7 +11,7 @@ push 5
 add
 push 10
 in
-nul
+mul
 out
 end
 ```
@@ -54,7 +54,7 @@ push 5
 add
 push 10
 in
-nul
+mul
 out
 end
 ```
