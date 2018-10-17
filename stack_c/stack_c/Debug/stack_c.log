@@ -1,3 +1,4 @@
-﻿  tests.cpp
-c:\users\aleksandr\onedrive\data\information\university\subjcts\cs\labs\stack_c\stack_c\tests.cpp(68): warning C4018: '<=': signed/unsigned mismatch
+﻿  Source.cpp
+  Stack.cpp
+  Generating Code...
   stack_c.vcxproj -> C:\Users\Aleksandr\OneDrive\Data\Information\university\subjcts\cs\labs\stack_c\Debug\stack_c.exe

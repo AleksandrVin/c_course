@@ -9,35 +9,59 @@
 Stack* StackCtorDin(size_t size_to_init) 
 {
 	Stack *stack = (Stack*)calloc(1, sizeof(Stack));
-	StackCtor(stack, size_to_init);
+	if (stack == nullptr) {
+		ERROR_LOG(STACK_LACK_OF_MEMORY, M_STACK_LACK_OF_MEMORY, STACK_NOT_EXIST, M_STACK_NOT_EXIST, stack);
+		return nullptr;
+	}
+	int status = StackCtor(stack, size_to_init);
+	if (status != STACK_GOOD) {
+		ERROR_LOG(status, "ERROR_IN_Ctor", stack->stack_state, "Stack was initialized broken", stack);
+	}
 	return stack;
 }
 
 
 int StackCtor(Stack* stack, size_t size_to_init) 
 {
+	if (stack == nullptr) {
+		ERROR_LOG( STACK_BAD_ARGS, M_STACK_BAD_ARGS, STACK_NOT_EXIST, M_STACK_NOT_EXIST, stack);
+		return STACK_BAD_ARGS;
+	}
 	stack->data = (data_stack*)calloc(size_to_init, sizeof(data_stack));
+	if (stack->data == nullptr) {
+		
+		ERROR_LOG(STACK_LACK_OF_MEMORY, M_STACK_LACK_OF_MEMORY, STACK_NOT_EXIST, M_STACK_NOT_EXIST, stack);
+		return STACK_LACK_OF_MEMORY;
+	}
 	stack->capacity = size_to_init;
-	stack->size = size_to_init;
+	stack->size = 0;
 	stack->stack_state = STACK_GOOD;
-	return size_to_init;
+	return STACK_GOOD;
 }
 
 
 int StackDtor(Stack* stack) 
 {
+	if (stack == nullptr) {
+		ERROR_LOG(STACK_BAD_ARGS, M_STACK_BAD_ARGS, STACK_NOT_EXIST, M_STACK_NOT_EXIST, stack);
+		return STACK_BAD_ARGS;
+	}
 	size_t stack_size = stack->size;
 	free(stack->data);
 	stack->stack_state = STACK_NOT_EXIST;
 	stack->data = nullptr;
-	stack->capacity = STACK_NOT_EXIST;
-	stack->size = STACK_NOT_EXIST;
+	stack->capacity = NULL;
+	stack->size = NULL;
 	return stack_size;
 }
 
 
 int StackDtorDin(Stack* stack) 
 {
+	if (stack == nullptr) {
+		ERROR_LOG(STACK_BAD_ARGS, M_STACK_BAD_ARGS, STACK_NOT_EXIST, M_STACK_NOT_EXIST, stack);
+		return STACK_BAD_ARGS;
+	}
 	size_t size = StackDtor(stack);
 	free(stack);
 	return size;
@@ -46,6 +70,7 @@ int StackDtorDin(Stack* stack)
 int StackClean(Stack* stack)
 {
 	if (!StackOk(stack)) {
+		ERROR_LOG(STACK_BROKEN, M_STACK_BROKEN, StackOk(stack) , "stack not good" , stack);
 		return STACK_BROKEN;
 	}
 	size_t stack_size = stack->size;
@@ -59,6 +84,7 @@ int StackClean(Stack* stack)
 int StackFree(Stack* stack)
 {
 	if (!StackOk(stack)) {
+		ERROR_LOG(STACK_BROKEN, M_STACK_BROKEN, StackOk(stack), "stack not good", stack);
 		return STACK_BROKEN;
 	}
 	size_t stack_size = stack->size;
@@ -73,11 +99,13 @@ int StackFree(Stack* stack)
 int StackPush(Stack* stack, data_stack data) 
 {
 	if (!StackOk(stack)) {
+		ERROR_LOG(STACK_BROKEN, M_STACK_BROKEN, StackOk(stack), "stack not good", stack);
 		return STACK_BROKEN;
 	}
 	if (!(stack->size < stack->capacity)) {
 		int status = StackRealloc(stack, 'u');
 		if (!(status == STACK_GOOD)) {
+			ERROR_LOG(status, "error in push", stack->stack_state, "stack not good", stack);
 			stack->stack_state = status;
 			return status;
 		}
@@ -90,11 +118,12 @@ int StackPush(Stack* stack, data_stack data)
 int StackRealloc(Stack* stack, char mode)
 {
 	if (!StackOk(stack)) {
+		ERROR_LOG(STACK_BROKEN, M_STACK_BROKEN, StackOk(stack), "stack not good", stack);
 		return STACK_BROKEN;
 	}
 	int resize = StackCalcResize(stack, mode);
 	if (stack->capacity != resize) {
-		data_stack* new_ptr = (data_stack*)realloc(stack->data, resize * sizeof(data_stack));
+		data_stack* new_ptr = (data_stack*)_recalloc(stack->data, resize , sizeof(data_stack));
 		if (new_ptr) {
 			stack->data = new_ptr;
 			stack->capacity = resize;
@@ -103,60 +132,70 @@ int StackRealloc(Stack* stack, char mode)
 		////
 		system(MEM_SHOP); ///ficha
 		////
+		ERROR_LOG(STACK_LACK_OF_MEMORY,M_STACK_LACK_OF_MEMORY, stack->stack_state, "stack not good", stack);
 		return STACK_LACK_OF_MEMORY;
 	}
 	return STACK_GOOD;
 }
 
-int StackOk(Stack* stack) /// add hash sum and memcheck advanced features 
+bool StackOk(Stack* stack) /// add hash sum and memcheck advanced features 
 {
+	if (stack == nullptr) {
+		return STACK_BROKEN;
+	}
+	if (stack->stack_state != STACK_GOOD) {
+		return STACK_BROKEN;
+	}
 	if (stack->data == nullptr) {
-		return STACK_NOT_EXIST;
+		return STACK_BROKEN;
 	}
 	if (stack->size > stack->capacity) {
 		return STACK_BROKEN;
 	}
 	if (stack->size < 0 && stack->capacity < 0) {
-		return STACK_NOT_EXIST;
+		return STACK_BROKEN;
 	}
 	return STACK_GOOD;
 }
 
-void StackDump(Stack* stack)
+void StackDump(Stack* stack, FILE* stream)
 {
-	if (StackOk(stack) != STACK_GOOD) {
-		printf("\n\nStack [0x%p] (ERROR!)\n{\n\t", stack);
-		printf("capacity = %d\n\t", stack->capacity);
-		printf("size = %d\n\t", stack->size);
-		printf("stack_state = %d\n\t", stack->stack_state);
-		printf("data[%d] : [0x%p]\n\t{\n", stack->capacity, stack->data);
+	if (StackOk(stack) != STACK_GOOD && stack != nullptr) {
+		fprintf(stream,"\n\nStack [0x%p] (ERROR!)\n{\n\t", stack);
+		fprintf(stream, "capacity = %d\n\t", stack->capacity);
+		fprintf(stream, "size = %d\n\t", stack->size);
+		fprintf(stream, "stack_state = %d\n\t", stack->stack_state);
+		fprintf(stream, "data[%d] : [0x%p]\n\t{\n", stack->capacity, stack->data);
 		for (size_t i = 0; i < stack->capacity; i++)
 		{
 			if (stack->size <= stack->capacity) {
-				printf("\t\t*[%d] = %d\n", i, stack->data[i]);
+				fprintf(stream, "\t\t*[%d] = %d\n", i, stack->data[i]);
 			}
 			else {
-				printf("\t\t[%d] = %d\n", i, stack->data[i]);
+				fprintf(stream, "\t\t[%d] = %d\n", i, stack->data[i]);
 			}
 		}
-		printf("\t}\n}\n");
+		fprintf(stream, "\t}\n}\n");
+	}
+	else if (StackOk(stack) != STACK_GOOD) {
+		fprintf(stream, "\n\nStack [0x%p] (ERROR!)\n{\n\t", stack);
 	}
 	else {
-		printf("\n\nStack [0x%p] (GOOD) \n{\n\t", stack);
-		printf("capacity = %d\n\t", stack->capacity);
-		printf("size = %d\n\t", stack->size);
-		printf("stack_state = %d\n\t", stack->stack_state);
-		printf("data[%d] : [0x%p]\n\t{\n", stack->capacity, stack->data);
+		fprintf(stream, "\n\nStack [0x%p] (GOOD) \n{\n\t", stack);
+		fprintf(stream, "capacity = %d\n\t", stack->capacity);
+		fprintf(stream, "size = %d\n\t", stack->size);
+		fprintf(stream, "stack_state = %d\n\t", stack->stack_state);
+		fprintf(stream, "data[%d] : [0x%p]\n\t{\n", stack->capacity, stack->data);
 		for (size_t i = 0; i < stack->capacity; i++)
 		{
 			if (stack->size <= stack->capacity) {
-				printf("\t\t*[%d] = %d\n", i, stack->data[i]);
+				fprintf(stream, "\t\t*[%d] = %d\n", i, stack->data[i]);
 			}
 			else {
-				printf("\t\t[%d] = %d\n", i, stack->data[i]);
+				fprintf(stream, "\t\t[%d] = %d\n", i, stack->data[i]);
 			}
 		}
-		printf("\t}\n}\n");
+		fprintf(stream, "\t}\n}\n");
 	}
 }
 
@@ -228,7 +267,7 @@ data_stack StackPop(Stack* stack)
 	else {
 		return (data_stack)STACK_UNDERFLOW;
 	}
-	return (data_stack)STACK_UNNOWN_ERROR;
+	return (data_stack)STACK_UNKNOWN_ERROR;
 }
 
 data_stack StackFront(Stack* stack)
@@ -241,7 +280,7 @@ data_stack StackFront(Stack* stack)
 
 size_t StackGetAll(Stack* stack, data_stack* output_data) /// make it 
 {
-	return STACK_UNNOWN_ERROR;
+	return STACK_UNKNOWN_ERROR;
 }
 
 int StackCalcResize(Stack* stack, char mode) /// to-do assert and err mesaging
@@ -277,5 +316,5 @@ int StackCalcResize(Stack* stack, char mode) /// to-do assert and err mesaging
 	else {
 		return STACK_BAD_ARGS;
 	}
-	return STACK_UNNOWN_ERROR;
+	return STACK_UNKNOWN_ERROR;
 }

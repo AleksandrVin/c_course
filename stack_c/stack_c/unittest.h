@@ -21,7 +21,6 @@
        , total_passed , "--------------------------------------------------------------------------------------", (what), (ref) , #what ,(ref) , __LINE__ , __FILE__, __FUNCSIG__); system("Color 6F");} \
 
 
-
 #else
 //#define PRINTF  ;
 #define UNITTEST ;

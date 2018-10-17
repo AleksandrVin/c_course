@@ -8,48 +8,91 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <assert.h>
 
 /**
  /note int , double , float , char types - ok
 */
 typedef int data_stack; /// defined as double but you can override it 
 
+//#define NO_ERROR_LOGING /// undefine it if you don't want to save errors in stderr
+//#define NO_STACK_DUMPING /// use it when dump stack when error_log // may be toooo slow 
+
 enum STACK_STATES {
- STACK_UNDERFLOW  = -1,  /// enum make it 
- STACK_OVERFLOW  = -2,
- STACK_NOT_EXIST  = -3,
- STACK_TYPE_ERR  = -4,
- STACK_LACK_OF_MEMORY = -5,
- STACK_BAD_ARGS = -6,
- STACK_UNNOWN_ERROR = -10
+	STACK_UNDERFLOW = -1,  /// enum make it 
+	STACK_OVERFLOW = -2,
+	STACK_NOT_EXIST = -3,
+	STACK_TYPE_ERR = -4,
+	STACK_LACK_OF_MEMORY = -5,
+	STACK_BAD_ARGS = -6,
+	STACK_UNKNOWN_ERROR = -10
 };
-//#define STACK_UNDERFLOW -1  /// enum make it 
-//#define STACK_OVERFLOW -2
-//#define STACK_NOT_EXIST -3
-//#define STACK_TYPE_ERR -4
-//#define STACK_LACK_OF_MEMORY -5
-//#define STACK_BAD_ARGS -6
-//#define STACK_UNNOWN_ERROR -10
+/// this is error messages used in ERROR_LOG
+#define M_STACK_UNDERFLOW  "STACK_UNDERFLOW" 
+#define M_STACK_OVERFLOW "STACK_OVERFLOW" 
+#define M_STACK_NOT_EXIST "STACK_NOT_EXIST"
+#define M_STACK_TYPE_ERR "STACK_TYPE_ERR"
+#define M_STACK_LACK_OF_MEMORY "STACK_LACK_OF_MEMORY" 
+#define M_STACK_BAD_ARGS "STACK_BAD_ARGS"
+#define M_STACK_UNKNOWN_ERROR "STACK_UNKNOWN_ERROR"
+#define M_STACK_GOOD "STACK_GOOD"
+#define M_STACK_BROKEN "STACK_BROKEN"
 
 #define MEM_SHOP "start http://newegg.com"
+
+
+#if !defined(NO_ERROR_LOGING) && !defined(NO_STACK_DUMPING)
+
+#define ERROR_LOG( error_code , error_message, current_stack_size , current_stack_message , stack ) \
+    fprintf(stderr,"\n\tERROR IN Stack %s\n", #stack); \
+    fprintf(stderr,"\t\terror code = %d\n",error_code); \
+    fprintf(stderr,"\t\terror message = %s\n", error_message); \
+    fprintf(stderr,"\t\tcurrent stack status = %d\n", current_stack_size); \
+    fprintf(stderr,"\t\tcurrent stack message = %s\n", current_stack_message); \
+    fprintf(stderr,"\t\terror in file = %s\n", __FILE__); \
+    fprintf(stderr,"\t\tin line = %d\n", __LINE__); \
+    fprintf(stderr,"\t\tin function = %s\n", __FUNCSIG__); \
+    StackDump(stack,stderr);
+
+#elif !defined(NO_ERROR_LOGING)
+
+#define ERROR_LOG( error_code , error_message, current_stack_status , current_stack_message , stack ) \
+    fprintf(stderr,"\n\tERROR IN Stack %s\n", #stack); \
+    fprintf(stderr,"\t\terror code = %d\n",error_code); \
+    fprintf(stderr,"\t\terror message = %s\n", error_message); \
+    fprintf(stderr,"\t\tcurrent stack status = %d\n", current_stack_status); \
+    fprintf(stderr,"\t\tcurrent stack message = %s\n", current_stack_message); \
+    fprintf(stderr,"\t\terror in file = %s\n", __FILE__); \
+    fprintf(stderr,"\t\tin line = %d\n", __LINE__); \
+    fprintf(stderr,"\t\tin function = %s\n", __FUNCSIG__); \
+
+#else
+
+#define ERROR_LOG ;
+
+#endif
+
 
 enum STACK_BOOL_STATES
 {
 	STACK_GOOD = 1,
 	STACK_BROKEN = 0
 };
-//#define STACK_GOOD 1
-//#define STACK_BROKEN 0
+/**
+ /brief Struct Stack
 
-//#define MAX_BUFF 10000000
-//#define STACK_MAX_CAPCITY ( MAX_BUFF / sizeof(data_stack) )
+ /param *data array of data in stack
+ /param size actual size of stack
+ /param capacity size of allocated memory for stack
 
+ /rapam stack_state State of stack
+*/
 struct Stack
 {
 	data_stack *data = nullptr;
 	size_t size = 0;
 	size_t capacity = 0;
-	int stack_state = STACK_NOT_EXIST;
+	char stack_state = STACK_NOT_EXIST;
 };
 
 /**
@@ -58,7 +101,7 @@ struct Stack
  /param[in] stack stack to construct
  /param[in] size_of_init size of stack initializing // default is 0
 
- /return size of output_data or error messege
+ /return error messege
 */
 int StackCtor(Stack* stack, size_t size_to_init = 0);
 /**
@@ -146,7 +189,7 @@ int StackClean(Stack* stack);
 
  need to check state of stack based on internal structure
 */
-int StackOk(Stack* stack);
+bool StackOk(Stack* stack);
 /**
  /brief resize capasity to size of stack
 
@@ -164,7 +207,8 @@ int StackSrink_to_fit(Stack* stack);
 
  beautifull debaging for stack
 */
-void StackDump(Stack* stack);
+void StackDump(Stack* stack, FILE* stream = stdout);
+
 /**
  /brief immediately realloc stack
 
