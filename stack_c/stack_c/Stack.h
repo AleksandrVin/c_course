@@ -14,8 +14,8 @@
 */
 typedef int data_stack; /// defined as double but you can override it 
 
-//#define NO_ERROR_LOGING /// undefine it if you don't want to save errors in stderr
-#define NO_STACK_DUMPING /// use it when dump stack when error_log // may be toooo slow 
+//#define NO_ERROR_LOGGING /// undefine it if you don't want to save errors in stderr
+//#define NO_STACK_DUMPING /// use it when dump stack when error_log // may be toooo slow 
 
 enum STACK_STATES {
 	STACK_UNDERFLOW = -1,  
@@ -39,11 +39,16 @@ enum STACK_STATES {
 
 const auto MEM_SHOP = "start http://newegg.com";
 
-#if defined(NO_ERROR_LOGING)
+const size_t STACK_PERMANENT_CAPACITY = 5; // size of fixed size of data when created 
+const size_t STACK_RESIZE_UP_COEFICIENT = 2; // how will capacity multiply up
+const size_t STACK_RESIZE_DOWN_COEFICIENT = 2; // how will capacity multiply down
+const size_t STACK_MEM_PROTECT = 0xF0;
+
+#if defined( NO_ERROR_LOGGING )
 
 #define ERROR_LOG ;
 
-#elif defined(NO_STACK_DUMPING)
+#elif defined( NO_STACK_DUMPING )
 
 #define ERROR_LOG( error_code , error_message, current_stack_status , current_stack_message , stack ) \
     fprintf(stderr,"\n\tERROR IN Stack %s\n", #stack); \
@@ -87,10 +92,12 @@ enum STACK_BOOL_STATES
 */
 struct Stack
 {
+	size_t mem_protect_begin = STACK_MEM_PROTECT;
 	data_stack *data = nullptr;
 	size_t size = 0;
 	size_t capacity = 0;
 	char stack_state = STACK_NOT_EXIST;
+	size_t mem_protect_end = STACK_MEM_PROTECT;
 };
 
 /**
@@ -153,7 +160,7 @@ data_stack StackPop(Stack* stack);
 
  /return size of output_data
 */
-size_t StackGetAll(Stack* stack, data_stack* output_data);
+///size_t StackGetAll(Stack* stack, data_stack* output_data);
 /**
  /brief give thirst elem of stack
 

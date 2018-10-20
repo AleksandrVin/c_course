@@ -53,7 +53,7 @@ bool TestTryGetLast(Stack* stack)
 	}
 	for (passed = 0; passed < 10; passed++, total_passed--)
 	{
-		UNITTEST(StackPop(stack), 1111);
+		UNITTEST(StackFront(stack), 1111);
 	}
 	StackDump(stack);
 	return true;
@@ -62,14 +62,14 @@ bool TestTryGetLast(Stack* stack)
 bool TestPushAndPopLarge(Stack* stack)
 {
 	total_passed = 10 - 1;
-	size_t tests = 500000000000;
+	size_t tests = 5000000;
 	for (passed = 0; passed < 10; passed++, total_passed--)
 	{
-		for (int i = 0; i <= tests; i++)
+		for (size_t i = 0; i <= tests; i++)
 		{
 			StackPush(stack, i);
 		}
-		for (int i = tests; i >= 0; i--)
+		for (size_t i = tests; i >= 0; i--)
 		{
 			UNITTEST_FAST(StackPop(stack), i);
 		}

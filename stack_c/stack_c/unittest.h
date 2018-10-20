@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-#if !defined(NDEBUG)
+#ifndef NDEBUG
 
 //#define PRINTF printf
 

@@ -1,4 +1,34 @@
-﻿  tests.cpp
+﻿  Source.cpp
+  Stack.cpp
+c:\users\vsash\onedrive\data\information\university\subjcts\cs\labs\stack_c\stack_c\stack.cpp(55): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+c:\users\vsash\onedrive\data\information\university\subjcts\cs\labs\stack_c\stack_c\stack.cpp(67): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+c:\users\vsash\onedrive\data\information\university\subjcts\cs\labs\stack_c\stack_c\stack.cpp(81): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+c:\users\vsash\onedrive\data\information\university\subjcts\cs\labs\stack_c\stack_c\stack.cpp(96): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+c:\users\vsash\onedrive\data\information\university\subjcts\cs\labs\stack_c\stack_c\stack.cpp(165): warning C4477: 'fprintf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'size_t'
+  c:\users\vsash\onedrive\data\information\university\subjcts\cs\labs\stack_c\stack_c\stack.cpp(165): note: consider using '%zd' in the format string
+c:\users\vsash\onedrive\data\information\university\subjcts\cs\labs\stack_c\stack_c\stack.cpp(166): warning C4477: 'fprintf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'size_t'
+  c:\users\vsash\onedrive\data\information\university\subjcts\cs\labs\stack_c\stack_c\stack.cpp(166): note: consider using '%zd' in the format string
+c:\users\vsash\onedrive\data\information\university\subjcts\cs\labs\stack_c\stack_c\stack.cpp(168): warning C4477: 'fprintf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'size_t'
+  c:\users\vsash\onedrive\data\information\university\subjcts\cs\labs\stack_c\stack_c\stack.cpp(168): note: consider using '%zd' in the format string
+c:\users\vsash\onedrive\data\information\university\subjcts\cs\labs\stack_c\stack_c\stack.cpp(172): warning C4477: 'fprintf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'size_t'
+  c:\users\vsash\onedrive\data\information\university\subjcts\cs\labs\stack_c\stack_c\stack.cpp(172): note: consider using '%zd' in the format string
+c:\users\vsash\onedrive\data\information\university\subjcts\cs\labs\stack_c\stack_c\stack.cpp(175): warning C4477: 'fprintf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'size_t'
+  c:\users\vsash\onedrive\data\information\university\subjcts\cs\labs\stack_c\stack_c\stack.cpp(175): note: consider using '%zd' in the format string
+c:\users\vsash\onedrive\data\information\university\subjcts\cs\labs\stack_c\stack_c\stack.cpp(185): warning C4477: 'fprintf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'size_t'
+  c:\users\vsash\onedrive\data\information\university\subjcts\cs\labs\stack_c\stack_c\stack.cpp(185): note: consider using '%zd' in the format string
+c:\users\vsash\onedrive\data\information\university\subjcts\cs\labs\stack_c\stack_c\stack.cpp(186): warning C4477: 'fprintf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'size_t'
+  c:\users\vsash\onedrive\data\information\university\subjcts\cs\labs\stack_c\stack_c\stack.cpp(186): note: consider using '%zd' in the format string
+c:\users\vsash\onedrive\data\information\university\subjcts\cs\labs\stack_c\stack_c\stack.cpp(188): warning C4477: 'fprintf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'size_t'
+  c:\users\vsash\onedrive\data\information\university\subjcts\cs\labs\stack_c\stack_c\stack.cpp(188): note: consider using '%zd' in the format string
+c:\users\vsash\onedrive\data\information\university\subjcts\cs\labs\stack_c\stack_c\stack.cpp(192): warning C4477: 'fprintf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'size_t'
+  c:\users\vsash\onedrive\data\information\university\subjcts\cs\labs\stack_c\stack_c\stack.cpp(192): note: consider using '%zd' in the format string
+c:\users\vsash\onedrive\data\information\university\subjcts\cs\labs\stack_c\stack_c\stack.cpp(195): warning C4477: 'fprintf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'size_t'
+  c:\users\vsash\onedrive\data\information\university\subjcts\cs\labs\stack_c\stack_c\stack.cpp(195): note: consider using '%zd' in the format string
+c:\users\vsash\onedrive\data\information\university\subjcts\cs\labs\stack_c\stack_c\stack.cpp(241): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+c:\users\vsash\onedrive\data\information\university\subjcts\cs\labs\stack_c\stack_c\stack.cpp(294): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+c:\users\vsash\onedrive\data\information\university\subjcts\cs\labs\stack_c\stack_c\stack.cpp(309): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+c:\users\vsash\onedrive\data\information\university\subjcts\cs\labs\stack_c\stack_c\stack.cpp(312): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  tests.cpp
 c:\users\vsash\onedrive\data\information\university\subjcts\cs\labs\stack_c\stack_c\tests.cpp(9): warning C4477: 'printf' : format string '%.*s' requires an argument of type 'int', but variadic argument 1 has type 'size_t'
   c:\users\vsash\onedrive\data\information\university\subjcts\cs\labs\stack_c\stack_c\tests.cpp(9): note: this argument is used as a precision
 c:\users\vsash\onedrive\data\information\university\subjcts\cs\labs\stack_c\stack_c\tests.cpp(9): warning C4477: 'printf' : format string '%.*s' requires an argument of type 'int', but variadic argument 3 has type 'size_t'
@@ -20,4 +50,6 @@ c:\users\vsash\onedrive\data\information\university\subjcts\cs\labs\stack_c\stac
   c:\users\vsash\onedrive\data\information\university\subjcts\cs\labs\stack_c\stack_c\tests.cpp(74): note: this argument is used as a precision
 c:\users\vsash\onedrive\data\information\university\subjcts\cs\labs\stack_c\stack_c\tests.cpp(74): warning C4477: 'printf' : format string '%.*s' requires an argument of type 'int', but variadic argument 3 has type 'size_t'
   c:\users\vsash\onedrive\data\information\university\subjcts\cs\labs\stack_c\stack_c\tests.cpp(74): note: this argument is used as a precision
+  unittest.h
+  Generating Code...
   stack_c.vcxproj -> C:\Users\vsash\OneDrive\Data\Information\university\subjcts\cs\labs\stack_c\x64\Debug\stack_c.exe
