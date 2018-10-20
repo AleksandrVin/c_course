@@ -8,7 +8,6 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <assert.h>
 
 /**
  /note int , double , float , char types - ok
@@ -16,10 +15,10 @@
 typedef int data_stack; /// defined as double but you can override it 
 
 //#define NO_ERROR_LOGING /// undefine it if you don't want to save errors in stderr
-//#define NO_STACK_DUMPING /// use it when dump stack when error_log // may be toooo slow 
+#define NO_STACK_DUMPING /// use it when dump stack when error_log // may be toooo slow 
 
 enum STACK_STATES {
-	STACK_UNDERFLOW = -1,  /// enum make it 
+	STACK_UNDERFLOW = -1,  
 	STACK_OVERFLOW = -2,
 	STACK_NOT_EXIST = -3,
 	STACK_TYPE_ERR = -4,
@@ -38,23 +37,13 @@ enum STACK_STATES {
 #define M_STACK_GOOD "STACK_GOOD"
 #define M_STACK_BROKEN "STACK_BROKEN"
 
-#define MEM_SHOP "start http://newegg.com"
+const auto MEM_SHOP = "start http://newegg.com";
 
+#if defined(NO_ERROR_LOGING)
 
-#if !defined(NO_ERROR_LOGING) && !defined(NO_STACK_DUMPING)
+#define ERROR_LOG ;
 
-#define ERROR_LOG( error_code , error_message, current_stack_size , current_stack_message , stack ) \
-    fprintf(stderr,"\n\tERROR IN Stack %s\n", #stack); \
-    fprintf(stderr,"\t\terror code = %d\n",error_code); \
-    fprintf(stderr,"\t\terror message = %s\n", error_message); \
-    fprintf(stderr,"\t\tcurrent stack status = %d\n", current_stack_size); \
-    fprintf(stderr,"\t\tcurrent stack message = %s\n", current_stack_message); \
-    fprintf(stderr,"\t\terror in file = %s\n", __FILE__); \
-    fprintf(stderr,"\t\tin line = %d\n", __LINE__); \
-    fprintf(stderr,"\t\tin function = %s\n", __FUNCSIG__); \
-    StackDump(stack,stderr);
-
-#elif !defined(NO_ERROR_LOGING)
+#elif defined(NO_STACK_DUMPING)
 
 #define ERROR_LOG( error_code , error_message, current_stack_status , current_stack_message , stack ) \
     fprintf(stderr,"\n\tERROR IN Stack %s\n", #stack); \
@@ -68,7 +57,16 @@ enum STACK_STATES {
 
 #else
 
-#define ERROR_LOG ;
+#define ERROR_LOG( error_code , error_message, current_stack_size , current_stack_message , stack ) \
+    fprintf(stderr,"\n\tERROR IN Stack %s\n", #stack); \
+    fprintf(stderr,"\t\terror code = %d\n",error_code); \
+    fprintf(stderr,"\t\terror message = %s\n", error_message); \
+    fprintf(stderr,"\t\tcurrent stack status = %d\n", current_stack_size); \
+    fprintf(stderr,"\t\tcurrent stack message = %s\n", current_stack_message); \
+    fprintf(stderr,"\t\terror in file = %s\n", __FILE__); \
+    fprintf(stderr,"\t\tin line = %d\n", __LINE__); \
+    fprintf(stderr,"\t\tin function = %s\n", __FUNCSIG__); \
+    StackDump(stack,stderr);
 
 #endif
 

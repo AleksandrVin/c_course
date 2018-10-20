@@ -1,0 +1,23 @@
+﻿  tests.cpp
+c:\users\vsash\onedrive\data\information\university\subjcts\cs\labs\stack_c\stack_c\tests.cpp(9): warning C4477: 'printf' : format string '%.*s' requires an argument of type 'int', but variadic argument 1 has type 'size_t'
+  c:\users\vsash\onedrive\data\information\university\subjcts\cs\labs\stack_c\stack_c\tests.cpp(9): note: this argument is used as a precision
+c:\users\vsash\onedrive\data\information\university\subjcts\cs\labs\stack_c\stack_c\tests.cpp(9): warning C4477: 'printf' : format string '%.*s' requires an argument of type 'int', but variadic argument 3 has type 'size_t'
+  c:\users\vsash\onedrive\data\information\university\subjcts\cs\labs\stack_c\stack_c\tests.cpp(9): note: this argument is used as a precision
+c:\users\vsash\onedrive\data\information\university\subjcts\cs\labs\stack_c\stack_c\tests.cpp(20): warning C4477: 'printf' : format string '%.*s' requires an argument of type 'int', but variadic argument 1 has type 'size_t'
+  c:\users\vsash\onedrive\data\information\university\subjcts\cs\labs\stack_c\stack_c\tests.cpp(20): note: this argument is used as a precision
+c:\users\vsash\onedrive\data\information\university\subjcts\cs\labs\stack_c\stack_c\tests.cpp(20): warning C4477: 'printf' : format string '%.*s' requires an argument of type 'int', but variadic argument 3 has type 'size_t'
+  c:\users\vsash\onedrive\data\information\university\subjcts\cs\labs\stack_c\stack_c\tests.cpp(20): note: this argument is used as a precision
+c:\users\vsash\onedrive\data\information\university\subjcts\cs\labs\stack_c\stack_c\tests.cpp(41): warning C4477: 'printf' : format string '%.*s' requires an argument of type 'int', but variadic argument 1 has type 'size_t'
+  c:\users\vsash\onedrive\data\information\university\subjcts\cs\labs\stack_c\stack_c\tests.cpp(41): note: this argument is used as a precision
+c:\users\vsash\onedrive\data\information\university\subjcts\cs\labs\stack_c\stack_c\tests.cpp(41): warning C4477: 'printf' : format string '%.*s' requires an argument of type 'int', but variadic argument 3 has type 'size_t'
+  c:\users\vsash\onedrive\data\information\university\subjcts\cs\labs\stack_c\stack_c\tests.cpp(41): note: this argument is used as a precision
+c:\users\vsash\onedrive\data\information\university\subjcts\cs\labs\stack_c\stack_c\tests.cpp(56): warning C4477: 'printf' : format string '%.*s' requires an argument of type 'int', but variadic argument 1 has type 'size_t'
+  c:\users\vsash\onedrive\data\information\university\subjcts\cs\labs\stack_c\stack_c\tests.cpp(56): note: this argument is used as a precision
+c:\users\vsash\onedrive\data\information\university\subjcts\cs\labs\stack_c\stack_c\tests.cpp(56): warning C4477: 'printf' : format string '%.*s' requires an argument of type 'int', but variadic argument 3 has type 'size_t'
+  c:\users\vsash\onedrive\data\information\university\subjcts\cs\labs\stack_c\stack_c\tests.cpp(56): note: this argument is used as a precision
+c:\users\vsash\onedrive\data\information\university\subjcts\cs\labs\stack_c\stack_c\tests.cpp(72): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\users\vsash\onedrive\data\information\university\subjcts\cs\labs\stack_c\stack_c\tests.cpp(74): warning C4477: 'printf' : format string '%.*s' requires an argument of type 'int', but variadic argument 1 has type 'size_t'
+  c:\users\vsash\onedrive\data\information\university\subjcts\cs\labs\stack_c\stack_c\tests.cpp(74): note: this argument is used as a precision
+c:\users\vsash\onedrive\data\information\university\subjcts\cs\labs\stack_c\stack_c\tests.cpp(74): warning C4477: 'printf' : format string '%.*s' requires an argument of type 'int', but variadic argument 3 has type 'size_t'
+  c:\users\vsash\onedrive\data\information\university\subjcts\cs\labs\stack_c\stack_c\tests.cpp(74): note: this argument is used as a precision
+  stack_c.vcxproj -> C:\Users\vsash\OneDrive\Data\Information\university\subjcts\cs\labs\stack_c\x64\Debug\stack_c.exe
