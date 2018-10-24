@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['debuging',['DEBUGING',['../_stack_8h.html#aeff79046387df0de04e7de11061a704b',1,'DEBUGING():&#160;Stack.h'],['../unittest_8h.html#aeff79046387df0de04e7de11061a704b',1,'DEBUGING():&#160;unittest.h']]]
+  ['error_5flog',['ERROR_LOG',['../_stack_8h.html#a9653db1cb65b94c9d98d35834ded328c',1,'Stack.h']]]
 ];

@@ -13,9 +13,18 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\Complier">
+      <UniqueIdentifier>{f8bfc77b-379e-4184-9b32-7e2531791e31}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Exercutor">
+      <UniqueIdentifier>{080292a5-6ce1-4100-b9e2-222a751f72c6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\stack_c\stack_c\Stack.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

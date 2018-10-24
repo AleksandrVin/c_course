@@ -4,6 +4,7 @@
 
  /author Vinogradov Aleksandr
 */
+
 #include "Stack.h"
 
 Stack* StackCtorDin(size_t size_to_init)

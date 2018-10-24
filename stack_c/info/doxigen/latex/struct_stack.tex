@@ -7,15 +7,26 @@
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
+size\+\_\+t \textbf{ mem\+\_\+protect\+\_\+begin} = \textbf{ S\+T\+A\+C\+K\+\_\+\+M\+E\+M\+\_\+\+P\+R\+O\+T\+E\+CT}
+\item 
 \textbf{ data\+\_\+stack} $\ast$ \textbf{ data} = nullptr
 \item 
 size\+\_\+t \textbf{ size} = 0
 \item 
 size\+\_\+t \textbf{ capacity} = 0
 \item 
-int \textbf{ stack\+\_\+state} = \textbf{ S\+T\+A\+C\+K\+\_\+\+N\+O\+T\+\_\+\+E\+X\+I\+ST}
+char \textbf{ stack\+\_\+state} = \textbf{ S\+T\+A\+C\+K\+\_\+\+N\+O\+T\+\_\+\+E\+X\+I\+ST}
+\item 
+size\+\_\+t \textbf{ mem\+\_\+protect\+\_\+end} = \textbf{ S\+T\+A\+C\+K\+\_\+\+M\+E\+M\+\_\+\+P\+R\+O\+T\+E\+CT}
 \end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+/brief Struct \doxyref{Stack}{p.}{struct_stack}
+
+/param $\ast$data array of data in stack /param size actual size of stack /param capacity size of allocated memory for stack
+
+/rapam stack\+\_\+state State of stack 
 
 \subsection{Member Data Documentation}
 \mbox{\label{struct_stack_afb6d4ad9d2904c20d50102d310c963e0}} 
@@ -30,17 +41,29 @@ int \textbf{ stack\+\_\+state} = \textbf{ S\+T\+A\+C\+K\+\_\+\+N\+O\+T\+\_\+\+E\
 \subsubsection{data}
 {\footnotesize\ttfamily \textbf{ data\+\_\+stack}$\ast$ Stack\+::data = nullptr}
 
+\mbox{\label{struct_stack_ac216ba09ad9045cd83cd53ebb7648878}} 
+\index{Stack@{Stack}!mem\+\_\+protect\+\_\+begin@{mem\+\_\+protect\+\_\+begin}}
+\index{mem\+\_\+protect\+\_\+begin@{mem\+\_\+protect\+\_\+begin}!Stack@{Stack}}
+\subsubsection{mem\+\_\+protect\+\_\+begin}
+{\footnotesize\ttfamily size\+\_\+t Stack\+::mem\+\_\+protect\+\_\+begin = \textbf{ S\+T\+A\+C\+K\+\_\+\+M\+E\+M\+\_\+\+P\+R\+O\+T\+E\+CT}}
+
+\mbox{\label{struct_stack_a164f303220955b7684a291265d5dc2f3}} 
+\index{Stack@{Stack}!mem\+\_\+protect\+\_\+end@{mem\+\_\+protect\+\_\+end}}
+\index{mem\+\_\+protect\+\_\+end@{mem\+\_\+protect\+\_\+end}!Stack@{Stack}}
+\subsubsection{mem\+\_\+protect\+\_\+end}
+{\footnotesize\ttfamily size\+\_\+t Stack\+::mem\+\_\+protect\+\_\+end = \textbf{ S\+T\+A\+C\+K\+\_\+\+M\+E\+M\+\_\+\+P\+R\+O\+T\+E\+CT}}
+
 \mbox{\label{struct_stack_a3a469595caaaf49bbce059efabbe07b5}} 
 \index{Stack@{Stack}!size@{size}}
 \index{size@{size}!Stack@{Stack}}
 \subsubsection{size}
 {\footnotesize\ttfamily size\+\_\+t Stack\+::size = 0}
 
-\mbox{\label{struct_stack_afd692b23b3475f3a415a419fce108d6a}} 
+\mbox{\label{struct_stack_a8fc766bd6109dab0df21ffcb360f26fd}} 
 \index{Stack@{Stack}!stack\+\_\+state@{stack\+\_\+state}}
 \index{stack\+\_\+state@{stack\+\_\+state}!Stack@{Stack}}
 \subsubsection{stack\+\_\+state}
-{\footnotesize\ttfamily int Stack\+::stack\+\_\+state = \textbf{ S\+T\+A\+C\+K\+\_\+\+N\+O\+T\+\_\+\+E\+X\+I\+ST}}
+{\footnotesize\ttfamily char Stack\+::stack\+\_\+state = \textbf{ S\+T\+A\+C\+K\+\_\+\+N\+O\+T\+\_\+\+E\+X\+I\+ST}}
 
 
 

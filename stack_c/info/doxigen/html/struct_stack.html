@@ -31,7 +31,7 @@
   <td id="projectlogo"><img alt="Logo" src="Stack_Logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Stack_c
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.1</span>
    </div>
   </td>
  </tr>
@@ -99,16 +99,24 @@ $(document).ready(function(){initNavTree('struct_stack.html','');});
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
+<tr class="memitem:ac216ba09ad9045cd83cd53ebb7648878"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_stack.html#ac216ba09ad9045cd83cd53ebb7648878">mem_protect_begin</a> = <a class="el" href="_stack_8h.html#a8bfcc237d26377ebefd12c848b7dfe1f">STACK_MEM_PROTECT</a></td></tr>
+<tr class="separator:ac216ba09ad9045cd83cd53ebb7648878"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3106563f8f21938dc9c387399b0cfdae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_stack_8h.html#aa2cf87122fee408b240b07ad7bef95df">data_stack</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_stack.html#a3106563f8f21938dc9c387399b0cfdae">data</a> = nullptr</td></tr>
 <tr class="separator:a3106563f8f21938dc9c387399b0cfdae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a469595caaaf49bbce059efabbe07b5"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_stack.html#a3a469595caaaf49bbce059efabbe07b5">size</a> = 0</td></tr>
 <tr class="separator:a3a469595caaaf49bbce059efabbe07b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb6d4ad9d2904c20d50102d310c963e0"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_stack.html#afb6d4ad9d2904c20d50102d310c963e0">capacity</a> = 0</td></tr>
 <tr class="separator:afb6d4ad9d2904c20d50102d310c963e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd692b23b3475f3a415a419fce108d6a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_stack.html#afd692b23b3475f3a415a419fce108d6a">stack_state</a> = <a class="el" href="_stack_8h.html#a6ae636c5fa35461ff6199a7727ec07b4">STACK_NOT_EXIST</a></td></tr>
-<tr class="separator:afd692b23b3475f3a415a419fce108d6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fc766bd6109dab0df21ffcb360f26fd"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_stack.html#a8fc766bd6109dab0df21ffcb360f26fd">stack_state</a> = <a class="el" href="_stack_8h.html#af7ada939655f16cddc3a46aa7d27e282afdec5dcccc0da67a68aa7bfb44f3dba5">STACK_NOT_EXIST</a></td></tr>
+<tr class="separator:a8fc766bd6109dab0df21ffcb360f26fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a164f303220955b7684a291265d5dc2f3"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_stack.html#a164f303220955b7684a291265d5dc2f3">mem_protect_end</a> = <a class="el" href="_stack_8h.html#a8bfcc237d26377ebefd12c848b7dfe1f">STACK_MEM_PROTECT</a></td></tr>
+<tr class="separator:a164f303220955b7684a291265d5dc2f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Data Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>/brief Struct <a class="el" href="struct_stack.html">Stack</a></p>
+<p>/param *data array of data in stack /param size actual size of stack /param capacity size of allocated memory for stack</p>
+<p>/rapam stack_state State of stack </p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="afb6d4ad9d2904c20d50102d310c963e0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afb6d4ad9d2904c20d50102d310c963e0">&#9670;&nbsp;</a></span>capacity</h2>
 
@@ -137,6 +145,34 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ac216ba09ad9045cd83cd53ebb7648878"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac216ba09ad9045cd83cd53ebb7648878">&#9670;&nbsp;</a></span>mem_protect_begin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Stack::mem_protect_begin = <a class="el" href="_stack_8h.html#a8bfcc237d26377ebefd12c848b7dfe1f">STACK_MEM_PROTECT</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a164f303220955b7684a291265d5dc2f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a164f303220955b7684a291265d5dc2f3">&#9670;&nbsp;</a></span>mem_protect_end</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Stack::mem_protect_end = <a class="el" href="_stack_8h.html#a8bfcc237d26377ebefd12c848b7dfe1f">STACK_MEM_PROTECT</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a3a469595caaaf49bbce059efabbe07b5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3a469595caaaf49bbce059efabbe07b5">&#9670;&nbsp;</a></span>size</h2>
 
@@ -151,14 +187,14 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="afd692b23b3475f3a415a419fce108d6a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afd692b23b3475f3a415a419fce108d6a">&#9670;&nbsp;</a></span>stack_state</h2>
+<a id="a8fc766bd6109dab0df21ffcb360f26fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fc766bd6109dab0df21ffcb360f26fd">&#9670;&nbsp;</a></span>stack_state</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int Stack::stack_state = <a class="el" href="_stack_8h.html#a6ae636c5fa35461ff6199a7727ec07b4">STACK_NOT_EXIST</a></td>
+          <td class="memname">char Stack::stack_state = <a class="el" href="_stack_8h.html#af7ada939655f16cddc3a46aa7d27e282afdec5dcccc0da67a68aa7bfb44f3dba5">STACK_NOT_EXIST</a></td>
         </tr>
       </table>
 </div><div class="memdoc">

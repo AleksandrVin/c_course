@@ -1,17 +1,19 @@
 \section{C\+:/\+Users/\+Aleksandr/\+One\+Drive/\+Data/\+Information/university/subjcts/cs/labs/stack\+\_\+c/stack\+\_\+c/\+Stack.cpp File Reference}
 \label{_stack_8cpp}\index{C\+:/\+Users/\+Aleksandr/\+One\+Drive/\+Data/\+Information/university/subjcts/cs/labs/stack\+\_\+c/stack\+\_\+c/\+Stack.\+cpp@{C\+:/\+Users/\+Aleksandr/\+One\+Drive/\+Data/\+Information/university/subjcts/cs/labs/stack\+\_\+c/stack\+\_\+c/\+Stack.\+cpp}}
 {\ttfamily \#include \char`\"{}Stack.\+h\char`\"{}}\newline
+Include dependency graph for Stack.\+cpp\+:
+% FIG 0
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 \textbf{ Stack} $\ast$ \textbf{ Stack\+Ctor\+Din} (size\+\_\+t size\+\_\+to\+\_\+init)
-\begin{DoxyCompactList}\small\item\em to-\/do assert and err mesaging \end{DoxyCompactList}\item 
+\item 
 int \textbf{ Stack\+Ctor} (\textbf{ Stack} $\ast$stack, size\+\_\+t size\+\_\+to\+\_\+init)
-\begin{DoxyCompactList}\small\item\em to-\/do assert and err mesaging \end{DoxyCompactList}\item 
+\item 
 int \textbf{ Stack\+Dtor} (\textbf{ Stack} $\ast$stack)
-\begin{DoxyCompactList}\small\item\em to-\/do assert and err mesaging \end{DoxyCompactList}\item 
+\item 
 int \textbf{ Stack\+Dtor\+Din} (\textbf{ Stack} $\ast$stack)
-\begin{DoxyCompactList}\small\item\em to-\/do assert and err mesaging \end{DoxyCompactList}\item 
+\item 
 int \textbf{ Stack\+Clean} (\textbf{ Stack} $\ast$stack)
 \item 
 int \textbf{ Stack\+Free} (\textbf{ Stack} $\ast$stack)
@@ -20,10 +22,10 @@ int \textbf{ Stack\+Push} (\textbf{ Stack} $\ast$stack, \textbf{ data\+\_\+stack
 \item 
 int \textbf{ Stack\+Realloc} (\textbf{ Stack} $\ast$stack, char mode)
 \item 
-int \textbf{ Stack\+Ok} (\textbf{ Stack} $\ast$stack)
+bool \textbf{ Stack\+Ok} (\textbf{ Stack} $\ast$stack)
 \begin{DoxyCompactList}\small\item\em add hash sum and memcheck advanced features \end{DoxyCompactList}\item 
-void \textbf{ Stack\+Dump} (\textbf{ Stack} $\ast$stack)
-\begin{DoxyCompactList}\small\item\em make it guy ! \end{DoxyCompactList}\item 
+void \textbf{ Stack\+Dump} (\textbf{ Stack} $\ast$stack, F\+I\+LE $\ast$stream)
+\item 
 int \textbf{ Stack\+Resize} (\textbf{ Stack} $\ast$stack, int new\+\_\+stack\+\_\+capacity)
 \item 
 int \textbf{ Stack\+Srink\+\_\+to\+\_\+fit} (\textbf{ Stack} $\ast$stack)
@@ -31,9 +33,7 @@ int \textbf{ Stack\+Srink\+\_\+to\+\_\+fit} (\textbf{ Stack} $\ast$stack)
 \textbf{ data\+\_\+stack} \textbf{ Stack\+Pop} (\textbf{ Stack} $\ast$stack)
 \item 
 \textbf{ data\+\_\+stack} \textbf{ Stack\+Front} (\textbf{ Stack} $\ast$stack)
-\item 
-size\+\_\+t \textbf{ Stack\+Get\+All} (\textbf{ Stack} $\ast$stack, \textbf{ data\+\_\+stack} $\ast$output\+\_\+data)
-\begin{DoxyCompactList}\small\item\em make it \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em size\+\_\+t Stack\+Get\+All(\+Stack$\ast$ stack, data\+\_\+stack$\ast$ output\+\_\+data); \end{DoxyCompactList}\item 
 int \textbf{ Stack\+Calc\+Resize} (\textbf{ Stack} $\ast$stack, char mode)
 \begin{DoxyCompactList}\small\item\em to-\/do assert and err mesaging \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -53,7 +53,11 @@ to-\/do assert and err mesaging
 
 /param[in] stack stack to calculate size // default is \textquotesingle{}u\textquotesingle{} /param[in] mode mode for calculating \textquotesingle{}u\textquotesingle{} -\/ resize up , and \textquotesingle{}d\textquotesingle{} -\/ resize down
 
-/return value to resize stack under zero on positive \mbox{\label{_stack_8cpp_a28154d65cb96e76c8be4b0be929e24db}} 
+/return value to resize stack under zero on positive Here is the call graph for this function\+:
+% FIG 1
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\label{_stack_8cpp_a28154d65cb96e76c8be4b0be929e24db}} 
 \index{Stack.\+cpp@{Stack.\+cpp}!Stack\+Clean@{Stack\+Clean}}
 \index{Stack\+Clean@{Stack\+Clean}!Stack.\+cpp@{Stack.\+cpp}}
 \subsubsection{Stack\+Clean()}
@@ -63,69 +67,63 @@ to-\/do assert and err mesaging
 
 /param[in] stack stack to cleen
 
-/return size of clened stack or error messege \mbox{\label{_stack_8cpp_a9248cbfe64c1998fecdf7af6dbcda025}} 
+/return size of clened stack or error messege Here is the call graph for this function\+:
+% FIG 3
+\mbox{\label{_stack_8cpp_a9248cbfe64c1998fecdf7af6dbcda025}} 
 \index{Stack.\+cpp@{Stack.\+cpp}!Stack\+Ctor@{Stack\+Ctor}}
 \index{Stack\+Ctor@{Stack\+Ctor}!Stack.\+cpp@{Stack.\+cpp}}
 \subsubsection{Stack\+Ctor()}
 {\footnotesize\ttfamily int Stack\+Ctor (\begin{DoxyParamCaption}\item[{\textbf{ Stack} $\ast$}]{stack,  }\item[{size\+\_\+t}]{size\+\_\+to\+\_\+init = {\ttfamily 0} }\end{DoxyParamCaption})}
 
-
-
-to-\/do assert and err mesaging 
-
 /brief construct a \doxyref{Stack}{p.}{struct_stack}
 
 /param[in] stack stack to construct /param[in] size\+\_\+of\+\_\+init size of stack initializing // default is 0
 
-/return size of output\+\_\+data or error messege \mbox{\label{_stack_8cpp_a1ddc101354b602c49875faa17ac89283}} 
+/return error messege Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\label{_stack_8cpp_a1ddc101354b602c49875faa17ac89283}} 
 \index{Stack.\+cpp@{Stack.\+cpp}!Stack\+Ctor\+Din@{Stack\+Ctor\+Din}}
 \index{Stack\+Ctor\+Din@{Stack\+Ctor\+Din}!Stack.\+cpp@{Stack.\+cpp}}
 \subsubsection{Stack\+Ctor\+Din()}
 {\footnotesize\ttfamily \textbf{ Stack}$\ast$ Stack\+Ctor\+Din (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size\+\_\+to\+\_\+init }\end{DoxyParamCaption})}
 
-
-
-to-\/do assert and err mesaging 
-
 /file /brief realization of \doxyref{Stack}{p.}{struct_stack}
 
-/author Vinogradov Aleksandr \mbox{\label{_stack_8cpp_af090c504a5436c2a041a389725de484b}} 
+/author Vinogradov Aleksandr Here is the call graph for this function\+:
+% FIG 5
+Here is the caller graph for this function\+:
+% FIG 6
+\mbox{\label{_stack_8cpp_af090c504a5436c2a041a389725de484b}} 
 \index{Stack.\+cpp@{Stack.\+cpp}!Stack\+Dtor@{Stack\+Dtor}}
 \index{Stack\+Dtor@{Stack\+Dtor}!Stack.\+cpp@{Stack.\+cpp}}
 \subsubsection{Stack\+Dtor()}
 {\footnotesize\ttfamily int Stack\+Dtor (\begin{DoxyParamCaption}\item[{\textbf{ Stack} $\ast$}]{stack }\end{DoxyParamCaption})}
 
-
-
-to-\/do assert and err mesaging 
-
 /brief destruct a \doxyref{Stack}{p.}{struct_stack}
 
 /param[in] stack stack to destruct
 
-/return size of destructed or error messege \mbox{\label{_stack_8cpp_a1685bf189e540fbc8d9aa420c6243aac}} 
+/return size of destructed or error messege Here is the caller graph for this function\+:
+% FIG 7
+\mbox{\label{_stack_8cpp_a1685bf189e540fbc8d9aa420c6243aac}} 
 \index{Stack.\+cpp@{Stack.\+cpp}!Stack\+Dtor\+Din@{Stack\+Dtor\+Din}}
 \index{Stack\+Dtor\+Din@{Stack\+Dtor\+Din}!Stack.\+cpp@{Stack.\+cpp}}
 \subsubsection{Stack\+Dtor\+Din()}
 {\footnotesize\ttfamily int Stack\+Dtor\+Din (\begin{DoxyParamCaption}\item[{\textbf{ Stack} $\ast$}]{stack }\end{DoxyParamCaption})}
 
-
-
-to-\/do assert and err mesaging 
-
 /brief destruct a \doxyref{Stack}{p.}{struct_stack} dinamic
 
 /param[in] stack stack to destruct dinamic
 
-/return size of destructed or error messege \mbox{\label{_stack_8cpp_ae63d7967f9657547b5902532d7fc53ad}} 
+/return size of destructed or error messege Here is the call graph for this function\+:
+% FIG 8
+Here is the caller graph for this function\+:
+% FIG 9
+\mbox{\label{_stack_8cpp_a1cdbbb67775515ee1de887ea46d6a5eb}} 
 \index{Stack.\+cpp@{Stack.\+cpp}!Stack\+Dump@{Stack\+Dump}}
 \index{Stack\+Dump@{Stack\+Dump}!Stack.\+cpp@{Stack.\+cpp}}
 \subsubsection{Stack\+Dump()}
-{\footnotesize\ttfamily void Stack\+Dump (\begin{DoxyParamCaption}\item[{\textbf{ Stack} $\ast$}]{stack }\end{DoxyParamCaption})}
-
-
-
-make it guy ! 
+{\footnotesize\ttfamily void Stack\+Dump (\begin{DoxyParamCaption}\item[{\textbf{ Stack} $\ast$}]{stack,  }\item[{F\+I\+LE $\ast$}]{stream = {\ttfamily stdout} }\end{DoxyParamCaption})}
 
 /brief print stack status
 
@@ -133,7 +131,9 @@ make it guy !
 
 /return none
 
-beautifull debaging for stack \mbox{\label{_stack_8cpp_a3eac8d89e697e5151d10ee1ba1915290}} 
+beautifull debaging for stack Here is the call graph for this function\+:
+% FIG 10
+\mbox{\label{_stack_8cpp_a3eac8d89e697e5151d10ee1ba1915290}} 
 \index{Stack.\+cpp@{Stack.\+cpp}!Stack\+Free@{Stack\+Free}}
 \index{Stack\+Free@{Stack\+Free}!Stack.\+cpp@{Stack.\+cpp}}
 \subsubsection{Stack\+Free()}
@@ -143,35 +143,36 @@ beautifull debaging for stack \mbox{\label{_stack_8cpp_a3eac8d89e697e5151d10ee1b
 
 /param[in] stack stack to free
 
-/return size of deleted stack or error messege \mbox{\label{_stack_8cpp_aa2468daaa4e13529892e5bda273abf2c}} 
+/return size of deleted stack or error messege Here is the call graph for this function\+:
+% FIG 11
+Here is the caller graph for this function\+:
+% FIG 12
+\mbox{\label{_stack_8cpp_aa2468daaa4e13529892e5bda273abf2c}} 
 \index{Stack.\+cpp@{Stack.\+cpp}!Stack\+Front@{Stack\+Front}}
 \index{Stack\+Front@{Stack\+Front}!Stack.\+cpp@{Stack.\+cpp}}
 \subsubsection{Stack\+Front()}
 {\footnotesize\ttfamily \textbf{ data\+\_\+stack} Stack\+Front (\begin{DoxyParamCaption}\item[{\textbf{ Stack} $\ast$}]{stack }\end{DoxyParamCaption})}
 
-/brief give thirst elem of stack
-
-/param[in] stack stack to get elem
-
-/return last elem or 0 if now elements in stack or error \mbox{\label{_stack_8cpp_aa1b1f8ffff194b6cd1ebb5ae9a94985c}} 
-\index{Stack.\+cpp@{Stack.\+cpp}!Stack\+Get\+All@{Stack\+Get\+All}}
-\index{Stack\+Get\+All@{Stack\+Get\+All}!Stack.\+cpp@{Stack.\+cpp}}
-\subsubsection{Stack\+Get\+All()}
-{\footnotesize\ttfamily size\+\_\+t Stack\+Get\+All (\begin{DoxyParamCaption}\item[{\textbf{ Stack} $\ast$}]{stack,  }\item[{\textbf{ data\+\_\+stack} $\ast$}]{output\+\_\+data }\end{DoxyParamCaption})}
 
 
-
-make it 
+size\+\_\+t Stack\+Get\+All(\+Stack$\ast$ stack, data\+\_\+stack$\ast$ output\+\_\+data); 
 
 /brief get all data from \doxyref{Stack}{p.}{struct_stack}
 
 /param[in] stack stack to fetch data /param[in] output\+\_\+data array of elements from \doxyref{Stack}{p.}{struct_stack}
 
-/return size of output\+\_\+data \mbox{\label{_stack_8cpp_ab0f2d9a835e00ceb3b0c24eee7925c44}} 
+/return size of output\+\_\+data ~\newline
+/brief give thirst elem of stack
+
+/param[in] stack stack to get elem
+
+/return last elem or 0 if now elements in stack or error Here is the call graph for this function\+:
+% FIG 13
+\mbox{\label{_stack_8cpp_ab9316611fbaf334168ffd8de2bbdb4b4}} 
 \index{Stack.\+cpp@{Stack.\+cpp}!Stack\+Ok@{Stack\+Ok}}
 \index{Stack\+Ok@{Stack\+Ok}!Stack.\+cpp@{Stack.\+cpp}}
 \subsubsection{Stack\+Ok()}
-{\footnotesize\ttfamily int Stack\+Ok (\begin{DoxyParamCaption}\item[{\textbf{ Stack} $\ast$}]{stack }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool Stack\+Ok (\begin{DoxyParamCaption}\item[{\textbf{ Stack} $\ast$}]{stack }\end{DoxyParamCaption})}
 
 
 
@@ -183,7 +184,9 @@ add hash sum and memcheck advanced features
 
 /return status of stack
 
-need to check state of stack based on internal structure \mbox{\label{_stack_8cpp_ab9ab3bcbe1af5140cc1a3cac9087e42a}} 
+need to check state of stack based on internal structure Here is the caller graph for this function\+:
+% FIG 14
+\mbox{\label{_stack_8cpp_ab9ab3bcbe1af5140cc1a3cac9087e42a}} 
 \index{Stack.\+cpp@{Stack.\+cpp}!Stack\+Pop@{Stack\+Pop}}
 \index{Stack\+Pop@{Stack\+Pop}!Stack.\+cpp@{Stack.\+cpp}}
 \subsubsection{Stack\+Pop()}
@@ -193,7 +196,9 @@ need to check state of stack based on internal structure \mbox{\label{_stack_8cp
 
 /param[in] stack stack to get elem
 
-/return last elem or 0 if now elements in stack or error \mbox{\label{_stack_8cpp_a42cc66765aeb8c0528421a393af6bcc0}} 
+/return last elem or 0 if now elements in stack or error Here is the call graph for this function\+:
+% FIG 15
+\mbox{\label{_stack_8cpp_a42cc66765aeb8c0528421a393af6bcc0}} 
 \index{Stack.\+cpp@{Stack.\+cpp}!Stack\+Push@{Stack\+Push}}
 \index{Stack\+Push@{Stack\+Push}!Stack.\+cpp@{Stack.\+cpp}}
 \subsubsection{Stack\+Push()}
@@ -203,7 +208,9 @@ need to check state of stack based on internal structure \mbox{\label{_stack_8cp
 
 /param[in] stack stack to push /param[in] data element to push
 
-/return status stack or error messege \mbox{\label{_stack_8cpp_a20160e6dbc38f9e26cfb0f840e757f5d}} 
+/return status stack or error messege Here is the call graph for this function\+:
+% FIG 16
+\mbox{\label{_stack_8cpp_a20160e6dbc38f9e26cfb0f840e757f5d}} 
 \index{Stack.\+cpp@{Stack.\+cpp}!Stack\+Realloc@{Stack\+Realloc}}
 \index{Stack\+Realloc@{Stack\+Realloc}!Stack.\+cpp@{Stack.\+cpp}}
 \subsubsection{Stack\+Realloc()}
@@ -213,7 +220,11 @@ need to check state of stack based on internal structure \mbox{\label{_stack_8cp
 
 /param[in] stack stack to free /param[in] mode \textquotesingle{}u\textquotesingle{} to realloc up or \textquotesingle{}d\textquotesingle{} to realloc down
 
-/return status of stack or error messege ficha / \mbox{\label{_stack_8cpp_a3e970b031bdeeeeb8b0b537fb02bef26}} 
+/return status of stack or error messege ficha / Here is the call graph for this function\+:
+% FIG 17
+Here is the caller graph for this function\+:
+% FIG 18
+\mbox{\label{_stack_8cpp_a3e970b031bdeeeeb8b0b537fb02bef26}} 
 \index{Stack.\+cpp@{Stack.\+cpp}!Stack\+Resize@{Stack\+Resize}}
 \index{Stack\+Resize@{Stack\+Resize}!Stack.\+cpp@{Stack.\+cpp}}
 \subsubsection{Stack\+Resize()}
@@ -225,7 +236,9 @@ need to check state of stack based on internal structure \mbox{\label{_stack_8cp
 
 /return new stack size or error message
 
-/note you can easy lost data from stack ficha / \mbox{\label{_stack_8cpp_ad67c7c911cc1d1824dbfd2054252b960}} 
+/note you can easy lost data from stack ficha / Here is the call graph for this function\+:
+% FIG 19
+\mbox{\label{_stack_8cpp_ad67c7c911cc1d1824dbfd2054252b960}} 
 \index{Stack.\+cpp@{Stack.\+cpp}!Stack\+Srink\+\_\+to\+\_\+fit@{Stack\+Srink\+\_\+to\+\_\+fit}}
 \index{Stack\+Srink\+\_\+to\+\_\+fit@{Stack\+Srink\+\_\+to\+\_\+fit}!Stack.\+cpp@{Stack.\+cpp}}
 \subsubsection{Stack\+Srink\+\_\+to\+\_\+fit()}
@@ -235,4 +248,5 @@ need to check state of stack based on internal structure \mbox{\label{_stack_8cp
 
 /param[in] stack stack to Srink
 
-/return new size or error ficha / 
+/return new size or error ficha / Here is the call graph for this function\+:
+% FIG 20

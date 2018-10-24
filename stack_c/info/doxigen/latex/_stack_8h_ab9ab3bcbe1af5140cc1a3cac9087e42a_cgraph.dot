@@ -1,0 +1,15 @@
+digraph "StackPop"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node47 [label="StackPop",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node47 -> Node48 [color="midnightblue",fontsize="10",style="solid"];
+  Node48 [label="StackOk",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_stack_8cpp.html#ab9316611fbaf334168ffd8de2bbdb4b4",tooltip="add hash sum and memcheck advanced features "];
+  Node47 -> Node49 [color="midnightblue",fontsize="10",style="solid"];
+  Node49 [label="StackRealloc",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_stack_8cpp.html#a20160e6dbc38f9e26cfb0f840e757f5d"];
+  Node49 -> Node48 [color="midnightblue",fontsize="10",style="solid"];
+  Node49 -> Node50 [color="midnightblue",fontsize="10",style="solid"];
+  Node50 [label="StackCalcResize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_stack_8cpp.html#a9a00ad97477e59c359d0410a46233653",tooltip="to-do assert and err mesaging "];
+  Node50 -> Node48 [color="midnightblue",fontsize="10",style="solid"];
+}

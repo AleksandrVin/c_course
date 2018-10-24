@@ -1,33 +1,57 @@
 \section{C\+:/\+Users/\+Aleksandr/\+One\+Drive/\+Data/\+Information/university/subjcts/cs/labs/stack\+\_\+c/stack\+\_\+c/unittest.h File Reference}
 \label{unittest_8h}\index{C\+:/\+Users/\+Aleksandr/\+One\+Drive/\+Data/\+Information/university/subjcts/cs/labs/stack\+\_\+c/stack\+\_\+c/unittest.\+h@{C\+:/\+Users/\+Aleksandr/\+One\+Drive/\+Data/\+Information/university/subjcts/cs/labs/stack\+\_\+c/stack\+\_\+c/unittest.\+h}}
 {\ttfamily \#include $<$iostream$>$}\newline
+Include dependency graph for unittest.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
 \subsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define \textbf{ D\+E\+B\+U\+G\+I\+NG}
+\#define \textbf{ x}~) std\+::cout $<$$<$ \char`\"{}\#\char`\"{} $<$$<$ x $<$$<$ \char`\"{} = \char`\"{} $<$$<$ ( x );
 \item 
-\#define \textbf{ P\+R\+I\+N\+TF}~printf
+\#define \textbf{ U\+N\+I\+T\+T\+E\+ST}(what,  ref)
 \item 
-\#define \textbf{ x}~) std\+::cout $<$$<$ \char`\"{}\#\char`\"{} $<$$<$ x $<$$<$ \char`\"{} = \char`\"{} $<$$<$ ( x )
+\#define \textbf{ U\+N\+I\+T\+T\+E\+S\+T\+\_\+\+F\+A\+ST}(what,  ref)
 \end{DoxyCompactItemize}
 
 
 \subsection{Macro Definition Documentation}
-\mbox{\label{unittest_8h_aeff79046387df0de04e7de11061a704b}} 
-\index{unittest.\+h@{unittest.\+h}!D\+E\+B\+U\+G\+I\+NG@{D\+E\+B\+U\+G\+I\+NG}}
-\index{D\+E\+B\+U\+G\+I\+NG@{D\+E\+B\+U\+G\+I\+NG}!unittest.\+h@{unittest.\+h}}
-\subsubsection{D\+E\+B\+U\+G\+I\+NG}
-{\footnotesize\ttfamily \#define D\+E\+B\+U\+G\+I\+NG}
+\mbox{\label{unittest_8h_ade10b9999d8c62576f5078598599d481}} 
+\index{unittest.\+h@{unittest.\+h}!U\+N\+I\+T\+T\+E\+ST@{U\+N\+I\+T\+T\+E\+ST}}
+\index{U\+N\+I\+T\+T\+E\+ST@{U\+N\+I\+T\+T\+E\+ST}!unittest.\+h@{unittest.\+h}}
+\subsubsection{U\+N\+I\+T\+T\+E\+ST}
+{\footnotesize\ttfamily \#define U\+N\+I\+T\+T\+E\+ST(\begin{DoxyParamCaption}\item[{}]{what,  }\item[{}]{ref }\end{DoxyParamCaption})}
 
-\mbox{\label{unittest_8h_ae1649fc947ca37a86917a08354f48d1a}} 
-\index{unittest.\+h@{unittest.\+h}!P\+R\+I\+N\+TF@{P\+R\+I\+N\+TF}}
-\index{P\+R\+I\+N\+TF@{P\+R\+I\+N\+TF}!unittest.\+h@{unittest.\+h}}
-\subsubsection{P\+R\+I\+N\+TF}
-{\footnotesize\ttfamily \#define P\+R\+I\+N\+TF~printf}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{if}((what) != (ref))\{ printf(\textcolor{stringliteral}{"\(\backslash\)r[%.*s|%.*s] // FAILED: %d = %d , expected: %s = %d , line: %d in file: %s\(\backslash\)n
+       from function: %s"}, passed , \textcolor{stringliteral}{"
+      xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"} \(\backslash\)
+       , total\_passed , \textcolor{stringliteral}{"
+      --------------------------------------------------------------------------------------"}, (what), (ref) , #what ,(ref) , \_\_LINE\_\_ , \_\_FILE\_\_, \_\_FUNCSIG\_\_); system(\textcolor{stringliteral}{"Color 6F"});\} \(\backslash\)
+   else printf(\textcolor{stringliteral}{"[%.*s|%.*s]\(\backslash\)r"}, passed , \textcolor{stringliteral}{"
+      xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"} \(\backslash\)
+       , total\_passed , \textcolor{stringliteral}{"
+      --------------------------------------------------------------------------------------"});
+\end{DoxyCode}
+\mbox{\label{unittest_8h_a765e2e481346be6219983cafa32ad825}} 
+\index{unittest.\+h@{unittest.\+h}!U\+N\+I\+T\+T\+E\+S\+T\+\_\+\+F\+A\+ST@{U\+N\+I\+T\+T\+E\+S\+T\+\_\+\+F\+A\+ST}}
+\index{U\+N\+I\+T\+T\+E\+S\+T\+\_\+\+F\+A\+ST@{U\+N\+I\+T\+T\+E\+S\+T\+\_\+\+F\+A\+ST}!unittest.\+h@{unittest.\+h}}
+\subsubsection{U\+N\+I\+T\+T\+E\+S\+T\+\_\+\+F\+A\+ST}
+{\footnotesize\ttfamily \#define U\+N\+I\+T\+T\+E\+S\+T\+\_\+\+F\+A\+ST(\begin{DoxyParamCaption}\item[{}]{what,  }\item[{}]{ref }\end{DoxyParamCaption})}
 
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{if}((what) != (ref))\{ printf(\textcolor{stringliteral}{"\(\backslash\)r[%.*s|%.*s] // FAILED: %d = %d , expected: %s = %d , line: %d in file: %s\(\backslash\)n
+       from function: %s"}, passed , \textcolor{stringliteral}{"
+      xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"} \(\backslash\)
+       , total\_passed , \textcolor{stringliteral}{"
+      --------------------------------------------------------------------------------------"}, (what), (ref) , #what ,(ref) , \_\_LINE\_\_ , \_\_FILE\_\_, \_\_FUNCSIG\_\_); system(\textcolor{stringliteral}{"Color 6F"});\} \(\backslash\)
+\end{DoxyCode}
 \mbox{\label{unittest_8h_a6c4b361d72eb3767ba424ac9a6ecf52b}} 
 \index{unittest.\+h@{unittest.\+h}!x@{x}}
 \index{x@{x}!unittest.\+h@{unittest.\+h}}
 \subsubsection{x}
-{\footnotesize\ttfamily \#define x~) std\+::cout $<$$<$ \char`\"{}\#\char`\"{} $<$$<$ x $<$$<$ \char`\"{} = \char`\"{} $<$$<$ ( x )}
+{\footnotesize\ttfamily \#define x~) std\+::cout $<$$<$ \char`\"{}\#\char`\"{} $<$$<$ x $<$$<$ \char`\"{} = \char`\"{} $<$$<$ ( x );}
 

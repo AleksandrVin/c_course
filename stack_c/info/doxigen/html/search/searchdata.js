@@ -1,12 +1,14 @@
 var indexSectionsWithContent =
 {
-  0: "cdmpsux",
+  0: "cdemnstux",
   1: "s",
-  2: "su",
-  3: "ms",
-  4: "cds",
+  2: "stu",
+  3: "mst",
+  4: "cdms",
   5: "d",
-  6: "dmpsx"
+  6: "s",
+  7: "s",
+  8: "emnux"
 };
 
 var indexSectionNames =
@@ -17,7 +19,9 @@ var indexSectionNames =
   3: "functions",
   4: "variables",
   5: "typedefs",
-  6: "defines"
+  6: "enums",
+  7: "enumvalues",
+  8: "defines"
 };
 
 var indexSectionLabels =
@@ -28,6 +32,8 @@ var indexSectionLabels =
   3: "Functions",
   4: "Variables",
   5: "Typedefs",
-  6: "Macros"
+  6: "Enumerations",
+  7: "Enumerator",
+  8: "Macros"
 };
 

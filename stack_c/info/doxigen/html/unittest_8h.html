@@ -31,7 +31,7 @@
   <td id="projectlogo"><img alt="Logo" src="Stack_Logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Stack_c
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.1</span>
    </div>
   </td>
  </tr>
@@ -94,45 +94,85 @@ $(document).ready(function(){initNavTree('unittest_8h.html','');});
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for unittest.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="unittest_8h__incl.png" border="0" usemap="#_c_1_2_users_2_aleksandr_2_one_drive_2_data_2_information_2university_2subjcts_2cs_2labs_2stack__c_2stack__c_2unittest_8h" alt=""/></div>
+<!-- MAP 0 -->
+</div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><img src="unittest_8h__dep__incl.png" border="0" usemap="#_c_1_2_users_2_aleksandr_2_one_drive_2_data_2_information_2university_2subjcts_2cs_2labs_2stack__c_2stack__c_2unittest_8hdep" alt=""/></div>
+<!-- MAP 1 -->
+</div>
 </div>
 <p><a href="unittest_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:aeff79046387df0de04e7de11061a704b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest_8h.html#aeff79046387df0de04e7de11061a704b">DEBUGING</a></td></tr>
-<tr class="separator:aeff79046387df0de04e7de11061a704b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1649fc947ca37a86917a08354f48d1a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest_8h.html#ae1649fc947ca37a86917a08354f48d1a">PRINTF</a>&#160;&#160;&#160;printf</td></tr>
-<tr class="separator:ae1649fc947ca37a86917a08354f48d1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c4b361d72eb3767ba424ac9a6ecf52b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest_8h.html#a6c4b361d72eb3767ba424ac9a6ecf52b">x</a>&#160;&#160;&#160;) std::cout &lt;&lt; &quot;#&quot; &lt;&lt; x &lt;&lt; &quot; = &quot; &lt;&lt; ( x )</td></tr>
+<tr class="memitem:a6c4b361d72eb3767ba424ac9a6ecf52b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest_8h.html#a6c4b361d72eb3767ba424ac9a6ecf52b">x</a>&#160;&#160;&#160;) std::cout &lt;&lt; &quot;#&quot; &lt;&lt; x &lt;&lt; &quot; = &quot; &lt;&lt; ( x );</td></tr>
 <tr class="separator:a6c4b361d72eb3767ba424ac9a6ecf52b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade10b9999d8c62576f5078598599d481"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest_8h.html#ade10b9999d8c62576f5078598599d481">UNITTEST</a>(what,  ref)</td></tr>
+<tr class="separator:ade10b9999d8c62576f5078598599d481"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a765e2e481346be6219983cafa32ad825"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest_8h.html#a765e2e481346be6219983cafa32ad825">UNITTEST_FAST</a>(what,  ref)</td></tr>
+<tr class="separator:a765e2e481346be6219983cafa32ad825"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="aeff79046387df0de04e7de11061a704b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeff79046387df0de04e7de11061a704b">&#9670;&nbsp;</a></span>DEBUGING</h2>
+<a id="ade10b9999d8c62576f5078598599d481"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade10b9999d8c62576f5078598599d481">&#9670;&nbsp;</a></span>UNITTEST</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define DEBUGING</td>
+          <td class="memname">#define UNITTEST</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">what, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">ref&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-
+<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">if</span>((what) != (ref)){ printf(<span class="stringliteral">&quot;\r[%.*s|%.*s] // FAILED: %d = %d , expected: %s = %d , line: %d in file: %s\n from function: %s&quot;</span>, passed , <span class="stringliteral">&quot;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&quot;</span> \</div><div class="line">       , total_passed , <span class="stringliteral">&quot;--------------------------------------------------------------------------------------&quot;</span>, (what), (ref) , #what ,(ref) , __LINE__ , __FILE__, __FUNCSIG__); system(<span class="stringliteral">&quot;Color 6F&quot;</span>);} \</div><div class="line">   else printf(<span class="stringliteral">&quot;[%.*s|%.*s]\r&quot;</span>, passed , <span class="stringliteral">&quot;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&quot;</span> \</div><div class="line">       , total_passed , <span class="stringliteral">&quot;--------------------------------------------------------------------------------------&quot;</span>);</div></div><!-- fragment -->
 </div>
 </div>
-<a id="ae1649fc947ca37a86917a08354f48d1a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae1649fc947ca37a86917a08354f48d1a">&#9670;&nbsp;</a></span>PRINTF</h2>
+<a id="a765e2e481346be6219983cafa32ad825"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a765e2e481346be6219983cafa32ad825">&#9670;&nbsp;</a></span>UNITTEST_FAST</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define PRINTF&#160;&#160;&#160;printf</td>
+          <td class="memname">#define UNITTEST_FAST</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">what, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">ref&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-
+<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">if</span>((what) != (ref)){ printf(<span class="stringliteral">&quot;\r[%.*s|%.*s] // FAILED: %d = %d , expected: %s = %d , line: %d in file: %s\n from function: %s&quot;</span>, passed , <span class="stringliteral">&quot;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&quot;</span> \</div><div class="line">       , total_passed , <span class="stringliteral">&quot;--------------------------------------------------------------------------------------&quot;</span>, (what), (ref) , #what ,(ref) , __LINE__ , __FILE__, __FUNCSIG__); system(<span class="stringliteral">&quot;Color 6F&quot;</span>);} \</div></div><!-- fragment -->
 </div>
 </div>
 <a id="a6c4b361d72eb3767ba424ac9a6ecf52b"></a>
@@ -142,7 +182,7 @@ Macros</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define x&#160;&#160;&#160;) std::cout &lt;&lt; &quot;#&quot; &lt;&lt; x &lt;&lt; &quot; = &quot; &lt;&lt; ( x )</td>
+          <td class="memname">#define x&#160;&#160;&#160;) std::cout &lt;&lt; &quot;#&quot; &lt;&lt; x &lt;&lt; &quot; = &quot; &lt;&lt; ( x );</td>
         </tr>
       </table>
 </div><div class="memdoc">

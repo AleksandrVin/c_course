@@ -1,3 +1,6 @@
-﻿  Stack.cpp
-c:\users\vsash\onedrive\data\information\university\subjcts\cs\labs\stack_c\stack_c\stack.cpp(174): warning C4129: '{': unrecognized character escape sequence
-  stack_c.vcxproj -> C:\Users\vsash\OneDrive\Data\Information\university\subjcts\cs\labs\stack_c\Debug\stack_c.exe
+﻿  Source.cpp
+  Stack.cpp
+  tests.cpp
+  unittest.h
+  Generating Code...
+  stack_c.vcxproj -> C:\Users\Aleksandr\OneDrive\Data\Information\university\subjcts\cs\labs\soft_cpu\Soft_CPU\Debug\stack_c.exe

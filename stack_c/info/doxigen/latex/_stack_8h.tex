@@ -2,6 +2,10 @@
 \label{_stack_8h}\index{C\+:/\+Users/\+Aleksandr/\+One\+Drive/\+Data/\+Information/university/subjcts/cs/labs/stack\+\_\+c/stack\+\_\+c/\+Stack.\+h@{C\+:/\+Users/\+Aleksandr/\+One\+Drive/\+Data/\+Information/university/subjcts/cs/labs/stack\+\_\+c/stack\+\_\+c/\+Stack.\+h}}
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include $<$stdlib.\+h$>$}\newline
+Include dependency graph for Stack.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
@@ -10,142 +14,173 @@ struct \textbf{ Stack}
 \subsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define \textbf{ D\+E\+B\+U\+G\+I\+NG}
+\#define \textbf{ M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+U\+N\+D\+E\+R\+F\+L\+OW}~\char`\"{}S\+T\+A\+C\+K\+\_\+\+U\+N\+D\+E\+R\+F\+L\+OW\char`\"{}
+\begin{DoxyCompactList}\small\item\em this is error messages used in E\+R\+R\+O\+R\+\_\+\+L\+OG \end{DoxyCompactList}\item 
+\#define \textbf{ M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+O\+V\+E\+R\+F\+L\+OW}~\char`\"{}S\+T\+A\+C\+K\+\_\+\+O\+V\+E\+R\+F\+L\+OW\char`\"{}
 \item 
-\#define \textbf{ S\+T\+A\+C\+K\+\_\+\+U\+N\+D\+E\+R\+F\+L\+OW}~-\/1
-\begin{DoxyCompactList}\small\item\em defined as double but you can override it \end{DoxyCompactList}\item 
-\#define \textbf{ S\+T\+A\+C\+K\+\_\+\+O\+V\+E\+R\+F\+L\+OW}~-\/2
+\#define \textbf{ M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+N\+O\+T\+\_\+\+E\+X\+I\+ST}~\char`\"{}S\+T\+A\+C\+K\+\_\+\+N\+O\+T\+\_\+\+E\+X\+I\+ST\char`\"{}
 \item 
-\#define \textbf{ S\+T\+A\+C\+K\+\_\+\+N\+O\+T\+\_\+\+E\+X\+I\+ST}~-\/3
+\#define \textbf{ M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+T\+Y\+P\+E\+\_\+\+E\+RR}~\char`\"{}S\+T\+A\+C\+K\+\_\+\+T\+Y\+P\+E\+\_\+\+E\+RR\char`\"{}
 \item 
-\#define \textbf{ S\+T\+A\+C\+K\+\_\+\+T\+Y\+P\+E\+\_\+\+E\+RR}~-\/4
+\#define \textbf{ M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+L\+A\+C\+K\+\_\+\+O\+F\+\_\+\+M\+E\+M\+O\+RY}~\char`\"{}S\+T\+A\+C\+K\+\_\+\+L\+A\+C\+K\+\_\+\+O\+F\+\_\+\+M\+E\+M\+O\+RY\char`\"{}
 \item 
-\#define \textbf{ S\+T\+A\+C\+K\+\_\+\+L\+A\+C\+K\+\_\+\+O\+F\+\_\+\+M\+E\+M\+O\+RY}~-\/5
+\#define \textbf{ M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+B\+A\+D\+\_\+\+A\+R\+GS}~\char`\"{}S\+T\+A\+C\+K\+\_\+\+B\+A\+D\+\_\+\+A\+R\+GS\char`\"{}
 \item 
-\#define \textbf{ S\+T\+A\+C\+K\+\_\+\+B\+A\+D\+\_\+\+A\+R\+GS}~-\/6
+\#define \textbf{ M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR}~\char`\"{}S\+T\+A\+C\+K\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR\char`\"{}
 \item 
-\#define \textbf{ S\+T\+A\+C\+K\+\_\+\+U\+N\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR}~-\/10
+\#define \textbf{ M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+G\+O\+OD}~\char`\"{}S\+T\+A\+C\+K\+\_\+\+G\+O\+OD\char`\"{}
 \item 
-\#define \textbf{ M\+E\+M\+\_\+\+S\+H\+OP}~\char`\"{}start http\+://newegg.\+com\char`\"{}
+\#define \textbf{ M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+B\+R\+O\+K\+EN}~\char`\"{}S\+T\+A\+C\+K\+\_\+\+B\+R\+O\+K\+EN\char`\"{}
 \item 
-\#define \textbf{ S\+T\+A\+C\+K\+\_\+\+G\+O\+OD}~1
-\item 
-\#define \textbf{ S\+T\+A\+C\+K\+\_\+\+B\+R\+O\+K\+EN}~0
+\#define \textbf{ E\+R\+R\+O\+R\+\_\+\+L\+OG}(error\+\_\+code,  error\+\_\+message,  current\+\_\+stack\+\_\+size,  current\+\_\+stack\+\_\+message,  stack)
 \end{DoxyCompactItemize}
 \subsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
 typedef int \textbf{ data\+\_\+stack}
 \end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \textbf{ S\+T\+A\+C\+K\+\_\+\+S\+T\+A\+T\+ES} \{ \newline
+\textbf{ S\+T\+A\+C\+K\+\_\+\+U\+N\+D\+E\+R\+F\+L\+OW} = -\/1, 
+\textbf{ S\+T\+A\+C\+K\+\_\+\+O\+V\+E\+R\+F\+L\+OW} = -\/2, 
+\textbf{ S\+T\+A\+C\+K\+\_\+\+N\+O\+T\+\_\+\+E\+X\+I\+ST} = -\/3, 
+\textbf{ S\+T\+A\+C\+K\+\_\+\+T\+Y\+P\+E\+\_\+\+E\+RR} = -\/4, 
+\newline
+\textbf{ S\+T\+A\+C\+K\+\_\+\+L\+A\+C\+K\+\_\+\+O\+F\+\_\+\+M\+E\+M\+O\+RY} = -\/5, 
+\textbf{ S\+T\+A\+C\+K\+\_\+\+B\+A\+D\+\_\+\+A\+R\+GS} = -\/6, 
+\textbf{ S\+T\+A\+C\+K\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR} = -\/10
+ \}
+\begin{DoxyCompactList}\small\item\em defined as double but you can override it \end{DoxyCompactList}\item 
+enum \textbf{ S\+T\+A\+C\+K\+\_\+\+B\+O\+O\+L\+\_\+\+S\+T\+A\+T\+ES} \{ \textbf{ S\+T\+A\+C\+K\+\_\+\+G\+O\+OD} = 1, 
+\textbf{ S\+T\+A\+C\+K\+\_\+\+B\+R\+O\+K\+EN} = 0
+ \}
+\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 int \textbf{ Stack\+Ctor} (\textbf{ Stack} $\ast$stack, size\+\_\+t size\+\_\+to\+\_\+init=0)
-\begin{DoxyCompactList}\small\item\em to-\/do assert and err mesaging \end{DoxyCompactList}\item 
+\item 
 \textbf{ Stack} $\ast$ \textbf{ Stack\+Ctor\+Din} (size\+\_\+t size\+\_\+to\+\_\+init=0)
-\begin{DoxyCompactList}\small\item\em to-\/do assert and err mesaging \end{DoxyCompactList}\item 
+\item 
 int \textbf{ Stack\+Dtor} (\textbf{ Stack} $\ast$stack)
-\begin{DoxyCompactList}\small\item\em to-\/do assert and err mesaging \end{DoxyCompactList}\item 
+\item 
 int \textbf{ Stack\+Dtor\+Din} (\textbf{ Stack} $\ast$stack)
-\begin{DoxyCompactList}\small\item\em to-\/do assert and err mesaging \end{DoxyCompactList}\item 
+\item 
 int \textbf{ Stack\+Push} (\textbf{ Stack} $\ast$stack, \textbf{ data\+\_\+stack} data)
 \item 
 \textbf{ data\+\_\+stack} \textbf{ Stack\+Pop} (\textbf{ Stack} $\ast$stack)
 \item 
-size\+\_\+t \textbf{ Stack\+Get\+All} (\textbf{ Stack} $\ast$stack, \textbf{ data\+\_\+stack} $\ast$output\+\_\+data)
-\begin{DoxyCompactList}\small\item\em make it \end{DoxyCompactList}\item 
 \textbf{ data\+\_\+stack} \textbf{ Stack\+Front} (\textbf{ Stack} $\ast$stack)
-\item 
+\begin{DoxyCompactList}\small\item\em size\+\_\+t Stack\+Get\+All(\+Stack$\ast$ stack, data\+\_\+stack$\ast$ output\+\_\+data); \end{DoxyCompactList}\item 
 int \textbf{ Stack\+Free} (\textbf{ Stack} $\ast$stack)
 \item 
 int \textbf{ Stack\+Clean} (\textbf{ Stack} $\ast$stack)
 \item 
-int \textbf{ Stack\+Ok} (\textbf{ Stack} $\ast$stack)
+bool \textbf{ Stack\+Ok} (\textbf{ Stack} $\ast$stack)
 \begin{DoxyCompactList}\small\item\em add hash sum and memcheck advanced features \end{DoxyCompactList}\item 
 int \textbf{ Stack\+Srink\+\_\+to\+\_\+fit} (\textbf{ Stack} $\ast$stack)
 \item 
-void \textbf{ Stack\+Dump} (\textbf{ Stack} $\ast$stack)
-\begin{DoxyCompactList}\small\item\em make it guy ! \end{DoxyCompactList}\item 
+void \textbf{ Stack\+Dump} (\textbf{ Stack} $\ast$stack, F\+I\+LE $\ast$stream=stdout)
+\item 
 int \textbf{ Stack\+Resize} (\textbf{ Stack} $\ast$stack, int new\+\_\+stack\+\_\+capacity)
 \item 
 int \textbf{ Stack\+Calc\+Resize} (\textbf{ Stack} $\ast$stack, char mode=\textquotesingle{}u\textquotesingle{})
 \begin{DoxyCompactList}\small\item\em to-\/do assert and err mesaging \end{DoxyCompactList}\item 
 int \textbf{ Stack\+Realloc} (\textbf{ Stack} $\ast$stack, char mode=\textquotesingle{}u\textquotesingle{})
 \end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const auto \textbf{ M\+E\+M\+\_\+\+S\+H\+OP} = \char`\"{}start http\+://newegg.\+com\char`\"{}
+\item 
+const size\+\_\+t \textbf{ S\+T\+A\+C\+K\+\_\+\+P\+E\+R\+M\+A\+N\+E\+N\+T\+\_\+\+C\+A\+P\+A\+C\+I\+TY} = 5
+\item 
+const size\+\_\+t \textbf{ S\+T\+A\+C\+K\+\_\+\+R\+E\+S\+I\+Z\+E\+\_\+\+U\+P\+\_\+\+C\+O\+E\+F\+I\+C\+I\+E\+NT} = 2
+\item 
+const size\+\_\+t \textbf{ S\+T\+A\+C\+K\+\_\+\+R\+E\+S\+I\+Z\+E\+\_\+\+D\+O\+W\+N\+\_\+\+C\+O\+E\+F\+I\+C\+I\+E\+NT} = 2
+\item 
+const size\+\_\+t \textbf{ S\+T\+A\+C\+K\+\_\+\+M\+E\+M\+\_\+\+P\+R\+O\+T\+E\+CT} = 0x\+F0
+\end{DoxyCompactItemize}
 
 
 \subsection{Macro Definition Documentation}
-\mbox{\label{_stack_8h_aeff79046387df0de04e7de11061a704b}} 
-\index{Stack.\+h@{Stack.\+h}!D\+E\+B\+U\+G\+I\+NG@{D\+E\+B\+U\+G\+I\+NG}}
-\index{D\+E\+B\+U\+G\+I\+NG@{D\+E\+B\+U\+G\+I\+NG}!Stack.\+h@{Stack.\+h}}
-\subsubsection{D\+E\+B\+U\+G\+I\+NG}
-{\footnotesize\ttfamily \#define D\+E\+B\+U\+G\+I\+NG}
+\mbox{\label{_stack_8h_a9653db1cb65b94c9d98d35834ded328c}} 
+\index{Stack.\+h@{Stack.\+h}!E\+R\+R\+O\+R\+\_\+\+L\+OG@{E\+R\+R\+O\+R\+\_\+\+L\+OG}}
+\index{E\+R\+R\+O\+R\+\_\+\+L\+OG@{E\+R\+R\+O\+R\+\_\+\+L\+OG}!Stack.\+h@{Stack.\+h}}
+\subsubsection{E\+R\+R\+O\+R\+\_\+\+L\+OG}
+{\footnotesize\ttfamily \#define E\+R\+R\+O\+R\+\_\+\+L\+OG(\begin{DoxyParamCaption}\item[{}]{error\+\_\+code,  }\item[{}]{error\+\_\+message,  }\item[{}]{current\+\_\+stack\+\_\+size,  }\item[{}]{current\+\_\+stack\+\_\+message,  }\item[{}]{stack }\end{DoxyParamCaption})}
 
-/file /brief declaration of \doxyref{Stack}{p.}{struct_stack}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+fprintf(stderr,\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)tERROR IN Stack %s\(\backslash\)n"}, #stack); \(\backslash\)
+    fprintf(stderr,\textcolor{stringliteral}{"\(\backslash\)t\(\backslash\)terror code = %d\(\backslash\)n"},error\_code); \(\backslash\)
+    fprintf(stderr,\textcolor{stringliteral}{"\(\backslash\)t\(\backslash\)terror message = %s\(\backslash\)n"}, error\_message); \(\backslash\)
+    fprintf(stderr,\textcolor{stringliteral}{"\(\backslash\)t\(\backslash\)tcurrent stack status = %d\(\backslash\)n"}, current\_stack\_size); \(\backslash\)
+    fprintf(stderr,\textcolor{stringliteral}{"\(\backslash\)t\(\backslash\)tcurrent stack message = %s\(\backslash\)n"}, current\_stack\_message); \(\backslash\)
+    fprintf(stderr,\textcolor{stringliteral}{"\(\backslash\)t\(\backslash\)terror in file = %s\(\backslash\)n"}, \_\_FILE\_\_); \(\backslash\)
+    fprintf(stderr,\textcolor{stringliteral}{"\(\backslash\)t\(\backslash\)tin line = %d\(\backslash\)n"}, \_\_LINE\_\_); \(\backslash\)
+    fprintf(stderr,\textcolor{stringliteral}{"\(\backslash\)t\(\backslash\)tin function = %s\(\backslash\)n"}, \_\_FUNCSIG\_\_); \(\backslash\)
+    StackDump(stack,stderr);
+\end{DoxyCode}
+\mbox{\label{_stack_8h_a2f26d2ca1aae800998e6f3b59dd519a2}} 
+\index{Stack.\+h@{Stack.\+h}!M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+B\+A\+D\+\_\+\+A\+R\+GS@{M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+B\+A\+D\+\_\+\+A\+R\+GS}}
+\index{M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+B\+A\+D\+\_\+\+A\+R\+GS@{M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+B\+A\+D\+\_\+\+A\+R\+GS}!Stack.\+h@{Stack.\+h}}
+\subsubsection{M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+B\+A\+D\+\_\+\+A\+R\+GS}
+{\footnotesize\ttfamily \#define M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+B\+A\+D\+\_\+\+A\+R\+GS~\char`\"{}S\+T\+A\+C\+K\+\_\+\+B\+A\+D\+\_\+\+A\+R\+GS\char`\"{}}
 
-/author Vinogradov Aleksandr \mbox{\label{_stack_8h_acda370508b3cf7d2fcc922f4d46440e5}} 
-\index{Stack.\+h@{Stack.\+h}!M\+E\+M\+\_\+\+S\+H\+OP@{M\+E\+M\+\_\+\+S\+H\+OP}}
-\index{M\+E\+M\+\_\+\+S\+H\+OP@{M\+E\+M\+\_\+\+S\+H\+OP}!Stack.\+h@{Stack.\+h}}
-\subsubsection{M\+E\+M\+\_\+\+S\+H\+OP}
-{\footnotesize\ttfamily \#define M\+E\+M\+\_\+\+S\+H\+OP~\char`\"{}start http\+://newegg.\+com\char`\"{}}
+\mbox{\label{_stack_8h_a7a9584010c3d21c149c543a120f7bc70}} 
+\index{Stack.\+h@{Stack.\+h}!M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+B\+R\+O\+K\+EN@{M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+B\+R\+O\+K\+EN}}
+\index{M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+B\+R\+O\+K\+EN@{M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+B\+R\+O\+K\+EN}!Stack.\+h@{Stack.\+h}}
+\subsubsection{M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+B\+R\+O\+K\+EN}
+{\footnotesize\ttfamily \#define M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+B\+R\+O\+K\+EN~\char`\"{}S\+T\+A\+C\+K\+\_\+\+B\+R\+O\+K\+EN\char`\"{}}
 
-\mbox{\label{_stack_8h_a1f17ab5de5d2d18df16d3e5b1396f7b9}} 
-\index{Stack.\+h@{Stack.\+h}!S\+T\+A\+C\+K\+\_\+\+B\+A\+D\+\_\+\+A\+R\+GS@{S\+T\+A\+C\+K\+\_\+\+B\+A\+D\+\_\+\+A\+R\+GS}}
-\index{S\+T\+A\+C\+K\+\_\+\+B\+A\+D\+\_\+\+A\+R\+GS@{S\+T\+A\+C\+K\+\_\+\+B\+A\+D\+\_\+\+A\+R\+GS}!Stack.\+h@{Stack.\+h}}
-\subsubsection{S\+T\+A\+C\+K\+\_\+\+B\+A\+D\+\_\+\+A\+R\+GS}
-{\footnotesize\ttfamily \#define S\+T\+A\+C\+K\+\_\+\+B\+A\+D\+\_\+\+A\+R\+GS~-\/6}
+\mbox{\label{_stack_8h_aa06c188bb306607a8e0b58be88761670}} 
+\index{Stack.\+h@{Stack.\+h}!M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+G\+O\+OD@{M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+G\+O\+OD}}
+\index{M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+G\+O\+OD@{M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+G\+O\+OD}!Stack.\+h@{Stack.\+h}}
+\subsubsection{M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+G\+O\+OD}
+{\footnotesize\ttfamily \#define M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+G\+O\+OD~\char`\"{}S\+T\+A\+C\+K\+\_\+\+G\+O\+OD\char`\"{}}
 
-\mbox{\label{_stack_8h_acd531ba86ccd3570cdd47a4f8d41aef2}} 
-\index{Stack.\+h@{Stack.\+h}!S\+T\+A\+C\+K\+\_\+\+B\+R\+O\+K\+EN@{S\+T\+A\+C\+K\+\_\+\+B\+R\+O\+K\+EN}}
-\index{S\+T\+A\+C\+K\+\_\+\+B\+R\+O\+K\+EN@{S\+T\+A\+C\+K\+\_\+\+B\+R\+O\+K\+EN}!Stack.\+h@{Stack.\+h}}
-\subsubsection{S\+T\+A\+C\+K\+\_\+\+B\+R\+O\+K\+EN}
-{\footnotesize\ttfamily \#define S\+T\+A\+C\+K\+\_\+\+B\+R\+O\+K\+EN~0}
+\mbox{\label{_stack_8h_adf59477490d15ecc2656f20f606826aa}} 
+\index{Stack.\+h@{Stack.\+h}!M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+L\+A\+C\+K\+\_\+\+O\+F\+\_\+\+M\+E\+M\+O\+RY@{M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+L\+A\+C\+K\+\_\+\+O\+F\+\_\+\+M\+E\+M\+O\+RY}}
+\index{M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+L\+A\+C\+K\+\_\+\+O\+F\+\_\+\+M\+E\+M\+O\+RY@{M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+L\+A\+C\+K\+\_\+\+O\+F\+\_\+\+M\+E\+M\+O\+RY}!Stack.\+h@{Stack.\+h}}
+\subsubsection{M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+L\+A\+C\+K\+\_\+\+O\+F\+\_\+\+M\+E\+M\+O\+RY}
+{\footnotesize\ttfamily \#define M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+L\+A\+C\+K\+\_\+\+O\+F\+\_\+\+M\+E\+M\+O\+RY~\char`\"{}S\+T\+A\+C\+K\+\_\+\+L\+A\+C\+K\+\_\+\+O\+F\+\_\+\+M\+E\+M\+O\+RY\char`\"{}}
 
-\mbox{\label{_stack_8h_a1064399c1e9878a9002de30d684e7c46}} 
-\index{Stack.\+h@{Stack.\+h}!S\+T\+A\+C\+K\+\_\+\+G\+O\+OD@{S\+T\+A\+C\+K\+\_\+\+G\+O\+OD}}
-\index{S\+T\+A\+C\+K\+\_\+\+G\+O\+OD@{S\+T\+A\+C\+K\+\_\+\+G\+O\+OD}!Stack.\+h@{Stack.\+h}}
-\subsubsection{S\+T\+A\+C\+K\+\_\+\+G\+O\+OD}
-{\footnotesize\ttfamily \#define S\+T\+A\+C\+K\+\_\+\+G\+O\+OD~1}
+\mbox{\label{_stack_8h_acf00c5118b8abe8f951cbdbdee9599e4}} 
+\index{Stack.\+h@{Stack.\+h}!M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+N\+O\+T\+\_\+\+E\+X\+I\+ST@{M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+N\+O\+T\+\_\+\+E\+X\+I\+ST}}
+\index{M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+N\+O\+T\+\_\+\+E\+X\+I\+ST@{M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+N\+O\+T\+\_\+\+E\+X\+I\+ST}!Stack.\+h@{Stack.\+h}}
+\subsubsection{M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+N\+O\+T\+\_\+\+E\+X\+I\+ST}
+{\footnotesize\ttfamily \#define M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+N\+O\+T\+\_\+\+E\+X\+I\+ST~\char`\"{}S\+T\+A\+C\+K\+\_\+\+N\+O\+T\+\_\+\+E\+X\+I\+ST\char`\"{}}
 
-\mbox{\label{_stack_8h_ae387eafaba4d48a8c8bb24cbdbae850c}} 
-\index{Stack.\+h@{Stack.\+h}!S\+T\+A\+C\+K\+\_\+\+L\+A\+C\+K\+\_\+\+O\+F\+\_\+\+M\+E\+M\+O\+RY@{S\+T\+A\+C\+K\+\_\+\+L\+A\+C\+K\+\_\+\+O\+F\+\_\+\+M\+E\+M\+O\+RY}}
-\index{S\+T\+A\+C\+K\+\_\+\+L\+A\+C\+K\+\_\+\+O\+F\+\_\+\+M\+E\+M\+O\+RY@{S\+T\+A\+C\+K\+\_\+\+L\+A\+C\+K\+\_\+\+O\+F\+\_\+\+M\+E\+M\+O\+RY}!Stack.\+h@{Stack.\+h}}
-\subsubsection{S\+T\+A\+C\+K\+\_\+\+L\+A\+C\+K\+\_\+\+O\+F\+\_\+\+M\+E\+M\+O\+RY}
-{\footnotesize\ttfamily \#define S\+T\+A\+C\+K\+\_\+\+L\+A\+C\+K\+\_\+\+O\+F\+\_\+\+M\+E\+M\+O\+RY~-\/5}
+\mbox{\label{_stack_8h_a4cbbecc24594306da6c919017a29b9b8}} 
+\index{Stack.\+h@{Stack.\+h}!M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+O\+V\+E\+R\+F\+L\+OW@{M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+O\+V\+E\+R\+F\+L\+OW}}
+\index{M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+O\+V\+E\+R\+F\+L\+OW@{M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+O\+V\+E\+R\+F\+L\+OW}!Stack.\+h@{Stack.\+h}}
+\subsubsection{M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+O\+V\+E\+R\+F\+L\+OW}
+{\footnotesize\ttfamily \#define M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+O\+V\+E\+R\+F\+L\+OW~\char`\"{}S\+T\+A\+C\+K\+\_\+\+O\+V\+E\+R\+F\+L\+OW\char`\"{}}
 
-\mbox{\label{_stack_8h_a6ae636c5fa35461ff6199a7727ec07b4}} 
-\index{Stack.\+h@{Stack.\+h}!S\+T\+A\+C\+K\+\_\+\+N\+O\+T\+\_\+\+E\+X\+I\+ST@{S\+T\+A\+C\+K\+\_\+\+N\+O\+T\+\_\+\+E\+X\+I\+ST}}
-\index{S\+T\+A\+C\+K\+\_\+\+N\+O\+T\+\_\+\+E\+X\+I\+ST@{S\+T\+A\+C\+K\+\_\+\+N\+O\+T\+\_\+\+E\+X\+I\+ST}!Stack.\+h@{Stack.\+h}}
-\subsubsection{S\+T\+A\+C\+K\+\_\+\+N\+O\+T\+\_\+\+E\+X\+I\+ST}
-{\footnotesize\ttfamily \#define S\+T\+A\+C\+K\+\_\+\+N\+O\+T\+\_\+\+E\+X\+I\+ST~-\/3}
+\mbox{\label{_stack_8h_a807d77d8239d543450df19769889134e}} 
+\index{Stack.\+h@{Stack.\+h}!M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+T\+Y\+P\+E\+\_\+\+E\+RR@{M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+T\+Y\+P\+E\+\_\+\+E\+RR}}
+\index{M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+T\+Y\+P\+E\+\_\+\+E\+RR@{M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+T\+Y\+P\+E\+\_\+\+E\+RR}!Stack.\+h@{Stack.\+h}}
+\subsubsection{M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+T\+Y\+P\+E\+\_\+\+E\+RR}
+{\footnotesize\ttfamily \#define M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+T\+Y\+P\+E\+\_\+\+E\+RR~\char`\"{}S\+T\+A\+C\+K\+\_\+\+T\+Y\+P\+E\+\_\+\+E\+RR\char`\"{}}
 
-\mbox{\label{_stack_8h_ac8c6509988bfa36bde2938343d99c290}} 
-\index{Stack.\+h@{Stack.\+h}!S\+T\+A\+C\+K\+\_\+\+O\+V\+E\+R\+F\+L\+OW@{S\+T\+A\+C\+K\+\_\+\+O\+V\+E\+R\+F\+L\+OW}}
-\index{S\+T\+A\+C\+K\+\_\+\+O\+V\+E\+R\+F\+L\+OW@{S\+T\+A\+C\+K\+\_\+\+O\+V\+E\+R\+F\+L\+OW}!Stack.\+h@{Stack.\+h}}
-\subsubsection{S\+T\+A\+C\+K\+\_\+\+O\+V\+E\+R\+F\+L\+OW}
-{\footnotesize\ttfamily \#define S\+T\+A\+C\+K\+\_\+\+O\+V\+E\+R\+F\+L\+OW~-\/2}
-
-\mbox{\label{_stack_8h_af7dee4d2b41624b79d0f5638443dbb2b}} 
-\index{Stack.\+h@{Stack.\+h}!S\+T\+A\+C\+K\+\_\+\+T\+Y\+P\+E\+\_\+\+E\+RR@{S\+T\+A\+C\+K\+\_\+\+T\+Y\+P\+E\+\_\+\+E\+RR}}
-\index{S\+T\+A\+C\+K\+\_\+\+T\+Y\+P\+E\+\_\+\+E\+RR@{S\+T\+A\+C\+K\+\_\+\+T\+Y\+P\+E\+\_\+\+E\+RR}!Stack.\+h@{Stack.\+h}}
-\subsubsection{S\+T\+A\+C\+K\+\_\+\+T\+Y\+P\+E\+\_\+\+E\+RR}
-{\footnotesize\ttfamily \#define S\+T\+A\+C\+K\+\_\+\+T\+Y\+P\+E\+\_\+\+E\+RR~-\/4}
-
-\mbox{\label{_stack_8h_a9fc7324c5d4ced773996c902bf7c82f3}} 
-\index{Stack.\+h@{Stack.\+h}!S\+T\+A\+C\+K\+\_\+\+U\+N\+D\+E\+R\+F\+L\+OW@{S\+T\+A\+C\+K\+\_\+\+U\+N\+D\+E\+R\+F\+L\+OW}}
-\index{S\+T\+A\+C\+K\+\_\+\+U\+N\+D\+E\+R\+F\+L\+OW@{S\+T\+A\+C\+K\+\_\+\+U\+N\+D\+E\+R\+F\+L\+OW}!Stack.\+h@{Stack.\+h}}
-\subsubsection{S\+T\+A\+C\+K\+\_\+\+U\+N\+D\+E\+R\+F\+L\+OW}
-{\footnotesize\ttfamily \#define S\+T\+A\+C\+K\+\_\+\+U\+N\+D\+E\+R\+F\+L\+OW~-\/1}
+\mbox{\label{_stack_8h_a648d27ffef366c0208d039328d0f439c}} 
+\index{Stack.\+h@{Stack.\+h}!M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+U\+N\+D\+E\+R\+F\+L\+OW@{M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+U\+N\+D\+E\+R\+F\+L\+OW}}
+\index{M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+U\+N\+D\+E\+R\+F\+L\+OW@{M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+U\+N\+D\+E\+R\+F\+L\+OW}!Stack.\+h@{Stack.\+h}}
+\subsubsection{M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+U\+N\+D\+E\+R\+F\+L\+OW}
+{\footnotesize\ttfamily \#define M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+U\+N\+D\+E\+R\+F\+L\+OW~\char`\"{}S\+T\+A\+C\+K\+\_\+\+U\+N\+D\+E\+R\+F\+L\+OW\char`\"{}}
 
 
 
-defined as double but you can override it 
+this is error messages used in E\+R\+R\+O\+R\+\_\+\+L\+OG 
 
-\mbox{\label{_stack_8h_a0503aeb97eec8ab1fb9e0119c63bb1d0}} 
-\index{Stack.\+h@{Stack.\+h}!S\+T\+A\+C\+K\+\_\+\+U\+N\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR@{S\+T\+A\+C\+K\+\_\+\+U\+N\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR}}
-\index{S\+T\+A\+C\+K\+\_\+\+U\+N\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR@{S\+T\+A\+C\+K\+\_\+\+U\+N\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR}!Stack.\+h@{Stack.\+h}}
-\subsubsection{S\+T\+A\+C\+K\+\_\+\+U\+N\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR}
-{\footnotesize\ttfamily \#define S\+T\+A\+C\+K\+\_\+\+U\+N\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR~-\/10}
+\mbox{\label{_stack_8h_a1f96d6b816da1a5ad5a2e693ad190604}} 
+\index{Stack.\+h@{Stack.\+h}!M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR@{M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR}}
+\index{M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR@{M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR}!Stack.\+h@{Stack.\+h}}
+\subsubsection{M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR}
+{\footnotesize\ttfamily \#define M\+\_\+\+S\+T\+A\+C\+K\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR~\char`\"{}S\+T\+A\+C\+K\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR\char`\"{}}
 
 
 
@@ -156,7 +191,69 @@ defined as double but you can override it
 \subsubsection{data\+\_\+stack}
 {\footnotesize\ttfamily typedef int \textbf{ data\+\_\+stack}}
 
+/file /brief declaration of \doxyref{Stack}{p.}{struct_stack}
+
+/author Vinogradov Aleksandr ~\newline
 /note int , double , float , char types -\/ ok 
+
+\subsection{Enumeration Type Documentation}
+\mbox{\label{_stack_8h_a0b594ba161c87bbc48e10cbe39981335}} 
+\index{Stack.\+h@{Stack.\+h}!S\+T\+A\+C\+K\+\_\+\+B\+O\+O\+L\+\_\+\+S\+T\+A\+T\+ES@{S\+T\+A\+C\+K\+\_\+\+B\+O\+O\+L\+\_\+\+S\+T\+A\+T\+ES}}
+\index{S\+T\+A\+C\+K\+\_\+\+B\+O\+O\+L\+\_\+\+S\+T\+A\+T\+ES@{S\+T\+A\+C\+K\+\_\+\+B\+O\+O\+L\+\_\+\+S\+T\+A\+T\+ES}!Stack.\+h@{Stack.\+h}}
+\subsubsection{S\+T\+A\+C\+K\+\_\+\+B\+O\+O\+L\+\_\+\+S\+T\+A\+T\+ES}
+{\footnotesize\ttfamily enum \textbf{ S\+T\+A\+C\+K\+\_\+\+B\+O\+O\+L\+\_\+\+S\+T\+A\+T\+ES}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+T\+A\+C\+K\+\_\+\+G\+O\+OD@{S\+T\+A\+C\+K\+\_\+\+G\+O\+OD}!Stack.\+h@{Stack.\+h}}\index{Stack.\+h@{Stack.\+h}!S\+T\+A\+C\+K\+\_\+\+G\+O\+OD@{S\+T\+A\+C\+K\+\_\+\+G\+O\+OD}}}\mbox{\label{_stack_8h_a0b594ba161c87bbc48e10cbe39981335a0eab387bc0b85329c54b9844acf2048a}} 
+S\+T\+A\+C\+K\+\_\+\+G\+O\+OD&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+T\+A\+C\+K\+\_\+\+B\+R\+O\+K\+EN@{S\+T\+A\+C\+K\+\_\+\+B\+R\+O\+K\+EN}!Stack.\+h@{Stack.\+h}}\index{Stack.\+h@{Stack.\+h}!S\+T\+A\+C\+K\+\_\+\+B\+R\+O\+K\+EN@{S\+T\+A\+C\+K\+\_\+\+B\+R\+O\+K\+EN}}}\mbox{\label{_stack_8h_a0b594ba161c87bbc48e10cbe39981335a2c3ed75d6ee625e6cfad20718f98d6eb}} 
+S\+T\+A\+C\+K\+\_\+\+B\+R\+O\+K\+EN&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\label{_stack_8h_af7ada939655f16cddc3a46aa7d27e282}} 
+\index{Stack.\+h@{Stack.\+h}!S\+T\+A\+C\+K\+\_\+\+S\+T\+A\+T\+ES@{S\+T\+A\+C\+K\+\_\+\+S\+T\+A\+T\+ES}}
+\index{S\+T\+A\+C\+K\+\_\+\+S\+T\+A\+T\+ES@{S\+T\+A\+C\+K\+\_\+\+S\+T\+A\+T\+ES}!Stack.\+h@{Stack.\+h}}
+\subsubsection{S\+T\+A\+C\+K\+\_\+\+S\+T\+A\+T\+ES}
+{\footnotesize\ttfamily enum \textbf{ S\+T\+A\+C\+K\+\_\+\+S\+T\+A\+T\+ES}}
+
+
+
+defined as double but you can override it 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+T\+A\+C\+K\+\_\+\+U\+N\+D\+E\+R\+F\+L\+OW@{S\+T\+A\+C\+K\+\_\+\+U\+N\+D\+E\+R\+F\+L\+OW}!Stack.\+h@{Stack.\+h}}\index{Stack.\+h@{Stack.\+h}!S\+T\+A\+C\+K\+\_\+\+U\+N\+D\+E\+R\+F\+L\+OW@{S\+T\+A\+C\+K\+\_\+\+U\+N\+D\+E\+R\+F\+L\+OW}}}\mbox{\label{_stack_8h_af7ada939655f16cddc3a46aa7d27e282acc9002da8e8bd756048ba1975b9a53a3}} 
+S\+T\+A\+C\+K\+\_\+\+U\+N\+D\+E\+R\+F\+L\+OW&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+T\+A\+C\+K\+\_\+\+O\+V\+E\+R\+F\+L\+OW@{S\+T\+A\+C\+K\+\_\+\+O\+V\+E\+R\+F\+L\+OW}!Stack.\+h@{Stack.\+h}}\index{Stack.\+h@{Stack.\+h}!S\+T\+A\+C\+K\+\_\+\+O\+V\+E\+R\+F\+L\+OW@{S\+T\+A\+C\+K\+\_\+\+O\+V\+E\+R\+F\+L\+OW}}}\mbox{\label{_stack_8h_af7ada939655f16cddc3a46aa7d27e282a5ab4c680e2046e128008b8a4bb5e2a59}} 
+S\+T\+A\+C\+K\+\_\+\+O\+V\+E\+R\+F\+L\+OW&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+T\+A\+C\+K\+\_\+\+N\+O\+T\+\_\+\+E\+X\+I\+ST@{S\+T\+A\+C\+K\+\_\+\+N\+O\+T\+\_\+\+E\+X\+I\+ST}!Stack.\+h@{Stack.\+h}}\index{Stack.\+h@{Stack.\+h}!S\+T\+A\+C\+K\+\_\+\+N\+O\+T\+\_\+\+E\+X\+I\+ST@{S\+T\+A\+C\+K\+\_\+\+N\+O\+T\+\_\+\+E\+X\+I\+ST}}}\mbox{\label{_stack_8h_af7ada939655f16cddc3a46aa7d27e282afdec5dcccc0da67a68aa7bfb44f3dba5}} 
+S\+T\+A\+C\+K\+\_\+\+N\+O\+T\+\_\+\+E\+X\+I\+ST&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+T\+A\+C\+K\+\_\+\+T\+Y\+P\+E\+\_\+\+E\+RR@{S\+T\+A\+C\+K\+\_\+\+T\+Y\+P\+E\+\_\+\+E\+RR}!Stack.\+h@{Stack.\+h}}\index{Stack.\+h@{Stack.\+h}!S\+T\+A\+C\+K\+\_\+\+T\+Y\+P\+E\+\_\+\+E\+RR@{S\+T\+A\+C\+K\+\_\+\+T\+Y\+P\+E\+\_\+\+E\+RR}}}\mbox{\label{_stack_8h_af7ada939655f16cddc3a46aa7d27e282a063f566fcb969e9999a01710c2874881}} 
+S\+T\+A\+C\+K\+\_\+\+T\+Y\+P\+E\+\_\+\+E\+RR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+T\+A\+C\+K\+\_\+\+L\+A\+C\+K\+\_\+\+O\+F\+\_\+\+M\+E\+M\+O\+RY@{S\+T\+A\+C\+K\+\_\+\+L\+A\+C\+K\+\_\+\+O\+F\+\_\+\+M\+E\+M\+O\+RY}!Stack.\+h@{Stack.\+h}}\index{Stack.\+h@{Stack.\+h}!S\+T\+A\+C\+K\+\_\+\+L\+A\+C\+K\+\_\+\+O\+F\+\_\+\+M\+E\+M\+O\+RY@{S\+T\+A\+C\+K\+\_\+\+L\+A\+C\+K\+\_\+\+O\+F\+\_\+\+M\+E\+M\+O\+RY}}}\mbox{\label{_stack_8h_af7ada939655f16cddc3a46aa7d27e282a44676dd1e07c53c793d1564570a9879a}} 
+S\+T\+A\+C\+K\+\_\+\+L\+A\+C\+K\+\_\+\+O\+F\+\_\+\+M\+E\+M\+O\+RY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+T\+A\+C\+K\+\_\+\+B\+A\+D\+\_\+\+A\+R\+GS@{S\+T\+A\+C\+K\+\_\+\+B\+A\+D\+\_\+\+A\+R\+GS}!Stack.\+h@{Stack.\+h}}\index{Stack.\+h@{Stack.\+h}!S\+T\+A\+C\+K\+\_\+\+B\+A\+D\+\_\+\+A\+R\+GS@{S\+T\+A\+C\+K\+\_\+\+B\+A\+D\+\_\+\+A\+R\+GS}}}\mbox{\label{_stack_8h_af7ada939655f16cddc3a46aa7d27e282ad6891d64ec20cd2aef082200f28b678f}} 
+S\+T\+A\+C\+K\+\_\+\+B\+A\+D\+\_\+\+A\+R\+GS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+T\+A\+C\+K\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR@{S\+T\+A\+C\+K\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR}!Stack.\+h@{Stack.\+h}}\index{Stack.\+h@{Stack.\+h}!S\+T\+A\+C\+K\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR@{S\+T\+A\+C\+K\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR}}}\mbox{\label{_stack_8h_af7ada939655f16cddc3a46aa7d27e282a0c10c41745487f272145d788a9e3fa7f}} 
+S\+T\+A\+C\+K\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+R\+R\+OR&\\
+\hline
+
+\end{DoxyEnumFields}
+
 
 \subsection{Function Documentation}
 \mbox{\label{_stack_8h_ad0aac574d9d787973a9c20bd6576e83e}} 
@@ -173,7 +270,11 @@ to-\/do assert and err mesaging
 
 /param[in] stack stack to calculate size // default is \textquotesingle{}u\textquotesingle{} /param[in] mode mode for calculating \textquotesingle{}u\textquotesingle{} -\/ resize up , and \textquotesingle{}d\textquotesingle{} -\/ resize down
 
-/return value to resize stack under zero on positive \mbox{\label{_stack_8h_a28154d65cb96e76c8be4b0be929e24db}} 
+/return value to resize stack under zero on positive Here is the call graph for this function\+:
+% FIG 2
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\label{_stack_8h_a28154d65cb96e76c8be4b0be929e24db}} 
 \index{Stack.\+h@{Stack.\+h}!Stack\+Clean@{Stack\+Clean}}
 \index{Stack\+Clean@{Stack\+Clean}!Stack.\+h@{Stack.\+h}}
 \subsubsection{Stack\+Clean()}
@@ -183,29 +284,25 @@ to-\/do assert and err mesaging
 
 /param[in] stack stack to cleen
 
-/return size of clened stack or error messege \mbox{\label{_stack_8h_a234248e4df795e76e3e65de6e4ed3deb}} 
+/return size of clened stack or error messege Here is the call graph for this function\+:
+% FIG 4
+\mbox{\label{_stack_8h_a234248e4df795e76e3e65de6e4ed3deb}} 
 \index{Stack.\+h@{Stack.\+h}!Stack\+Ctor@{Stack\+Ctor}}
 \index{Stack\+Ctor@{Stack\+Ctor}!Stack.\+h@{Stack.\+h}}
 \subsubsection{Stack\+Ctor()}
 {\footnotesize\ttfamily int Stack\+Ctor (\begin{DoxyParamCaption}\item[{\textbf{ Stack} $\ast$}]{stack,  }\item[{size\+\_\+t}]{size\+\_\+to\+\_\+init = {\ttfamily 0} }\end{DoxyParamCaption})}
 
-
-
-to-\/do assert and err mesaging 
-
 /brief construct a \doxyref{Stack}{p.}{struct_stack}
 
 /param[in] stack stack to construct /param[in] size\+\_\+of\+\_\+init size of stack initializing // default is 0
 
-/return size of output\+\_\+data or error messege \mbox{\label{_stack_8h_ad798a336363112d73d3c04b4630cbdfd}} 
+/return error messege Here is the caller graph for this function\+:
+% FIG 5
+\mbox{\label{_stack_8h_ad798a336363112d73d3c04b4630cbdfd}} 
 \index{Stack.\+h@{Stack.\+h}!Stack\+Ctor\+Din@{Stack\+Ctor\+Din}}
 \index{Stack\+Ctor\+Din@{Stack\+Ctor\+Din}!Stack.\+h@{Stack.\+h}}
 \subsubsection{Stack\+Ctor\+Din()}
 {\footnotesize\ttfamily \textbf{ Stack}$\ast$ Stack\+Ctor\+Din (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size\+\_\+to\+\_\+init }\end{DoxyParamCaption})}
-
-
-
-to-\/do assert and err mesaging 
 
 /brief construct a \doxyref{Stack}{p.}{struct_stack} using dimamic memory
 
@@ -215,43 +312,41 @@ to-\/do assert and err mesaging
 
 /file /brief realization of \doxyref{Stack}{p.}{struct_stack}
 
-/author Vinogradov Aleksandr \mbox{\label{_stack_8h_af090c504a5436c2a041a389725de484b}} 
+/author Vinogradov Aleksandr Here is the call graph for this function\+:
+% FIG 6
+Here is the caller graph for this function\+:
+% FIG 7
+\mbox{\label{_stack_8h_af090c504a5436c2a041a389725de484b}} 
 \index{Stack.\+h@{Stack.\+h}!Stack\+Dtor@{Stack\+Dtor}}
 \index{Stack\+Dtor@{Stack\+Dtor}!Stack.\+h@{Stack.\+h}}
 \subsubsection{Stack\+Dtor()}
 {\footnotesize\ttfamily int Stack\+Dtor (\begin{DoxyParamCaption}\item[{\textbf{ Stack} $\ast$}]{stack }\end{DoxyParamCaption})}
 
-
-
-to-\/do assert and err mesaging 
-
 /brief destruct a \doxyref{Stack}{p.}{struct_stack}
 
 /param[in] stack stack to destruct
 
-/return size of destructed or error messege \mbox{\label{_stack_8h_a1685bf189e540fbc8d9aa420c6243aac}} 
+/return size of destructed or error messege Here is the caller graph for this function\+:
+% FIG 8
+\mbox{\label{_stack_8h_a1685bf189e540fbc8d9aa420c6243aac}} 
 \index{Stack.\+h@{Stack.\+h}!Stack\+Dtor\+Din@{Stack\+Dtor\+Din}}
 \index{Stack\+Dtor\+Din@{Stack\+Dtor\+Din}!Stack.\+h@{Stack.\+h}}
 \subsubsection{Stack\+Dtor\+Din()}
 {\footnotesize\ttfamily int Stack\+Dtor\+Din (\begin{DoxyParamCaption}\item[{\textbf{ Stack} $\ast$}]{stack }\end{DoxyParamCaption})}
 
-
-
-to-\/do assert and err mesaging 
-
 /brief destruct a \doxyref{Stack}{p.}{struct_stack} dinamic
 
 /param[in] stack stack to destruct dinamic
 
-/return size of destructed or error messege \mbox{\label{_stack_8h_ae63d7967f9657547b5902532d7fc53ad}} 
+/return size of destructed or error messege Here is the call graph for this function\+:
+% FIG 9
+Here is the caller graph for this function\+:
+% FIG 10
+\mbox{\label{_stack_8h_a7c6b02eb4b146cd19952c9e2b0ed9aa3}} 
 \index{Stack.\+h@{Stack.\+h}!Stack\+Dump@{Stack\+Dump}}
 \index{Stack\+Dump@{Stack\+Dump}!Stack.\+h@{Stack.\+h}}
 \subsubsection{Stack\+Dump()}
-{\footnotesize\ttfamily void Stack\+Dump (\begin{DoxyParamCaption}\item[{\textbf{ Stack} $\ast$}]{stack }\end{DoxyParamCaption})}
-
-
-
-make it guy ! 
+{\footnotesize\ttfamily void Stack\+Dump (\begin{DoxyParamCaption}\item[{\textbf{ Stack} $\ast$}]{stack,  }\item[{F\+I\+LE $\ast$}]{stream = {\ttfamily stdout} }\end{DoxyParamCaption})}
 
 /brief print stack status
 
@@ -259,7 +354,9 @@ make it guy !
 
 /return none
 
-beautifull debaging for stack \mbox{\label{_stack_8h_a3eac8d89e697e5151d10ee1ba1915290}} 
+beautifull debaging for stack Here is the call graph for this function\+:
+% FIG 11
+\mbox{\label{_stack_8h_a3eac8d89e697e5151d10ee1ba1915290}} 
 \index{Stack.\+h@{Stack.\+h}!Stack\+Free@{Stack\+Free}}
 \index{Stack\+Free@{Stack\+Free}!Stack.\+h@{Stack.\+h}}
 \subsubsection{Stack\+Free()}
@@ -269,35 +366,36 @@ beautifull debaging for stack \mbox{\label{_stack_8h_a3eac8d89e697e5151d10ee1ba1
 
 /param[in] stack stack to free
 
-/return size of deleted stack or error messege \mbox{\label{_stack_8h_aa2468daaa4e13529892e5bda273abf2c}} 
+/return size of deleted stack or error messege Here is the call graph for this function\+:
+% FIG 12
+Here is the caller graph for this function\+:
+% FIG 13
+\mbox{\label{_stack_8h_aa2468daaa4e13529892e5bda273abf2c}} 
 \index{Stack.\+h@{Stack.\+h}!Stack\+Front@{Stack\+Front}}
 \index{Stack\+Front@{Stack\+Front}!Stack.\+h@{Stack.\+h}}
 \subsubsection{Stack\+Front()}
 {\footnotesize\ttfamily \textbf{ data\+\_\+stack} Stack\+Front (\begin{DoxyParamCaption}\item[{\textbf{ Stack} $\ast$}]{stack }\end{DoxyParamCaption})}
 
-/brief give thirst elem of stack
-
-/param[in] stack stack to get elem
-
-/return last elem or 0 if now elements in stack or error \mbox{\label{_stack_8h_aa1b1f8ffff194b6cd1ebb5ae9a94985c}} 
-\index{Stack.\+h@{Stack.\+h}!Stack\+Get\+All@{Stack\+Get\+All}}
-\index{Stack\+Get\+All@{Stack\+Get\+All}!Stack.\+h@{Stack.\+h}}
-\subsubsection{Stack\+Get\+All()}
-{\footnotesize\ttfamily size\+\_\+t Stack\+Get\+All (\begin{DoxyParamCaption}\item[{\textbf{ Stack} $\ast$}]{stack,  }\item[{\textbf{ data\+\_\+stack} $\ast$}]{output\+\_\+data }\end{DoxyParamCaption})}
 
 
-
-make it 
+size\+\_\+t Stack\+Get\+All(\+Stack$\ast$ stack, data\+\_\+stack$\ast$ output\+\_\+data); 
 
 /brief get all data from \doxyref{Stack}{p.}{struct_stack}
 
 /param[in] stack stack to fetch data /param[in] output\+\_\+data array of elements from \doxyref{Stack}{p.}{struct_stack}
 
-/return size of output\+\_\+data \mbox{\label{_stack_8h_ab0f2d9a835e00ceb3b0c24eee7925c44}} 
+/return size of output\+\_\+data ~\newline
+/brief give thirst elem of stack
+
+/param[in] stack stack to get elem
+
+/return last elem or 0 if now elements in stack or error Here is the call graph for this function\+:
+% FIG 14
+\mbox{\label{_stack_8h_ab9316611fbaf334168ffd8de2bbdb4b4}} 
 \index{Stack.\+h@{Stack.\+h}!Stack\+Ok@{Stack\+Ok}}
 \index{Stack\+Ok@{Stack\+Ok}!Stack.\+h@{Stack.\+h}}
 \subsubsection{Stack\+Ok()}
-{\footnotesize\ttfamily int Stack\+Ok (\begin{DoxyParamCaption}\item[{\textbf{ Stack} $\ast$}]{stack }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool Stack\+Ok (\begin{DoxyParamCaption}\item[{\textbf{ Stack} $\ast$}]{stack }\end{DoxyParamCaption})}
 
 
 
@@ -309,7 +407,9 @@ add hash sum and memcheck advanced features
 
 /return status of stack
 
-need to check state of stack based on internal structure \mbox{\label{_stack_8h_ab9ab3bcbe1af5140cc1a3cac9087e42a}} 
+need to check state of stack based on internal structure Here is the caller graph for this function\+:
+% FIG 15
+\mbox{\label{_stack_8h_ab9ab3bcbe1af5140cc1a3cac9087e42a}} 
 \index{Stack.\+h@{Stack.\+h}!Stack\+Pop@{Stack\+Pop}}
 \index{Stack\+Pop@{Stack\+Pop}!Stack.\+h@{Stack.\+h}}
 \subsubsection{Stack\+Pop()}
@@ -319,7 +419,9 @@ need to check state of stack based on internal structure \mbox{\label{_stack_8h_
 
 /param[in] stack stack to get elem
 
-/return last elem or 0 if now elements in stack or error \mbox{\label{_stack_8h_a42cc66765aeb8c0528421a393af6bcc0}} 
+/return last elem or 0 if now elements in stack or error Here is the call graph for this function\+:
+% FIG 16
+\mbox{\label{_stack_8h_a42cc66765aeb8c0528421a393af6bcc0}} 
 \index{Stack.\+h@{Stack.\+h}!Stack\+Push@{Stack\+Push}}
 \index{Stack\+Push@{Stack\+Push}!Stack.\+h@{Stack.\+h}}
 \subsubsection{Stack\+Push()}
@@ -329,7 +431,9 @@ need to check state of stack based on internal structure \mbox{\label{_stack_8h_
 
 /param[in] stack stack to push /param[in] data element to push
 
-/return status stack or error messege \mbox{\label{_stack_8h_aa1f6502245adf7db05b1f45eebdbe112}} 
+/return status stack or error messege Here is the call graph for this function\+:
+% FIG 17
+\mbox{\label{_stack_8h_aa1f6502245adf7db05b1f45eebdbe112}} 
 \index{Stack.\+h@{Stack.\+h}!Stack\+Realloc@{Stack\+Realloc}}
 \index{Stack\+Realloc@{Stack\+Realloc}!Stack.\+h@{Stack.\+h}}
 \subsubsection{Stack\+Realloc()}
@@ -339,7 +443,11 @@ need to check state of stack based on internal structure \mbox{\label{_stack_8h_
 
 /param[in] stack stack to free /param[in] mode \textquotesingle{}u\textquotesingle{} to realloc up or \textquotesingle{}d\textquotesingle{} to realloc down
 
-/return status of stack or error messege ficha / \mbox{\label{_stack_8h_a3e970b031bdeeeeb8b0b537fb02bef26}} 
+/return status of stack or error messege ficha / Here is the call graph for this function\+:
+% FIG 18
+Here is the caller graph for this function\+:
+% FIG 19
+\mbox{\label{_stack_8h_a3e970b031bdeeeeb8b0b537fb02bef26}} 
 \index{Stack.\+h@{Stack.\+h}!Stack\+Resize@{Stack\+Resize}}
 \index{Stack\+Resize@{Stack\+Resize}!Stack.\+h@{Stack.\+h}}
 \subsubsection{Stack\+Resize()}
@@ -351,7 +459,9 @@ need to check state of stack based on internal structure \mbox{\label{_stack_8h_
 
 /return new stack size or error message
 
-/note you can easy lost data from stack ficha / \mbox{\label{_stack_8h_ad67c7c911cc1d1824dbfd2054252b960}} 
+/note you can easy lost data from stack ficha / Here is the call graph for this function\+:
+% FIG 20
+\mbox{\label{_stack_8h_ad67c7c911cc1d1824dbfd2054252b960}} 
 \index{Stack.\+h@{Stack.\+h}!Stack\+Srink\+\_\+to\+\_\+fit@{Stack\+Srink\+\_\+to\+\_\+fit}}
 \index{Stack\+Srink\+\_\+to\+\_\+fit@{Stack\+Srink\+\_\+to\+\_\+fit}!Stack.\+h@{Stack.\+h}}
 \subsubsection{Stack\+Srink\+\_\+to\+\_\+fit()}
@@ -361,4 +471,38 @@ need to check state of stack based on internal structure \mbox{\label{_stack_8h_
 
 /param[in] stack stack to Srink
 
-/return new size or error ficha / 
+/return new size or error ficha / Here is the call graph for this function\+:
+% FIG 21
+
+
+\subsection{Variable Documentation}
+\mbox{\label{_stack_8h_a31bfd944dc6e6d6ff19a750356b8d187}} 
+\index{Stack.\+h@{Stack.\+h}!M\+E\+M\+\_\+\+S\+H\+OP@{M\+E\+M\+\_\+\+S\+H\+OP}}
+\index{M\+E\+M\+\_\+\+S\+H\+OP@{M\+E\+M\+\_\+\+S\+H\+OP}!Stack.\+h@{Stack.\+h}}
+\subsubsection{M\+E\+M\+\_\+\+S\+H\+OP}
+{\footnotesize\ttfamily const auto M\+E\+M\+\_\+\+S\+H\+OP = \char`\"{}start http\+://newegg.\+com\char`\"{}}
+
+\mbox{\label{_stack_8h_a8bfcc237d26377ebefd12c848b7dfe1f}} 
+\index{Stack.\+h@{Stack.\+h}!S\+T\+A\+C\+K\+\_\+\+M\+E\+M\+\_\+\+P\+R\+O\+T\+E\+CT@{S\+T\+A\+C\+K\+\_\+\+M\+E\+M\+\_\+\+P\+R\+O\+T\+E\+CT}}
+\index{S\+T\+A\+C\+K\+\_\+\+M\+E\+M\+\_\+\+P\+R\+O\+T\+E\+CT@{S\+T\+A\+C\+K\+\_\+\+M\+E\+M\+\_\+\+P\+R\+O\+T\+E\+CT}!Stack.\+h@{Stack.\+h}}
+\subsubsection{S\+T\+A\+C\+K\+\_\+\+M\+E\+M\+\_\+\+P\+R\+O\+T\+E\+CT}
+{\footnotesize\ttfamily const size\+\_\+t S\+T\+A\+C\+K\+\_\+\+M\+E\+M\+\_\+\+P\+R\+O\+T\+E\+CT = 0x\+F0}
+
+\mbox{\label{_stack_8h_a803202b32bc97138c449faf42ce50605}} 
+\index{Stack.\+h@{Stack.\+h}!S\+T\+A\+C\+K\+\_\+\+P\+E\+R\+M\+A\+N\+E\+N\+T\+\_\+\+C\+A\+P\+A\+C\+I\+TY@{S\+T\+A\+C\+K\+\_\+\+P\+E\+R\+M\+A\+N\+E\+N\+T\+\_\+\+C\+A\+P\+A\+C\+I\+TY}}
+\index{S\+T\+A\+C\+K\+\_\+\+P\+E\+R\+M\+A\+N\+E\+N\+T\+\_\+\+C\+A\+P\+A\+C\+I\+TY@{S\+T\+A\+C\+K\+\_\+\+P\+E\+R\+M\+A\+N\+E\+N\+T\+\_\+\+C\+A\+P\+A\+C\+I\+TY}!Stack.\+h@{Stack.\+h}}
+\subsubsection{S\+T\+A\+C\+K\+\_\+\+P\+E\+R\+M\+A\+N\+E\+N\+T\+\_\+\+C\+A\+P\+A\+C\+I\+TY}
+{\footnotesize\ttfamily const size\+\_\+t S\+T\+A\+C\+K\+\_\+\+P\+E\+R\+M\+A\+N\+E\+N\+T\+\_\+\+C\+A\+P\+A\+C\+I\+TY = 5}
+
+\mbox{\label{_stack_8h_a337ccd1b2dd4644db8c70fcfcf92b381}} 
+\index{Stack.\+h@{Stack.\+h}!S\+T\+A\+C\+K\+\_\+\+R\+E\+S\+I\+Z\+E\+\_\+\+D\+O\+W\+N\+\_\+\+C\+O\+E\+F\+I\+C\+I\+E\+NT@{S\+T\+A\+C\+K\+\_\+\+R\+E\+S\+I\+Z\+E\+\_\+\+D\+O\+W\+N\+\_\+\+C\+O\+E\+F\+I\+C\+I\+E\+NT}}
+\index{S\+T\+A\+C\+K\+\_\+\+R\+E\+S\+I\+Z\+E\+\_\+\+D\+O\+W\+N\+\_\+\+C\+O\+E\+F\+I\+C\+I\+E\+NT@{S\+T\+A\+C\+K\+\_\+\+R\+E\+S\+I\+Z\+E\+\_\+\+D\+O\+W\+N\+\_\+\+C\+O\+E\+F\+I\+C\+I\+E\+NT}!Stack.\+h@{Stack.\+h}}
+\subsubsection{S\+T\+A\+C\+K\+\_\+\+R\+E\+S\+I\+Z\+E\+\_\+\+D\+O\+W\+N\+\_\+\+C\+O\+E\+F\+I\+C\+I\+E\+NT}
+{\footnotesize\ttfamily const size\+\_\+t S\+T\+A\+C\+K\+\_\+\+R\+E\+S\+I\+Z\+E\+\_\+\+D\+O\+W\+N\+\_\+\+C\+O\+E\+F\+I\+C\+I\+E\+NT = 2}
+
+\mbox{\label{_stack_8h_a7758d4a1dbd1cd3838a1f895e7c99a71}} 
+\index{Stack.\+h@{Stack.\+h}!S\+T\+A\+C\+K\+\_\+\+R\+E\+S\+I\+Z\+E\+\_\+\+U\+P\+\_\+\+C\+O\+E\+F\+I\+C\+I\+E\+NT@{S\+T\+A\+C\+K\+\_\+\+R\+E\+S\+I\+Z\+E\+\_\+\+U\+P\+\_\+\+C\+O\+E\+F\+I\+C\+I\+E\+NT}}
+\index{S\+T\+A\+C\+K\+\_\+\+R\+E\+S\+I\+Z\+E\+\_\+\+U\+P\+\_\+\+C\+O\+E\+F\+I\+C\+I\+E\+NT@{S\+T\+A\+C\+K\+\_\+\+R\+E\+S\+I\+Z\+E\+\_\+\+U\+P\+\_\+\+C\+O\+E\+F\+I\+C\+I\+E\+NT}!Stack.\+h@{Stack.\+h}}
+\subsubsection{S\+T\+A\+C\+K\+\_\+\+R\+E\+S\+I\+Z\+E\+\_\+\+U\+P\+\_\+\+C\+O\+E\+F\+I\+C\+I\+E\+NT}
+{\footnotesize\ttfamily const size\+\_\+t S\+T\+A\+C\+K\+\_\+\+R\+E\+S\+I\+Z\+E\+\_\+\+U\+P\+\_\+\+C\+O\+E\+F\+I\+C\+I\+E\+NT = 2}
+
