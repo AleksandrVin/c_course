@@ -3,8 +3,8 @@
   tests.cpp
   unittest.h
   Generating code
-  8 of 19 functions (42.1%) were compiled, the rest were copied from previous compilation.
+  12 of 18 functions (66.7%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    2 functions had inline decision re-evaluated but remain unchanged
+    1 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
-  stack_c.vcxproj -> C:\Users\vsash\OneDrive\Data\Information\university\subjcts\cs\labs\stack_c\Release\stack_c.exe
+  stack_c.vcxproj -> C:\Users\Aleksandr\OneDrive\Data\Information\university\subjcts\cs\labs\stack_c\Release\stack_c.exe

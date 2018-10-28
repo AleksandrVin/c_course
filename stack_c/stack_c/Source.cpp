@@ -1,13 +1,12 @@
+#include "config.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 
-#define NO_STACK_DUMPING 
 
-#define NO_ERROR_LOGGING
 
 #include "Stack.h" /// sourse file of Stack
 
-#define NDEBUG
 
 
 //#include "unittest.h" /// use unittest #defines for debuging Stack
@@ -38,7 +37,7 @@ int main()
 	printf("\n\n");
 
 	ex = StackCtorDin();
-	//TestTryPopEmpty(ex);
+	TestTryPopEmpty(ex);
 	StackDtorDin(ex);
 
 	printf("\n\n");
@@ -52,8 +51,8 @@ int main()
 	ex = StackCtorDin();
 	//TestPushAndPopLarge(ex);
 	StackDtorDin(ex);
-	//ex = nullptr;
-	//StackDtorDin(ex);
+	ex = (Stack*)nullptr;
+	StackDtorDin(ex);
 	printf("\n\n");
 
 	printf("\n");

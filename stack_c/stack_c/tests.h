@@ -1,5 +1,7 @@
 #pragma once
 
+#include "config.h"
+
 #include "unittest.h"
 #include "Stack.h"
 

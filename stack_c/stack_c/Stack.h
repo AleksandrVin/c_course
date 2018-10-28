@@ -6,6 +6,8 @@
 */
 #pragma once
 
+#include "config.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -18,12 +20,12 @@ typedef int data_stack; /// defined as double but you can override it
 //#define NO_STACK_DUMPING /// use it when dump stack when error_log // may be toooo slow 
 
 enum STACK_STATES {
-	STACK_UNDERFLOW = -1,  
-	STACK_OVERFLOW = -2,
-	STACK_NOT_EXIST = -3,
-	STACK_TYPE_ERR = -4,
+	STACK_UNDERFLOW		= -1,  
+	STACK_OVERFLOW		= -2,
+	STACK_NOT_EXIST		= -3,
+	STACK_TYPE_ERR		= -4,
 	STACK_LACK_OF_MEMORY = -5,
-	STACK_BAD_ARGS = -6,
+	STACK_BAD_ARGS		= -6,
 	STACK_UNKNOWN_ERROR = -10
 };
 /// this is error messages used in ERROR_LOG
@@ -43,6 +45,8 @@ const size_t STACK_PERMANENT_CAPACITY = 5; // size of fixed size of data when cr
 const size_t STACK_RESIZE_UP_COEFICIENT = 2; // how will capacity multiply up
 const size_t STACK_RESIZE_DOWN_COEFICIENT = 2; // how will capacity multiply down
 const size_t STACK_MEM_PROTECT = 0xF0;
+
+#define some "some text"
 
 #if defined( NO_ERROR_LOGGING )
 

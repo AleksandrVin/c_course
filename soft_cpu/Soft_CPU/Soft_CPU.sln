@@ -11,6 +11,14 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Compiler", "Compiler\Compil
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "stack_c", "..\..\stack_c\stack_c\stack_c.vcxproj", "{E2E6D526-6711-4786-92FE-4F5BD4AB394A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E7CC9E19-E785-47AA-91BF-75C84F115B70}"
+	ProjectSection(SolutionItems) = preProject
+		Commands.h = Commands.h
+		Registers.h = Registers.h
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Decompiler", "Decompiler\Decompiler.vcxproj", "{DFB964DA-A842-4AF5-82B3-3005DF8ADD28}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -51,6 +59,14 @@ Global
 		{E2E6D526-6711-4786-92FE-4F5BD4AB394A}.Release|x64.Build.0 = Release|x64
 		{E2E6D526-6711-4786-92FE-4F5BD4AB394A}.Release|x86.ActiveCfg = Release|Win32
 		{E2E6D526-6711-4786-92FE-4F5BD4AB394A}.Release|x86.Build.0 = Release|Win32
+		{DFB964DA-A842-4AF5-82B3-3005DF8ADD28}.Debug|x64.ActiveCfg = Debug|x64
+		{DFB964DA-A842-4AF5-82B3-3005DF8ADD28}.Debug|x64.Build.0 = Debug|x64
+		{DFB964DA-A842-4AF5-82B3-3005DF8ADD28}.Debug|x86.ActiveCfg = Debug|Win32
+		{DFB964DA-A842-4AF5-82B3-3005DF8ADD28}.Debug|x86.Build.0 = Debug|Win32
+		{DFB964DA-A842-4AF5-82B3-3005DF8ADD28}.Release|x64.ActiveCfg = Release|x64
+		{DFB964DA-A842-4AF5-82B3-3005DF8ADD28}.Release|x64.Build.0 = Release|x64
+		{DFB964DA-A842-4AF5-82B3-3005DF8ADD28}.Release|x86.ActiveCfg = Release|Win32
+		{DFB964DA-A842-4AF5-82B3-3005DF8ADD28}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

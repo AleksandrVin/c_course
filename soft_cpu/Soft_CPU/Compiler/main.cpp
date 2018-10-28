@@ -10,7 +10,6 @@
 
 #include "Compiler.h"
 
-#include "../../../stack_c/stack_c/Stack.h"
 // files to compile
 #define FILE_TO_COMPILE "prog.softasm"
 // files for prepocessor

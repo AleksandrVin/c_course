@@ -1,0 +1,6 @@
+DEF_CMD ( init , 1 )
+DEF_CDM ( push , 2 )
+DEF_CMD ( pop , 3 )
+DEF_CND ( add , 4 )
+DEF_CDM ( sub , 5 )
+DEF_CMD ( end , 11 )

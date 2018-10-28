@@ -114,7 +114,7 @@ int StackPush(Stack* stack, data_stack data)
 		}
 	}
 	stack->data[stack->size] = data;
-	stack->size++;
+	stack->size++;                                                                                                              
 	return STACK_GOOD;
 }
 
@@ -221,7 +221,7 @@ int StackResize(Stack* stack, int new_stack_capacity)
 		return new_stack_capacity;
 	}
 	if (new_stack_capacity > 0) {
-		data_stack* new_ptr = (data_stack*)realloc(stack->data, new_stack_capacity * sizeof(data_stack));
+		data_stack* new_ptr = (data_stack*)_recalloc(stack->data, new_stack_capacity , sizeof(data_stack));
 		if (new_ptr) {
 			stack->data = new_ptr;
 			stack->capacity = new_stack_capacity;

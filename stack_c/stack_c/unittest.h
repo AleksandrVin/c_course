@@ -1,5 +1,7 @@
 #pragma once
 
+#include "config.h"
+
 #include <iostream>
 
 #ifndef NDEBUG
@@ -23,9 +25,9 @@
 
 #else
 //#define PRINTF  ;
-#define UNITTEST ;
+#define UNITTEST( what , ref ) ;
 
-#define UNITTEST_FAST ;
+#define UNITTEST_FAST( what , ref ) ;
 
 #endif
 

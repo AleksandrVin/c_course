@@ -121,6 +121,7 @@
     <ClCompile Include="unittest.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="config.h" />
     <ClInclude Include="Stack.h" />
     <ClInclude Include="tests.h" />
   </ItemGroup>
