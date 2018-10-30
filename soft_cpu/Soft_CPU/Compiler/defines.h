@@ -6,10 +6,12 @@
 #define MODE_REGISTER 3
 #define MODE_RAM 4 
 #define MODE_ERR 0
+#define MODE_FREE_LINE 10
 
 #define MAX_LENGTH_OF_COMMAND 10
 
 typedef unsigned char cmd;
+typedef int data;
 
 const size_t COMMAD_SIZE = sizeof(cmd);
 const size_t DATA_SIZE = sizeof(int);

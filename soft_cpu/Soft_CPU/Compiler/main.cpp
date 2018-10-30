@@ -27,5 +27,7 @@ int main()
 
 	//size_t size_of_bin_file = CompilerCompile(progect, FILE_FOR_PREPROCESSOR, FILE_OUT_BIN);
 
+    CompilerDtorDin(progect);
+
 	system("pause");
 }

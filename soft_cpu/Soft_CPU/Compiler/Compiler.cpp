@@ -4,7 +4,35 @@ Compiler * CompilerCtorDin()
 {
     Compiler* progect = (Compiler*)calloc(1, sizeof(Compiler));
     assert(progect != nullptr);
+    progect->CONF = 0x00; // defaut config 
+    progect->buf_input = nullptr;
+    progect->size_of_buf_input = 0;
+    progect->strings = nullptr; // array of pointers to strings
+    progect->string_amount = 0;
     return progect;
+}
+
+size_t CompilerDtorDin(Compiler * progect)
+{
+    StringsMemClear(progect);
+    free(progect);
+    return 0;
+}
+
+size_t StringsMemClear(Compiler * progect)
+{
+    assert(progect != nullptr);
+    assert(progect->strings != nullptr);
+    size_t i = 0;
+    for (i; i < progect->string_amount; i++) {
+        if (progect->strings[i] != nullptr) {
+            free(progect->strings[i]);
+            progect->strings[i] = nullptr;
+        }
+    }
+    free(progect->strings);
+    progect->strings = nullptr;
+    return i;
 }
 
 size_t CompilerPreprocessor(Compiler* progect, const char* file_to_read, const char* file_output)
@@ -18,14 +46,14 @@ size_t CompilerPreprocessor(Compiler* progect, const char* file_to_read, const c
         LOG_ERR("can't open file read in preprocessor", file_to_read);
         return 0;
     }
-    size_t size_of_file = GetFileSize(FILE_input);
-    char* text_buff = (char*)calloc(size_of_file, sizeof(char));
-    size_t file_readed_size = fread_s(text_buff, size_of_file, sizeof(char), size_of_file, FILE_input);
+    progect->size_of_buf_input = GetFileSize(FILE_input);
+    progect->buf_input = (char*)calloc(progect->size_of_buf_input, sizeof(char));
+    progect->size_of_buf_input = fread_s(progect->buf_input, progect->size_of_buf_input, sizeof(char), progect->size_of_buf_input, FILE_input);
     fclose(FILE_input);
-    size_t strings_parsed = ParseToSrings(progect, text_buff, file_readed_size);
+    progect->string_amount = ParseToSrings(progect);
     size_t after_clearing = ClearStrings(progect);
-    PrintStrings(strings_parsed, progect->strings);
-    return file_readed_size; // remove it 
+    PrintStrings(progect->string_amount, progect->strings);
+    return progect->size_of_buf_input; // remove it 
 }
 
 size_t CompilerCompile(Compiler * progect, const char * file_to_preproc, const char * file_to_read)
@@ -54,14 +82,61 @@ size_t ParseString(Compiler * progect, const char * string_to_parse, Command * l
         line_parsed->mode = MODE_ACTION;
         return 1;
     }
-
+    /*   if (string_to_parse == "") {
+           line_parsed->mode = MODE_FREE_LINE;
+           return -1;
+       }*/
     line_parsed->mode = MODE_ERR;
     return 0;
 }
 
-size_t ClearString(Compiler * progect) /// make it ! // this function deletes coments and so on 
+size_t ClearStrings(Compiler * progect) /// make it ! // this function deletes coments and so on 
 {
-    return 0;
+    assert(progect != nullptr);
+    size_t free_lines = DellClearlines(progect);
+    size_t comments = DellComments(progect);
+    return free_lines + comments;
+}
+
+size_t DellComments(Compiler * progect)
+{
+    assert(progect != nullptr);
+    assert(progect->strings != nullptr);
+    size_t comment_lines = 0;
+    char * comment_start = nullptr;
+    for (size_t i = 0; i < progect->string_amount; i++)
+    {
+        if (progect->strings[i] == nullptr) {
+            continue;
+        }
+        if ((comment_start = strchr(progect->strings[i], '#')))
+        {
+            char * string_buf = (char*)calloc(comment_start - progect->strings[i] + 1, sizeof(char));
+            strncpy_s(string_buf, comment_start - progect->strings[i] + 1, progect->strings[i], comment_start - progect->strings[i]);
+            free(progect->strings[i]);
+            progect->strings[i] = string_buf;
+            comment_lines++;
+        }
+    }
+    return comment_lines;
+}
+
+size_t DellClearlines(Compiler * progect)
+{
+    assert(progect != nullptr);
+    assert(progect->strings != nullptr);
+    size_t clear_lines = 0;
+    for (size_t i = 0; i < progect->string_amount; i++)
+    {
+        if (strlen(progect->strings[i]) == 0)
+        {
+            clear_lines++;
+            assert(progect->strings[i] != nullptr);
+            free(progect->strings[i]);
+            progect->strings[i] = nullptr;
+        }
+    }
+    return clear_lines;
 }
 
 size_t GetFileSize(FILE* file_to_seek)
@@ -72,41 +147,51 @@ size_t GetFileSize(FILE* file_to_seek)
     return file_size;
 }
 
-int ParseToSrings(Compiler* progect, const char* buff, size_t size_of_buff)
+int ParseToSrings(Compiler* progect)
 {
-    int string_counter = CountStrings(buff, size_of_buff);
+    int string_counter = CountStrings(progect->buf_input, progect->size_of_buf_input);
     progect->strings = (char**)calloc(string_counter, sizeof(char*));
-    int current_string_starts = 0;
-    int current_string_lenght = 0;
-    int current_string = 0;
-    for (size_t i = 0; i < size_of_buff; i++)
+    progect->string_amount = 0;
+    char * buf_copy = progect->buf_input;
+    char * buf_end = buf_copy + progect->size_of_buf_input;
+    char * last_string = buf_copy;
+    for (buf_copy; buf_copy < buf_end; buf_copy++)
     {
-        if (buff[i] == '\n' && current_string_lenght) {
-            progect->strings[current_string] = (char*)calloc(current_string_lenght, sizeof(char));
-            StringCopy(progect->strings[current_string], buff, current_string_starts, current_string_lenght, 0);
-            current_string++;
-            ++current_string_starts += current_string_lenght;
-            current_string_lenght = 0;
-        }
-        else if (buff[i] != '\n') {
-            current_string_lenght++;
+        if (*buf_copy == '\n') {
+            (progect->strings)[progect->string_amount] = (char*)calloc(buf_copy - last_string + 1, sizeof(char));
+            size_t i = 0;
+            for (last_string; last_string < buf_copy; last_string++) {
+                progect->strings[progect->string_amount][i] = *last_string;
+                i++;
+            }
+            progect->strings[progect->string_amount][i] = '\0';
+            progect->string_amount++;
+            last_string = buf_copy + 1;
         }
     }
-    return current_string;
+    if (last_string != buf_copy + 1) {
+        (progect->strings)[progect->string_amount] = (char*)calloc(buf_end - last_string + 1, sizeof(char));
+        size_t i = 0;
+        for (last_string; last_string < (buf_end - 1); last_string++) {
+            progect->strings[progect->string_amount][i] = *last_string;
+            i++;
+        }
+        progect->strings[progect->string_amount][i] = '\0';
+        progect->string_amount++;
+    }
+    return progect->string_amount;
 }
 int CountStrings(const char * buff, size_t size_of_buff)
 {
     int string_counter = 0;
-    bool last_was_free = true;
     for (size_t i = 0; i < size_of_buff; i++)
     {
-        if (buff[i] == '\n' && !last_was_free) {
-            last_was_free = true;
+        if (buff[i] == '\n') {
             string_counter++;
         }
-        else if (buff[i] != '\n') {
-            last_was_free = false;
-        }
+    }
+    if (buff[size_of_buff - 1] != '/n') {
+        string_counter++;
     }
     return string_counter;
 }
@@ -126,7 +211,9 @@ int PrintStrings(int strings_amount, char** strings)
 {
     for (int i = 0; i < strings_amount; i++)
     {
-        printf("{%s}\n", strings[i]);
+        if (strings[i] != nullptr) {
+            printf("{%s}\n", strings[i]);
+        }
     }
     return strings_amount;
 }
