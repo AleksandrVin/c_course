@@ -28,21 +28,33 @@ size_t CompilerCompile(Compiler * progect, const char * file_to_read, const char
             LOG_ERR("error in line = ", i);
             return 0;
         }
+        bool recognised = false;
         if (command_now.mode == MODE_NUMBER) {
-
 #define DEF_CMD(name, num) \
             if(strcmp(command_now.command_raw, #name) == 0){ \
                 putc(CMD_##name , FILE_output); \
             fprintf_s(FILE_output, "%d", command_now.number); \
-            } \
-            else { \
-                LOG_ERR("error in code, line = ", i); \
-                return i; \
+recognised = true;  \
+            }
+
+#include "../Commands.h"
+
+#undef DEF_CMD
+        }
+        else if (command_now.mode == MODE_ACTION) {
+#define DEF_CMD(name, num) \
+            if(strcmp(command_now.command_raw, #name) == 0){ \
+                putc(CMD_##name , FILE_output); \
+recognised = true;  \
             } 
 
 #include "../Commands.h"
 
 #undef DEF_CMD
+        }
+
+        if (!recognised) {
+            LOG_ERR_NUM("error in code, line = ", i + 1);
         }
     }
 
@@ -59,19 +71,19 @@ size_t ParseString(Compiler * progect, const char * string_to_parse, Command * l
     assert(progect != nullptr);
     assert(string_to_parse != nullptr);
 
-    if (sscanf_s(string_to_parse, "%9s %d", line_parsed->command_raw , MAX_LENGTH_OF_COMMAND , &(line_parsed->number) , 1) == 2){ //   , &number, (unsigned)_countof(line), (unsigned)sizeof(int)) == 2) { // format like {push 10}
+    if (sscanf_s(string_to_parse, "%9s %d", line_parsed->command_raw, MAX_LENGTH_OF_COMMAND, &(line_parsed->number), 1) == 2) { //   , &number, (unsigned)_countof(line), (unsigned)sizeof(int)) == 2) { // format like {push 10}
         line_parsed->mode = MODE_NUMBER;
         return 2;
     }
-    if (sscanf_s(string_to_parse, "%s[%d]", line_parsed->command_raw, &(line_parsed->number)) == 2) { // format like {push [10]}
+    if (sscanf_s(string_to_parse, "%s[%d]", line_parsed->command_raw, MAX_LENGTH_OF_COMMAND, &(line_parsed->number), 1) == 2) { // format like {push [10]}
         line_parsed->mode = MODE_RAM;
         return 2;
     }
-    if (sscanf_s(string_to_parse, "%s%s", line_parsed->command_raw, line_parsed->number_raw) == 2) { // format like {push ax}
+    if (sscanf_s(string_to_parse, "%s%s", line_parsed->command_raw, MAX_LENGTH_OF_COMMAND, line_parsed->number_raw, 1) == 2) { // format like {push ax}
         line_parsed->mode = MODE_REGISTER;
         return 2;
     }
-    if (sscanf_s(string_to_parse, "%s", line_parsed->command_raw) == 1) { // format like {add}
+    if (sscanf_s(string_to_parse, "%s", line_parsed->command_raw, MAX_LENGTH_OF_COMMAND) == 1) { // format like {add}
         line_parsed->mode = MODE_ACTION;
         return 1;
     }

@@ -27,7 +27,7 @@ struct Compiler {
 struct Command {
     char command_raw[MAX_LENGTH_OF_COMMAND]; 
     char number_raw[MAX_LENGTH_OF_COMMAND];
-    cmd command = 0;
+    _cmd command = 0;
     unsigned char  mode = 0; // mode of commannd 
     int number = 0; // or number of register 
 };

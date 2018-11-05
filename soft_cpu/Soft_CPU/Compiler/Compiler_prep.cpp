@@ -188,6 +188,7 @@ const char* StringCopy(char* str_to, const char* str_from, int begin_from, int l
     return str_from;
 }
 
+
 int PrintStrings(int strings_amount, char** strings)
 {
     for (int i = 0; i < strings_amount; i++)
