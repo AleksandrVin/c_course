@@ -62,6 +62,11 @@ size_t ClearStrings(Compiler * progect);
 size_t DellComments(Compiler * progect);
 size_t DellClearlines(Compiler * progect);
 
+size_t PrepareStringsToSave(Compiler * progect, const char * file_to_read);
+
+
+FILE * OpenFile(Compiler * progect, const char * file, const char * mode);
+
 size_t GetFileSize(FILE * file_to_seek);
 //size_t CheckString(Compiler* progect, char* string);
 int CountStrings(const char* buff, size_t size_of_buff);

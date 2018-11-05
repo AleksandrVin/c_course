@@ -25,7 +25,7 @@ int main()
 	size_t size_of_preproc_file = CompilerPreprocessor(progect, FILE_TO_COMPILE, FILE_FOR_PREPROCESSOR);;
 	assert(size_of_preproc_file > 0);
 
-	//size_t size_of_bin_file = CompilerCompile(progect, FILE_FOR_PREPROCESSOR, FILE_OUT_BIN);
+	size_t size_of_bin_file = CompilerCompile(progect, FILE_FOR_PREPROCESSOR, FILE_OUT_BIN);
 
     CompilerDtorDin(progect);
 

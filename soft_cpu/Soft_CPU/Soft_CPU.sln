@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2041
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Soft_CPU", "Soft_CPU\Soft_CPU.vcxproj", "{3E6819E7-9994-4769-8DDA-64012C995021}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Executor", "Executor\Executor.vcxproj", "{64FC7390-F686-47A6-BC9B-F2E71DCFEF9D}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Compiler", "Compiler\Compiler.vcxproj", "{3C9C2B00-ABC3-43CB-994B-822240EAB8F1}"
@@ -27,14 +25,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3E6819E7-9994-4769-8DDA-64012C995021}.Debug|x64.ActiveCfg = Debug|x64
-		{3E6819E7-9994-4769-8DDA-64012C995021}.Debug|x64.Build.0 = Debug|x64
-		{3E6819E7-9994-4769-8DDA-64012C995021}.Debug|x86.ActiveCfg = Debug|Win32
-		{3E6819E7-9994-4769-8DDA-64012C995021}.Debug|x86.Build.0 = Debug|Win32
-		{3E6819E7-9994-4769-8DDA-64012C995021}.Release|x64.ActiveCfg = Debug|x64
-		{3E6819E7-9994-4769-8DDA-64012C995021}.Release|x64.Build.0 = Debug|x64
-		{3E6819E7-9994-4769-8DDA-64012C995021}.Release|x86.ActiveCfg = Debug|x64
-		{3E6819E7-9994-4769-8DDA-64012C995021}.Release|x86.Build.0 = Debug|x64
 		{64FC7390-F686-47A6-BC9B-F2E71DCFEF9D}.Debug|x64.ActiveCfg = Debug|x64
 		{64FC7390-F686-47A6-BC9B-F2E71DCFEF9D}.Debug|x64.Build.0 = Debug|x64
 		{64FC7390-F686-47A6-BC9B-F2E71DCFEF9D}.Debug|x86.ActiveCfg = Debug|Win32
