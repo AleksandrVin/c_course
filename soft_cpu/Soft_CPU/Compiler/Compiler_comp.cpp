@@ -4,7 +4,7 @@ size_t CompilerCompile(Compiler * progect, const char * file_to_read, const char
 {
     assert(progect != nullptr);
     //openinng files
-    FILE* FILE_output = OpenFile(progect, file_to_save, "w");
+    FILE* FILE_output = OpenFile(progect, file_to_save, "wb");
     if (FILE_output == nullptr) {
         LOG_ERR("can't open file to save assembled program into file", file_to_save);
         return 0;
@@ -21,6 +21,32 @@ size_t CompilerCompile(Compiler * progect, const char * file_to_read, const char
     fclose(FILE_input);
     progect->string_amount = ParseToSrings(progect);
 
+    for (size_t i = 0; i < progect->string_amount; i++) {
+        Command command_now;
+        size_t args_n = ParseString(progect, progect->strings[i], &command_now);
+        if (args_n == 0) {
+            LOG_ERR("error in line = ", i);
+            return 0;
+        }
+        if (command_now.mode == MODE_NUMBER) {
+
+#define DEF_CMD(name, num) \
+            if(strcmp(command_now.command_raw, #name) == 0){ \
+                putc(CMD_##name , FILE_output); \
+            fprintf_s(FILE_output, "%d", command_now.number); \
+            } \
+            else { \
+                LOG_ERR("error in code, line = ", i); \
+                return i; \
+            } 
+
+#include "../Commands.h"
+
+#undef DEF_CMD
+        }
+    }
+
+
     free(progect->buf_input);
     progect->buf_input = nullptr;
     ClearStrings(progect);
@@ -33,26 +59,22 @@ size_t ParseString(Compiler * progect, const char * string_to_parse, Command * l
     assert(progect != nullptr);
     assert(string_to_parse != nullptr);
 
-    if (sscanf_s(string_to_parse, "%s %d", &(line_parsed->command), &(line_parsed->number)) == 2) { // format like {push 10}
+    if (sscanf_s(string_to_parse, "%9s %d", line_parsed->command_raw , MAX_LENGTH_OF_COMMAND , &(line_parsed->number) , 1) == 2){ //   , &number, (unsigned)_countof(line), (unsigned)sizeof(int)) == 2) { // format like {push 10}
         line_parsed->mode = MODE_NUMBER;
         return 2;
     }
-    if (sscanf_s(string_to_parse, "%s [%d]", &(line_parsed->command), &(line_parsed->number)) == 2) { // format like {push [10]}
+    if (sscanf_s(string_to_parse, "%s[%d]", line_parsed->command_raw, &(line_parsed->number)) == 2) { // format like {push [10]}
         line_parsed->mode = MODE_RAM;
         return 2;
     }
-    if (sscanf_s(string_to_parse, "%s %s", &(line_parsed->command_raw), &(line_parsed->number_raw)) == 2) { // format like {push ax}
+    if (sscanf_s(string_to_parse, "%s%s", line_parsed->command_raw, line_parsed->number_raw) == 2) { // format like {push ax}
         line_parsed->mode = MODE_REGISTER;
         return 2;
     }
-    if (sscanf_s(string_to_parse, "%s", &(line_parsed->command)) == 1) { // format like {add}
+    if (sscanf_s(string_to_parse, "%s", line_parsed->command_raw) == 1) { // format like {add}
         line_parsed->mode = MODE_ACTION;
         return 1;
     }
-    /*   if (string_to_parse == "") {
-           line_parsed->mode = MODE_FREE_LINE;
-           return -1;
-       }*/
     line_parsed->mode = MODE_ERR;
     return 0;
 }

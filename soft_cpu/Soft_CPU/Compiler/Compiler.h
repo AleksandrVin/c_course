@@ -12,7 +12,7 @@
 #include <ctype.h>
 #include <string.h>
 
-//#include "../../../stack_c/stack_c/Stack.h"
+#include "../../../stack_c/stack_c/Stack.h"
 #include "defines.h"
 
 struct Compiler {
@@ -21,14 +21,15 @@ struct Compiler {
     size_t size_of_buf_input = 0;
     char **strings = nullptr; // array of pointers to strings
     size_t string_amount = 0;
+    Stack * commands = nullptr;
 };
 
 struct Command {
     char command_raw[MAX_LENGTH_OF_COMMAND]; 
     char number_raw[MAX_LENGTH_OF_COMMAND];
-    cmd command;
-    unsigned char  mode; // mode of commannd 
-    int number; // or number of register 
+    cmd command = 0;
+    unsigned char  mode = 0; // mode of commannd 
+    int number = 0; // or number of register 
 };
 
 Compiler* CompilerCtorDin();
