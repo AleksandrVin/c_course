@@ -70,8 +70,8 @@ size_t CompilerPreprocessor(Compiler* progect, const char* file_to_read, const c
 size_t ClearStrings(Compiler * progect) /// make it ! // this function deletes coments and so on 
 {
     assert(progect != nullptr);
-    size_t free_lines = DellClearlines(progect);
     size_t comments = DellComments(progect);
+    size_t free_lines = DellClearlines(progect);
     return free_lines + comments;
 }
 

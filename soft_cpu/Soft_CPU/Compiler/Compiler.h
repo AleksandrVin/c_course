@@ -14,6 +14,7 @@
 
 #include "../../../stack_c/stack_c/Stack.h"
 #include "defines.h"
+#include "../global_prop.h"
 
 struct Compiler {
     char CONF = 0x00; // defaut config 
@@ -67,6 +68,8 @@ size_t PrepareStringsToSave(Compiler * progect, const char * file_to_read);
 
 
 FILE * OpenFile(Compiler * progect, const char * file, const char * mode);
+
+void SaveNumber(FILE * file, int number);
 
 size_t GetFileSize(FILE * file_to_seek);
 //size_t CheckString(Compiler* progect, char* string);

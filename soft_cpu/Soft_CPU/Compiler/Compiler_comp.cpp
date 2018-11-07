@@ -30,11 +30,11 @@ size_t CompilerCompile(Compiler * progect, const char * file_to_read, const char
         }
         bool recognised = false;
         if (command_now.mode == MODE_NUMBER) {
-#define DEF_CMD(name, num) \
+#define DEF_CMD(name, num , code) \
             if(strcmp(command_now.command_raw, #name) == 0){ \
-                putc(CMD_##name , FILE_output); \
-            fprintf_s(FILE_output, "%d", command_now.number); \
-recognised = true;  \
+                putc(CMD_##name | COMMAND_NUMBER_BIT , FILE_output); \
+            SaveNumber(FILE_output, command_now.number); \
+            recognised = true;  \
             }
 
 #include "../Commands.h"
@@ -42,7 +42,7 @@ recognised = true;  \
 #undef DEF_CMD
         }
         else if (command_now.mode == MODE_ACTION) {
-#define DEF_CMD(name, num) \
+#define DEF_CMD(name, num , code) \
             if(strcmp(command_now.command_raw, #name) == 0){ \
                 putc(CMD_##name , FILE_output); \
 recognised = true;  \
@@ -122,6 +122,14 @@ FILE * OpenFile(Compiler * progect, const char * file_to_open, const char * mode
         return nullptr;
     }
     return file;
+}
+
+void SaveNumber(FILE * file, int number)
+{
+    for (size_t i = 0; i < DATA_SIZE; i++) {
+        int local_number = number >> (DATA_SIZE - i - 1) * 8;
+        fputc(number >> (DATA_SIZE - i - 1) * 8, file);
+    }
 }
 
 

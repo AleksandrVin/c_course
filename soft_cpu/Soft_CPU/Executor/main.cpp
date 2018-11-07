@@ -1,18 +1,31 @@
 #include <stdio.h>
-#include "../../../stack_c/stack_c/Stack.h"
 
-int main()
+#include "Exercutor.h"
+
+#define FILE_INPUT "RUN.softexe"
+
+int main(int argc, char **argv)
 {
-	printf("Hello World!\n");
+    //if (argc == 1) {
+    //    LOG_ERR("no file to run/", "provide file to run");
+    //}
 
-	Stack *ex = nullptr;
+    //for (size_t i = 1; i < size_t(argc); i++) {
+    //    Process* now = CreateProcessDin(i , argv[i]);
+    //    size_t exercuted = RunProces(now);
+    //    DestructProcess(now);
+    //    printf("\nin process id : %d was exercuted %d commands", i, exercuted);
+    //}
 
-	ex = StackCtorDin();
-	StackPush(ex, 4235775);
-	printf("%d", StackPop(ex));
-	StackDtorDin(ex);
+        Process* now = CreateProcessDin(1, FILE_INPUT);
+        size_t exercuted = RunProces(now);
+        DestructProcess(now);
+        printf("\nin process id : %d was exercuted %d commands", 1, exercuted);
+	//Stack *ex = nullptr;
 
-	printf("\n\n");
+	//ex = StackCtorDin();
+	//StackPush(ex, 4235775);
+	//printf("%d", StackPop(ex));
+	//StackDtorDin(ex);
 
-	system("pause");
 }
