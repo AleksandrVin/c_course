@@ -5,7 +5,7 @@
 ### In file it should look like this
 
 ```c
-((30)+(40)*(10))
+((30)+((40)*(10)))
 ```
 
 this look like this in dot
