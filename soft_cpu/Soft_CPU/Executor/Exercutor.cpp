@@ -3,39 +3,40 @@
 size_t RunProces(Process * process)
 {
     assert(process != nullptr);
-    process->running = true;
     assert(process->buf_input != nullptr);
     size_t runs = 0;
 
-    
-    for(size_t i = 0;i < process->size_of_buf_input;i++) {
-        switch (process->buf_input[i])
+
+    for (process->position = 0; process->position < process->size_of_buf_input; process->position++) {
+        switch (process->buf_input[process->position])
         {
 #define DEF_CMD(name, num, code) \
         case CMD_##name : \
-            code; \
-runs++; \
+            code \
+            runs++; \
             break;
 
 #include "../Commands.h"
 
 #undef DEF_CMD
-        default :
+        default:
+            LOG_ERR_NUM("can't read command", process->position);
             break;
 
         }
     }
-    process->running = false;
-    return runs;
+        return runs;
 }
 
 Process * CreateProcessDin(size_t id, const char * file)
 {
     Process * process = (Process*)calloc(1, sizeof(Process));
+    process->id = id;
+    process->position = 0;
     FILE * FILE_reading = OpenFile(file, "rb");
     size_t file_size = GetFileSize(FILE_reading);
-    process->buf_input = (char*)calloc(process->size_of_buf_input, sizeof(char));
-    process->size_of_buf_input = fread_s(process->buf_input, process->size_of_buf_input, sizeof(char), process->size_of_buf_input, FILE_reading);
+    process->buf_input = (char*)calloc(file_size, sizeof(char));
+    process->size_of_buf_input = fread_s(process->buf_input, file_size, sizeof(char), file_size, FILE_reading);
     fclose(FILE_reading);
 
     process->stack = StackCtorDin();
@@ -75,10 +76,7 @@ size_t GetFileSize(FILE* file_to_seek)
 
 int ReadNumber(char * data)
 {
-    int number = 0;
-    for (size_t i = 0; i < DATA_SIZE; i++) {
-        number = number | data[i];
-        number = number << 8;
-    }
+    assert(data != nullptr);
+    int number = *(int*)data;
     return number;
 }

@@ -25,39 +25,70 @@ size_t CompilerCompile(Compiler * progect, const char * file_to_read, const char
         Command command_now;
         size_t args_n = ParseString(progect, progect->strings[i], &command_now);
         if (args_n == 0) {
-            LOG_ERR("error in line = ", i);
+            LOG_ERR_NUM("error in line = ", i);
             return 0;
         }
         bool recognised = false;
         if (command_now.mode == MODE_NUMBER) {
 #define DEF_CMD(name, num , code) \
             if(strcmp(command_now.command_raw, #name) == 0){ \
-                putc(CMD_##name | COMMAND_NUMBER_BIT , FILE_output); \
-            SaveNumber(FILE_output, command_now.number); \
-            recognised = true;  \
+                putc(CMD_##name, FILE_output); \
+                putc(COMMAND_NUMBER_BIT,FILE_output); \
+                SaveNumber(FILE_output, command_now.number); \
+                recognised = true;  \
             }
-
 #include "../Commands.h"
 
 #undef DEF_CMD
+
         }
-        else if (command_now.mode == MODE_ACTION) {
+
+
+        if (command_now.mode == MODE_ACTION) {
 #define DEF_CMD(name, num , code) \
             if(strcmp(command_now.command_raw, #name) == 0){ \
                 putc(CMD_##name , FILE_output); \
-recognised = true;  \
+                recognised = true;  \
             } 
-
 #include "../Commands.h"
 
 #undef DEF_CMD
         }
 
+
+        if (command_now.mode == MODE_REGISTER) {
+#define DEF_CMD(name, num , code) \
+            if(strcmp(command_now.command_raw, #name) == 0){ \
+                putc(CMD_##name , FILE_output); \
+                putc(COMMAND_REGISTER_BIT, FILE_output); \
+                SaveNumber(FILE_output,CompareRegister(command_now.number_raw)); \
+                recognised = true;  \
+            }
+#include "../Commands.h"
+
+#undef DEF_CMD
+
+        }
+
+        if (command_now.mode == MODE_RAM) {
+#define DEF_CMD(name, num , code) \
+            if(strcmp(command_now.command_raw, #name) == 0){ \
+                putc(CMD_##name , FILE_output); \
+                putc(COMMAND_RAM_BIT, FILE_output); \
+                SaveNumber(FILE_output,command_now.number); \
+                recognised = true;  \
+            }
+#include "../Commands.h"
+
+#undef DEF_CMD
+
+        }
+
+
         if (!recognised) {
-            LOG_ERR_NUM("error in code, line = ", i + 1);
+            LOG_ERR_NUM("error in code, line = ", (i + 1));
         }
     }
-
 
     free(progect->buf_input);
     progect->buf_input = nullptr;
@@ -65,6 +96,7 @@ recognised = true;  \
     fclose(FILE_output);
     return progect->string_amount;
 }
+
 
 size_t ParseString(Compiler * progect, const char * string_to_parse, Command * line_parsed)
 {
@@ -75,15 +107,15 @@ size_t ParseString(Compiler * progect, const char * string_to_parse, Command * l
         line_parsed->mode = MODE_NUMBER;
         return 2;
     }
-    if (sscanf_s(string_to_parse, "%s[%d]", line_parsed->command_raw, MAX_LENGTH_OF_COMMAND, &(line_parsed->number), 1) == 2) { // format like {push [10]}
+    if (sscanf_s(string_to_parse, "%9s [%d]", line_parsed->command_raw, MAX_LENGTH_OF_COMMAND, &(line_parsed->number), 1) == 2) { // format like {push [10]}
         line_parsed->mode = MODE_RAM;
         return 2;
     }
-    if (sscanf_s(string_to_parse, "%s%s", line_parsed->command_raw, MAX_LENGTH_OF_COMMAND, line_parsed->number_raw, 1) == 2) { // format like {push ax}
+    if (sscanf_s(string_to_parse, "%9s%9s", line_parsed->command_raw, MAX_LENGTH_OF_COMMAND, line_parsed->number_raw, MAX_LENGTH_OF_COMMAND) == 2) { // format like {push ax}
         line_parsed->mode = MODE_REGISTER;
         return 2;
     }
-    if (sscanf_s(string_to_parse, "%s", line_parsed->command_raw, MAX_LENGTH_OF_COMMAND) == 1) { // format like {add}
+    if (sscanf_s(string_to_parse, "%9s", line_parsed->command_raw, MAX_LENGTH_OF_COMMAND) == 1) { // format like {add}
         line_parsed->mode = MODE_ACTION;
         return 1;
     }
@@ -124,12 +156,23 @@ FILE * OpenFile(Compiler * progect, const char * file_to_open, const char * mode
     return file;
 }
 
-void SaveNumber(FILE * file, int number)
+size_t SaveNumber(FILE * file, int number)
 {
-    for (size_t i = 0; i < DATA_SIZE; i++) {
-        int local_number = number >> (DATA_SIZE - i - 1) * 8;
-        fputc(number >> (DATA_SIZE - i - 1) * 8, file);
-    }
+    assert(file != nullptr);
+    return fwrite(&number, DATA_SIZE, 1, file);
+}
+
+int CompareRegister(const char * register_raw)
+{
+#define DEF_REG(name, num) \
+            if(strcmp(register_raw, #name) == 0){ \
+                return REG_##name; \
+            }
+
+#include "../Registers.h"
+
+#undef DEF_REG
+    return 0;
 }
 
 

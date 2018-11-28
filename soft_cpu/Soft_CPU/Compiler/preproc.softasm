@@ -1,6 +1,15 @@
 init
+mem 111
 push 10 
+pop [10]
 push 11
+pop bx
+push ax
+push bx
 add
+push 111111
+push 111111
+add
+sub
 out
 end

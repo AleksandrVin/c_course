@@ -27,5 +27,6 @@ int main(int argc, char **argv)
 	//StackPush(ex, 4235775);
 	//printf("%d", StackPop(ex));
 	//StackDtorDin(ex);
+        return 0;
 
 }

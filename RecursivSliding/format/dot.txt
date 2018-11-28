@@ -1,0 +1,12 @@
+digraph tree {
+    A1 [label="*"];
+    A2 [label="40"];
+    A3 [label="10"];
+    A4 [label="30"];
+    A5 [label="+"];
+    A5 -> A4;
+    A5 -> A1;
+    A1 -> A2;
+    A1 -> A3;
+}
+

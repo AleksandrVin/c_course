@@ -16,6 +16,8 @@ struct Process {
     size_t size_of_buf_input;
     Stack * stack;
     int * ram;
+    size_t ram_ammount;
+    int registers[REGISTERS_AMOUNT];
 };
 
 size_t RunProces(Process * process);

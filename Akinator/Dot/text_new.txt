@@ -1,0 +1,24 @@
+digraph {
+node[shape = record, height = .1 , style=filled];
+node22726000[label = "<f0> left| <f1> ???????? | <f2> right| <f3> parent" , color=mediumturquoise ];
+"node22726000":f3 -> "node22726320" : f1;node22726320[label = "<f0> left| <f1> ???????? | <f2> right| <f3> parent" , color=mediumturquoise ];
+"node22726320":f0 -> "node22726000" : f1;"node22726320":f3 -> "node22724424" : f1;node22724424[label = "<f0> left| <f1> ???????? | <f2> right| <f3> parent" , color=mediumturquoise ];
+"node22724424":f0 -> "node22726320" : f1;"node22724424":f3 -> "node22724360" : f1;node22724360[label = "<f0> left| <f1> ???????? | <f2> right| <f3> parent" , color=mediumturquoise ];
+"node22724360":f0 -> "node22724424" : f1;"node22724360":f3 -> "node22724296" : f1;node22724296[label = "<f0> left| <f1> ???????? | <f2> right| <f3> parent" , color=mediumturquoise ];
+"node22724296":f0 -> "node22724360" : f1;"node22724296":f3 -> "node22724232" : f1;node22724232[label = "<f0> left| <f1> ???????? | <f2> right| <f3> parent" , color=mediumturquoise ];
+"node22724232":f0 -> "node22724296" : f1;"node22724232":f3 -> "node22724168" : f1;node22724168[label = "<f0> left| <f1> ???????? | <f2> right| <f3> parent" , color=mediumturquoise ];
+"node22724168":f0 -> "node22724232" : f1;"node22724168":f3 -> "node22724104" : f1;node22724104[label = "<f0> left| <f1> ???????? | <f2> right| <f3> parent" , color=mediumturquoise ];
+"node22724104":f0 -> "node22724168" : f1;"node22724104":f3 -> "node22724040" : f1;node22724040[label = "<f0> left| <f1> ???????? | <f2> right| <f3> parent" , color=mediumturquoise ];
+"node22724040":f0 -> "node22724104" : f1;"node22724040":f3 -> "node22723976" : f1;node22723976[label = "<f0> left| <f1> ???????? | <f2> right| <f3> parent" , color=mediumturquoise ];
+"node22723976":f0 -> "node22724040" : f1;"node22723976":f3 -> "node22611328" : f1;node22611328[label = "<f0> left| <f1> ?????????? | <f2> right| <f3> parent" , color=mediumturquoise ];
+"node22611328":f0 -> "node22723976" : f1;"node22611328":f2 -> "node22725744" : f1;node22725744[label = "<f0> left| <f1> ????????? | <f2> right| <f3> parent" , color=mediumturquoise ];
+"node22725744":f2 -> "node22724784" : f1;"node22725744":f3 -> "node22611328" : f1;node22724784[label = "<f0> left| <f1> ????????? | <f2> right| <f3> parent" , color=mediumturquoise ];
+"node22724784":f2 -> "node22725680" : f1;"node22724784":f3 -> "node22725744" : f1;node22725680[label = "<f0> left| <f1> ????????? | <f2> right| <f3> parent" , color=mediumturquoise ];
+"node22725680":f2 -> "node22725808" : f1;"node22725680":f3 -> "node22724784" : f1;node22725808[label = "<f0> left| <f1> ????????? | <f2> right| <f3> parent" , color=mediumturquoise ];
+"node22725808":f2 -> "node22724720" : f1;"node22725808":f3 -> "node22725680" : f1;node22724720[label = "<f0> left| <f1> ????????? | <f2> right| <f3> parent" , color=mediumturquoise ];
+"node22724720":f2 -> "node22724912" : f1;"node22724720":f3 -> "node22725808" : f1;node22724912[label = "<f0> left| <f1> ????????? | <f2> right| <f3> parent" , color=mediumturquoise ];
+"node22724912":f2 -> "node22725872" : f1;"node22724912":f3 -> "node22724720" : f1;node22725872[label = "<f0> left| <f1> ????????? | <f2> right| <f3> parent" , color=mediumturquoise ];
+"node22725872":f2 -> "node22724976" : f1;"node22725872":f3 -> "node22724912" : f1;node22724976[label = "<f0> left| <f1> ????????? | <f2> right| <f3> parent" , color=mediumturquoise ];
+"node22724976":f2 -> "node22724848" : f1;"node22724976":f3 -> "node22725872" : f1;node22724848[label = "<f0> left| <f1> ????????? | <f2> right| <f3> parent" , color=mediumturquoise ];
+"node22724848":f2 -> "node22724656" : f1;"node22724848":f3 -> "node22724976" : f1;node22724656[label = "<f0> left| <f1> ????????? | <f2> right| <f3> parent" , color=mediumturquoise ];
+"node22724656":f3 -> "node22724848" : f1;}
