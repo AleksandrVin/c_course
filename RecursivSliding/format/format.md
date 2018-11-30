@@ -58,7 +58,7 @@ this look like this in dot
 
 1. We use left leave for every single argument function. For example: sin(0.5);
 
-2. We use left leave for positive if, while and other functions that contains choice. For example: if(a > b){cos(10)} . We will use left leave for cos(10)
+2. We use left leave for condition. For example: if, while and other functions,that contains choice. For example: if(a > b){ val =  cos(10)} . We will use left leave for "a > b" and right for "val = cos(10)"
 
 ### Encoding options
 
