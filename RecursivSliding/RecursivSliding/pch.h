@@ -9,6 +9,16 @@
 #ifndef PCH_H
 #define PCH_H
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <math.h>
+#include <string.h>
+
+#include "ReaderLib.h"
+#include "macros.h"
+#include "FormulaParseLib.h"
+
 // TODO: add headers that you want to pre-compile here
 
 #endif //PCH_H
