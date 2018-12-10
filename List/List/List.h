@@ -1,3 +1,11 @@
+
+/**
+ \brief header for list library
+
+ \authors Vinogradov Aleksandr
+
+ @note 
+*/
 #pragma once
 
 #include <stdio.h>
@@ -33,23 +41,58 @@ struct List {
     size_t size = 0;
 };
 
+/**
+     /brief Create New list
 
+     /return pointer to list
+*/
 List * ListCtorDin();
+/**
+     /brief delete list 
+
+     /param[in] list pointer to list to delete
+
+     /return void
+*/
 void ListDtorDin(List * list);
 
 Item * ListInsert(List * list, data_t data);
+
+/**
+     /brief remove element with data from list
+
+     /param[in]  list pointer to list 
+     /param[in]  data data to remove from list
+
+     /return true is succes
+*/
 bool ListDelete(List * list, data_t data);
+/**
+     /brief remove element with pinter to item in list
+
+     /param[in]  list poiner to list
+     /param[in]  item pinter to item in list to remove
+
+     /return true is succes
+*/
 bool ListRemove(List * list, Item * item);
-//bool listPushBack(List * list, data_t * data_poiner);
-//bool listPushFront(List * list, data_t * data_pointer);
 
 Item * ListSearch(List * list, data_t data);
 
 Item * ListCreateItem();
+
 void listFreeElem(Item * item);
 
 bool ListCheck(List * list);
+/**
+     /brief dump list to dot file and open it 
 
+     /param[in]  list list to dump
+     /param[in]  image_file file for dot
+     /param[in]  file_image_out file for image
+
+     /return void
+*/
 void ListDump(List * list, const char * file_image_out, const char * image_file);
 
 void ListDumpNode(FILE * file, Item * item , size_t number,const char * color);
