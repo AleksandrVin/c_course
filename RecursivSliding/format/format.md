@@ -12,6 +12,8 @@
 ((30)+((40)*(10)))
 ```
 
+>we use () if node is empty
+
 this look like this in dot
 
 ![tree sample](picture.png)
