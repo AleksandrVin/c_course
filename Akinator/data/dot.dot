@@ -1,6 +1,6 @@
 digraph {
 node[shape = record, height = .1 , style=filled];
-node7754408[label = "<f0> left| <f1> zero | <f2> right| <f3> parent" , color=mediumturquoise ];
-"node7754408":f3 -> "node7775232" : f1;node7775232[label = "<f0> left| <f1> first | <f2> right| <f3> parent" , color=mediumturquoise ];
-"node7775232":f0 -> "node7754408" : f1;"node7775232":f2 -> "node7775296" : f1;node7775296[label = "<f0> left| <f1> second | <f2> right| <f3> parent" , color=mediumturquoise ];
-"node7775296":f3 -> "node7775232" : f1;}
+node1131529280[label = "<f0> left| <f1> dog | <f2> right| <f3> parent" , color=mediumturquoise ];
+"node1131529280":f3 -> "node1131529856" : f1;node1131529856[label = "<f0> left| <f1> Pearson | <f2> right| <f3> parent" , color=mediumturquoise ];
+"node1131529856":f0 -> "node1131529280" : f1;"node1131529856":f2 -> "node1131528512" : f1;node1131528512[label = "<f0> left| <f1> me | <f2> right| <f3> parent" , color=mediumturquoise ];
+"node1131528512":f3 -> "node1131529856" : f1;}
