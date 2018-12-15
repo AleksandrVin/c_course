@@ -1,0 +1,18 @@
+digraph {
+node[shape = record, height = .1 , style=filled];
+node-246563632[label = "<f0> left| <f1> table | <f2> right| <f3> parent" , color=mediumturquoise ];
+"node-246563632":f3 -> "node-246562096" : f1;node-246562096[label = "<f0> left| <f1> dish | <f2> right| <f3> parent" , color=mediumturquoise ];
+"node-246562096":f0 -> "node-246563632" : f1;"node-246562096":f2 -> "node-246562000" : f1;"node-246562096":f3 -> "node-246562864" : f1;node-246562000[label = "<f0> left| <f1> cup | <f2> right| <f3> parent" , color=mediumturquoise ];
+"node-246562000":f3 -> "node-246562096" : f1;node-246562864[label = "<f0> left| <f1> we seat on this object | <f2> right| <f3> parent" , color=mediumturquoise ];
+"node-246562864":f0 -> "node-246562096" : f1;"node-246562864":f2 -> "node-246563440" : f1;"node-246562864":f3 -> "node-246563248" : f1;node-246563536[label = "<f0> left| <f1> chair | <f2> right| <f3> parent" , color=mediumturquoise ];
+"node-246563536":f3 -> "node-246563440" : f1;node-246563440[label = "<f0> left| <f1> simplier | <f2> right| <f3> parent" , color=mediumturquoise ];
+"node-246563440":f0 -> "node-246563536" : f1;"node-246563440":f2 -> "node-246562960" : f1;"node-246563440":f3 -> "node-246562864" : f1;node-246562960[label = "<f0> left| <f1> stool | <f2> right| <f3> parent" , color=mediumturquoise ];
+"node-246562960":f3 -> "node-246563440" : f1;node-246563248[label = "<f0> left| <f1> eat food | <f2> right| <f3> parent" , color=mediumturquoise ];
+"node-246563248":f0 -> "node-246562864" : f1;"node-246563248":f2 -> "node-246544080" : f1;node-246563056[label = "<f0> left| <f1> person | <f2> right| <f3> parent" , color=mediumturquoise ];
+"node-246563056":f3 -> "node-246544080" : f1;node-246544080[label = "<f0> left| <f1> animal | <f2> right| <f3> parent" , color=mediumturquoise ];
+"node-246544080":f0 -> "node-246563056" : f1;"node-246544080":f2 -> "node-246545520" : f1;"node-246544080":f3 -> "node-246563248" : f1;node-246547056[label = "<f0> left| <f1> cat | <f2> right| <f3> parent" , color=mediumturquoise ];
+"node-246547056":f3 -> "node-246546768" : f1;node-246546768[label = "<f0> left| <f1> weird | <f2> right| <f3> parent" , color=mediumturquoise ];
+"node-246546768":f0 -> "node-246547056" : f1;"node-246546768":f2 -> "node-246546480" : f1;"node-246546768":f3 -> "node-246545520" : f1;node-246546480[label = "<f0> left| <f1> frog | <f2> right| <f3> parent" , color=mediumturquoise ];
+"node-246546480":f3 -> "node-246546768" : f1;node-246545520[label = "<f0> left| <f1> big | <f2> right| <f3> parent" , color=mediumturquoise ];
+"node-246545520":f0 -> "node-246546768" : f1;"node-246545520":f2 -> "node-246546192" : f1;"node-246545520":f3 -> "node-246544080" : f1;node-246546192[label = "<f0> left| <f1> cow | <f2> right| <f3> parent" , color=mediumturquoise ];
+"node-246546192":f3 -> "node-246545520" : f1;}

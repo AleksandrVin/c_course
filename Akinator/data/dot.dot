@@ -1,6 +1,16 @@
 digraph {
 node[shape = record, height = .1 , style=filled];
-node1131529280[label = "<f0> left| <f1> dog | <f2> right| <f3> parent" , color=mediumturquoise ];
-"node1131529280":f3 -> "node1131529856" : f1;node1131529856[label = "<f0> left| <f1> Pearson | <f2> right| <f3> parent" , color=mediumturquoise ];
-"node1131529856":f0 -> "node1131529280" : f1;"node1131529856":f2 -> "node1131528512" : f1;node1131528512[label = "<f0> left| <f1> me | <f2> right| <f3> parent" , color=mediumturquoise ];
-"node1131528512":f3 -> "node1131529856" : f1;}
+node-2001485776[label = "<f0> left| <f1> table | <f2> right| <f3> parent" , color=mediumturquoise ];
+"node-2001485776":f3 -> "node-2001485104" : f1;node-2001485104[label = "<f0> left| <f1> dish | <f2> right| <f3> parent" , color=mediumturquoise ];
+"node-2001485104":f0 -> "node-2001485776" : f1;"node-2001485104":f2 -> "node-2001486736" : f1;"node-2001485104":f3 -> "node-2001486256" : f1;node-2001486736[label = "<f0> left| <f1> cup | <f2> right| <f3> parent" , color=mediumturquoise ];
+"node-2001486736":f3 -> "node-2001485104" : f1;node-2001486256[label = "<f0> left| <f1> we seat on this object | <f2> right| <f3> parent" , color=mediumturquoise ];
+"node-2001486256":f0 -> "node-2001485104" : f1;"node-2001486256":f2 -> "node-2001485488" : f1;"node-2001486256":f3 -> "node-2001485200" : f1;node-2001485680[label = "<f0> left| <f1> chair | <f2> right| <f3> parent" , color=mediumturquoise ];
+"node-2001485680":f3 -> "node-2001485488" : f1;node-2001485488[label = "<f0> left| <f1> simplier | <f2> right| <f3> parent" , color=mediumturquoise ];
+"node-2001485488":f0 -> "node-2001485680" : f1;"node-2001485488":f2 -> "node-2001485296" : f1;"node-2001485488":f3 -> "node-2001486256" : f1;node-2001485296[label = "<f0> left| <f1> stool | <f2> right| <f3> parent" , color=mediumturquoise ];
+"node-2001485296":f3 -> "node-2001485488" : f1;node-2001485200[label = "<f0> left| <f1> eat food | <f2> right| <f3> parent" , color=mediumturquoise ];
+"node-2001485200":f0 -> "node-2001486256" : f1;"node-2001485200":f2 -> "node-2001467312" : f1;node-2001485008[label = "<f0> left| <f1> person | <f2> right| <f3> parent" , color=mediumturquoise ];
+"node-2001485008":f3 -> "node-2001467312" : f1;node-2001467312[label = "<f0> left| <f1> animal | <f2> right| <f3> parent" , color=mediumturquoise ];
+"node-2001467312":f0 -> "node-2001485008" : f1;"node-2001467312":f2 -> "node-2001469328" : f1;"node-2001467312":f3 -> "node-2001485200" : f1;node-2001470192[label = "<f0> left| <f1> cat | <f2> right| <f3> parent" , color=mediumturquoise ];
+"node-2001470192":f3 -> "node-2001469328" : f1;node-2001469328[label = "<f0> left| <f1> big | <f2> right| <f3> parent" , color=mediumturquoise ];
+"node-2001469328":f0 -> "node-2001470192" : f1;"node-2001469328":f2 -> "node-2001469040" : f1;"node-2001469328":f3 -> "node-2001467312" : f1;node-2001469040[label = "<f0> left| <f1> cow | <f2> right| <f3> parent" , color=mediumturquoise ];
+"node-2001469040":f3 -> "node-2001469328" : f1;}

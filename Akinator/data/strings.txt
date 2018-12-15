@@ -1,3 +1,15 @@
-Pearson
-dog
-me
+table
+dish
+cup
+we seat on this object
+chair
+simplier
+stool
+eat food
+person
+animal
+cat
+weird
+frog
+big
+cow
