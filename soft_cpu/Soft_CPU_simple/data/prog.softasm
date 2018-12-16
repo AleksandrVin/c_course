@@ -1,0 +1,21 @@
+#this is example 
+
+
+init
+mem 111
+push 10 # add 10 to push
+pop [10]
+push 11
+pop bx
+push ax 
+push bx
+add
+
+
+
+push 111111
+push 111111
+add
+sub
+out
+end
