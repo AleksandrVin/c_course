@@ -1,0 +1,80 @@
+#this is example 
+
+# square solver
+
+# made by Aleksandr Vinogradov
+
+init
+push 1 # a
+push 4 # b
+push 4 # c
+pop ax 
+pop bx
+pop cx
+test
+call :solve
+end
+
+:solve
+test
+push bx
+push bx
+mul
+pop fx
+push fx
+push 4
+push ax
+mul
+push cx
+mul
+pop ex
+push ex
+sub
+pop dx
+push dx
+push 0
+ja :above
+push dx
+push 0
+jb :below
+push dx
+push 0
+je :equal
+:solve_end
+ret
+
+:above
+test
+push -1
+push bx
+mul
+push dx
+sqrt
+add
+push ax
+div
+out # root 1
+push -1
+push bx
+mul
+push dx
+sqrt
+push -1
+mul
+add
+push ax
+div
+out # root 2
+jmp :solve_end
+
+:below
+jmp :solve_end
+
+:equal
+push -1
+push bx
+mul
+push ax
+div
+out # root 1
+jmp :solve_end

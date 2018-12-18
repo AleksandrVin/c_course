@@ -1,21 +1,13 @@
-#this is example 
-
-# factorial 
-
-# made by Aleksandr Vinogradov
-
-
 init
-push 10 # fact
+push 10 
 pop ax 
 push 1
-pop bx # for answer
-push 1 # current iteration
+pop bx 
+push 1 
 pop cx
 test
 call :solve
 end
-
 :solve
 test
 :repeat
@@ -25,7 +17,6 @@ ja :mul
 push bx
 out
 ret
-
 :mul
 push bx
 push cx
